@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier - GreenGoodies{% endblock %}
+
+{% block body %}
+
+<section class="cart-page">
+
+    <h1>Mon panier</h1>
+
+    {% if not cart or cart.cartItems is empty %}
+        <p>Votre panier est vide.</p>
+        <a href="{{ path('app_home') }}" class="btn">Retour aux produits</a>
+    {% else %}
+
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Photo</th>
+                    <th>Quantité</th>
+                    <th>Prix unitaire</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% set total = 0 %}
+
+                {% for item in cart.cartItems %}
+                    {% set lineTotal = item.product.price * item.quantity %}
+                    {% set total = total + lineTotal %}
+
+                    <tr>
+                        <td>{{ item.product.name }}</td>
+                        <td>
+                            <img src="{{ asset('uploads/' ~ item.product.picture) }}" alt="{{ item.product.name }}" width="80">
+                        </td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.product.price }} €</td>
+                        <td>{{ lineTotal }} €</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <p><strong>Total :</strong> {{ total }} €</p>
+
+            <a href="{{ path('app_cart_clear') }}" class="btn btn-danger">
+                Vider le panier
+            </a>
+
+            <a href="#" class="btn btn-success">
+                Valider la commande
+            </a>
+        </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

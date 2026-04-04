@@ -1,3 +1,16 @@
 0e2a08,127.0.0.1,GET,https://127.0.0.1:8000/,1775318697,,404,request
 5dc30e,127.0.0.1,GET,https://127.0.0.1:8000/,1775318903,,404,request
 4177fd,127.0.0.1,GET,https://127.0.0.1:8001/,1775321626,,404,request
+d6d5be,127.0.0.1,GET,https://127.0.0.1:8001/,1775324315,,404,request
+0b6fb0,127.0.0.1,GET,https://127.0.0.1:8001/home,1775324586,6d97b0,500,request
+6d97b0,127.0.0.1,GET,https://127.0.0.1:8001/home,1775324586,,500,request
+d0744c,127.0.0.1,GET,https://127.0.0.1:8001/home,1775325111,ea5f8a,500,request
+ea5f8a,127.0.0.1,GET,https://127.0.0.1:8001/home,1775325111,,500,request
+fca0f7,127.0.0.1,GET,https://127.0.0.1:8001/home,1775325119,5ee3b0,500,request
+5ee3b0,127.0.0.1,GET,https://127.0.0.1:8001/home,1775325119,,500,request
+0ab4a7,127.0.0.1,GET,https://127.0.0.1:8001/mon-compte,1775326231,eb3aba,404,request
+eb3aba,127.0.0.1,GET,https://127.0.0.1:8001/mon-compte,1775326231,,404,request
+5ba6a0,127.0.0.1,GET,https://127.0.0.1:8001/panier,1775326252,7e5ddf,404,request
+7e5ddf,127.0.0.1,GET,https://127.0.0.1:8001/panier,1775326252,,404,request
+f81366,127.0.0.1,GET,https://127.0.0.1:8001/home,1775326277,869e98,500,request
+869e98,127.0.0.1,GET,https://127.0.0.1:8001/home,1775326277,,500,request
