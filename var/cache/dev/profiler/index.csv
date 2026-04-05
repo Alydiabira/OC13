@@ -14,3 +14,11 @@ eb3aba,127.0.0.1,GET,https://127.0.0.1:8001/mon-compte,1775326231,,404,request
 7e5ddf,127.0.0.1,GET,https://127.0.0.1:8001/panier,1775326252,,404,request
 f81366,127.0.0.1,GET,https://127.0.0.1:8001/home,1775326277,869e98,500,request
 869e98,127.0.0.1,GET,https://127.0.0.1:8001/home,1775326277,,500,request
+c06a85,127.0.0.1,GET,https://127.0.0.1:8001/home,1775328702,f073f7,500,request
+f073f7,127.0.0.1,GET,https://127.0.0.1:8001/home,1775328702,,500,request
+78f553,127.0.0.1,GET,https://127.0.0.1:8001/home,1775369446,628243,500,request
+628243,127.0.0.1,GET,https://127.0.0.1:8001/home,1775369446,,500,request
+13426b,127.0.0.1,GET,https://127.0.0.1:8001/mon-compte,1775401267,82bca6,404,request
+82bca6,127.0.0.1,GET,https://127.0.0.1:8001/mon-compte,1775401267,,404,request
+e85b54,127.0.0.1,GET,https://127.0.0.1:8001/login,1775401292,,200,request
+f9ef9e,127.0.0.1,GET,https://127.0.0.1:8001/register,1775401300,,200,request
