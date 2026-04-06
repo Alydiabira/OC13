@@ -180,6 +180,6 @@ class __TwigTemplate_bd9522d04b67165071ac5fa151ab4e1f extends Template
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', {link: profiler_url, name: 'time', status: status_color}) }}
 {% endblock %}
-", "@WebProfiler/Collector/memory.html.twig", "/Users/diabiraaly/greengoodies/vendor/symfony/web-profiler-bundle/Resources/views/Collector/memory.html.twig");
+", "@WebProfiler/Collector/memory.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/vendor/symfony/web-profiler-bundle/Resources/views/Collector/memory.html.twig");
     }
 }

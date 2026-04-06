@@ -85,6 +85,6 @@ class __TwigTemplate_8cccdd44116cd80907bd4f643a47de79 extends Template
     public function getSourceContext(): Source
     {
         return new Source("{% extends '@email/zurb_2/notification/body.html.twig' %}
-", "@email/default/notification/body.html.twig", "/Users/diabiraaly/greengoodies/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.html.twig");
+", "@email/default/notification/body.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.html.twig");
     }
 }

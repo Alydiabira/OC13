@@ -271,6 +271,6 @@ class __TwigTemplate_484b1fe65f75117254b03b4d0dff72ba extends Template
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/Users/diabiraaly/greengoodies/templates/base.html.twig");
+", "base.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/base.html.twig");
     }
 }
