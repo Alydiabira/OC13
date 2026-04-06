@@ -31,6 +31,9 @@ class Order
     #[ORM\OneToMany(targetEntity: OrderItem::class, mappedBy: 'orderRef')]
     private Collection $orderItems;
 
+    #[ORM\Column(length: 50)]
+    private ?string $number = null;
+
     public function __construct()
     {
         $this->orderItems = new ArrayCollection();
@@ -103,6 +106,18 @@ class Order
                 $orderItem->setOrderRef(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNumber(): ?string
+    {
+        return $this->number;
+    }
+
+    public function setNumber(string $number): static
+    {
+        $this->number = $number;
 
         return $this;
     }

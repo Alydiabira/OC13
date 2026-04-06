@@ -22,3 +22,8 @@ f073f7,127.0.0.1,GET,https://127.0.0.1:8001/home,1775328702,,500,request
 82bca6,127.0.0.1,GET,https://127.0.0.1:8001/mon-compte,1775401267,,404,request
 e85b54,127.0.0.1,GET,https://127.0.0.1:8001/login,1775401292,,200,request
 f9ef9e,127.0.0.1,GET,https://127.0.0.1:8001/register,1775401300,,200,request
+1bd111,127.0.0.1,GET,https://127.0.0.1:8001/,1775482217,,404,request
+d27d80,127.0.0.1,GET,https://127.0.0.1:8001/login,1775484347,,200,request
+a9536f,127.0.0.1,GET,https://127.0.0.1:8001/register,1775484360,,200,request
+366327,127.0.0.1,GET,https://127.0.0.1:8001/home,1775484368,f4f3ba,500,request
+f4f3ba,127.0.0.1,GET,https://127.0.0.1:8001/home,1775484368,,500,request
