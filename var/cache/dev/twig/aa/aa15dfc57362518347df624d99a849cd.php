@@ -187,6 +187,6 @@ class __TwigTemplate_e1b1f692fba292a511000b22432bf406 extends Template
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', {link: false}) }}
 {% endblock %}
-", "@WebProfiler/Collector/ajax.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/greengoodies/vendor/symfony/web-profiler-bundle/Resources/views/Collector/ajax.html.twig");
+", "@WebProfiler/Collector/ajax.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/vendor/symfony/web-profiler-bundle/Resources/views/Collector/ajax.html.twig");
     }
 }

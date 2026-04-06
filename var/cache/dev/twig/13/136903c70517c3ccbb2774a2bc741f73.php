@@ -233,6 +233,6 @@ class __TwigTemplate_f8f4bc074f85b467bdb0a0c26501d88d extends Template
     word-wrap: break-word;
     word-break: break-all;
 }
-", "@WebProfiler/Profiler/open.css.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/greengoodies/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.css.twig");
+", "@WebProfiler/Profiler/open.css.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.css.twig");
     }
 }

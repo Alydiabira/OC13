@@ -117,7 +117,7 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
             yield "\t\t\t\t<div class=\"product-card\">
 \t\t\t\t\t<img src=\"";
             // line 19
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 19))), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 19)), "html", null, true);
             yield "\" alt=\"";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 19), "html", null, true);
             yield "\">
@@ -157,7 +157,7 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t<h2>Notre conviction</h2>
 \t\t<p>
 \t\t\tChez GreenGoodies, nous croyons en un monde où la consommation responsable est la norme.
-\t\t\tNous sélectionnons des produits qui respectent l’environnement et les êtres humains.
+\t\t\t\t\t\t\t\t\tNous sélectionnons des produits qui respectent l’environnement et les êtres humains.
 \t\t</p>
 
 \t\t<h2>Nos valeurs</h2>
@@ -220,7 +220,7 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t<div class=\"product-grid\">
 \t\t\t{% for product in products %}
 \t\t\t\t<div class=\"product-card\">
-\t\t\t\t\t<img src=\"{{ asset('uploads/' ~ product.picture) }}\" alt=\"{{ product.name }}\">
+\t\t\t\t\t<img src=\"{{ asset(product.picture) }}\" alt=\"{{ product.name }}\">
 
 \t\t\t\t\t<h3>{{ product.name }}</h3>
 \t\t\t\t\t<p class=\"price\">{{ product.price }}
@@ -240,7 +240,7 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t<h2>Notre conviction</h2>
 \t\t<p>
 \t\t\tChez GreenGoodies, nous croyons en un monde où la consommation responsable est la norme.
-\t\t\tNous sélectionnons des produits qui respectent l’environnement et les êtres humains.
+\t\t\t\t\t\t\t\t\tNous sélectionnons des produits qui respectent l’environnement et les êtres humains.
 \t\t</p>
 
 \t\t<h2>Nos valeurs</h2>

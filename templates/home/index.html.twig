@@ -16,7 +16,7 @@
 		<div class="product-grid">
 			{% for product in products %}
 				<div class="product-card">
-					<img src="{{ asset('uploads/' ~ product.picture) }}" alt="{{ product.name }}">
+					<img src="{{ asset(product.picture) }}" alt="{{ product.name }}">
 
 					<h3>{{ product.name }}</h3>
 					<p class="price">{{ product.price }}
@@ -36,7 +36,7 @@
 		<h2>Notre conviction</h2>
 		<p>
 			Chez GreenGoodies, nous croyons en un monde où la consommation responsable est la norme.
-			Nous sélectionnons des produits qui respectent l’environnement et les êtres humains.
+									Nous sélectionnons des produits qui respectent l’environnement et les êtres humains.
 		</p>
 
 		<h2>Nos valeurs</h2>

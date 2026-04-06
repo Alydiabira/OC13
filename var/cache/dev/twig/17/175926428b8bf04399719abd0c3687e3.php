@@ -225,6 +225,6 @@ $context["name"], "profiler_markup_version" =>                 // line 10
         <i class=\"sf-toolbar-icon-closed\" title=\"Open Toolbar\">{{ source('@WebProfiler/Icon/symfony.svg') }}</i>
     </button>
 </div>
-", "@WebProfiler/Profiler/toolbar.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/greengoodies/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar.html.twig");
+", "@WebProfiler/Profiler/toolbar.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar.html.twig");
     }
 }

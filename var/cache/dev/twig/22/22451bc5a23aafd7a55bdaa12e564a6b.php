@@ -989,6 +989,6 @@ class __TwigTemplate_521ead5c13195817c42286c1fdb48860 extends Template
         </td>
     </tr>
 {% endmacro %}
-", "@DoctrineMigrations/Collector/migrations.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/greengoodies/vendor/doctrine/doctrine-migrations-bundle/templates/Collector/migrations.html.twig");
+", "@DoctrineMigrations/Collector/migrations.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/vendor/doctrine/doctrine-migrations-bundle/templates/Collector/migrations.html.twig");
     }
 }
