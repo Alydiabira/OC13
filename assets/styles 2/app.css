@@ -1,0 +1,177 @@
+/* ------------------------------
+   RESET & BASE
+------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ------------------------------
+   HEADER
+------------------------------ */
+header {
+    width: 100%;
+    padding: 20px 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+header .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .nav-left img {
+    height: 45px;
+}
+
+header .nav-right a {
+    margin-left: 25px;
+    font-weight: 500;
+    color: #444;
+    transition: 0.2s;
+}
+
+header .nav-right a:hover {
+    color: #6aa56a;
+}
+
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f3f7f3;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2f4f2f;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* ------------------------------
+   PRODUCT GRID
+------------------------------ */
+.products {
+    margin-top: 60px;
+}
+
+.products h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #2f4f2f;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.product-card img {
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.product-card .price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #6aa56a;
+}
+
+/* ------------------------------
+   SECTIONS "NOTRE CONVICTION" / "NOS VALEURS"
+------------------------------ */
+.section {
+    margin-top: 80px;
+    padding: 50px 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.section h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #2f4f2f;
+}
+
+.section p {
+    font-size: 17px;
+    color: #555;
+    max-width: 800px;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+footer {
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 60px;
+    color: #777;
+    font-size: 14px;
+}
