@@ -45,11 +45,8 @@ class __TwigTemplate_ee420a8fa08a3ac35e6eba7b5071a6aa extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "partials/footer.html.twig"));
 
         // line 1
-        yield "<footer class=\"footer\">
-    © GreenGoodies - ";
-        // line 2
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate("now", "Y"), "html", null, true);
-        yield "
+        yield "<footer class=\"gg-footer\">
+    © GreenGoodies - 2024
 </footer>
 ";
         
@@ -72,23 +69,15 @@ class __TwigTemplate_ee420a8fa08a3ac35e6eba7b5071a6aa extends Template
     /**
      * @codeCoverageIgnore
      */
-    public function isTraitable(): bool
-    {
-        return false;
-    }
-
-    /**
-     * @codeCoverageIgnore
-     */
     public function getDebugInfo(): array
     {
-        return array (  51 => 2,  48 => 1,);
+        return array (  48 => 1,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("<footer class=\"footer\">
-    © GreenGoodies - {{ \"now\"|date(\"Y\") }}
+        return new Source("<footer class=\"gg-footer\">
+    © GreenGoodies - 2024
 </footer>
 ", "partials/footer.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/partials/footer.html.twig");
     }
