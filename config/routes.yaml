@@ -1,18 +1,7 @@
-# Routes des controllers Symfony (MVC)
 controllers:
     resource: ../src/Controller/
     type: attribute
 
-# Routes du Web Profiler
-web_profiler_wdt:
-    resource: '@WebProfilerBundle/Resources/config/routing/wdt.php'
-    prefix: /_wdt
-
-web_profiler_profiler:
-    resource: '@WebProfilerBundle/Resources/config/routing/profiler.php'
-    prefix: /_profiler
-
-# Routes API Platform
 api_platform:
     resource: .
     type: api_platform
