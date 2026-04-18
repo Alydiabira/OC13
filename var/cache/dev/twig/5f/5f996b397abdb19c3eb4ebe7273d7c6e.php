@@ -73,7 +73,8 @@ class __TwigTemplate_4594286768efd8d9429f77efec33b851 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Inscription";
+        yield "Inscription
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_4594286768efd8d9429f77efec33b851 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,66 +97,71 @@ class __TwigTemplate_4594286768efd8d9429f77efec33b851 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         yield "
-<div class=\"register-page\">
+\t<div class=\"register-page\">
 
-    <div class=\"register-left\">
-        <img src=\"";
-        // line 10
+\t\t<div class=\"register-left\">
+\t\t\t<img src=\"";
+        // line 11
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/register.jpg"), "html", null, true);
         yield "\" alt=\"\">
-    </div>
+\t\t</div>
 
-    <div class=\"register-right\">
-        <h1>Page inscription</h1>
+\t\t<div class=\"register-right\">
+\t\t\t<h1>Page inscription</h1>
 
-        ";
-        // line 16
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), 'form_start');
-        yield "
-            ";
+\t\t\t";
         // line 17
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "lastname", [], "any", false, false, false, 17), 'row');
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'form_start');
         yield "
-            ";
+\t\t\t";
         // line 18
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), "firstname", [], "any", false, false, false, 18), 'row');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'errors');
         yield "
-            ";
-        // line 19
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), "email", [], "any", false, false, false, 19), 'row');
-        yield "
-            ";
+
+\t\t\t";
         // line 20
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), "password", [], "any", false, false, false, 20), 'row');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), "lastname", [], "any", false, false, false, 20), 'row');
         yield "
-            ";
+\t\t\t";
         // line 21
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), "confirmPassword", [], "any", false, false, false, 21), 'row');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), "firstname", [], "any", false, false, false, 21), 'row');
         yield "
-            ";
+\t\t\t";
         // line 22
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "acceptCgu", [], "any", false, false, false, 22), 'row');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "email", [], "any", false, false, false, 22), 'row');
         yield "
-
-            <button class=\"register-btn\">S’inscrire</button>
-        ";
+\t\t\t";
+        // line 23
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "password", [], "any", false, false, false, 23), 'row');
+        yield "
+\t\t\t";
+        // line 24
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "confirmPassword", [], "any", false, false, false, 24), 'row');
+        yield "
+\t\t\t";
         // line 25
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), 'form_end');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), "acceptCgu", [], "any", false, false, false, 25), 'row');
         yield "
 
-        <p class=\"register-login\">
-            Déjà un compte ?
-            <a href=\"";
-        // line 29
+\t\t\t<button class=\"register-btn\">S’inscrire</button>
+\t\t\t";
+        // line 28
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), 'form_end');
+        yield "
+
+\t\t\t<p class=\"register-login\">
+\t\t\t\tDéjà un compte ?
+\t\t\t\t<a href=\"";
+        // line 32
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         yield "\">Se connecter</a>
-        </p>
+\t\t\t</p>
 
-    </div>
+\t\t</div>
 
-</div>
+\t</div>
 
 ";
         
@@ -188,45 +194,48 @@ class __TwigTemplate_4594286768efd8d9429f77efec33b851 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  152 => 29,  145 => 25,  139 => 22,  135 => 21,  131 => 20,  127 => 19,  123 => 18,  119 => 17,  115 => 16,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  158 => 32,  151 => 28,  145 => 25,  141 => 24,  137 => 23,  133 => 22,  129 => 21,  125 => 20,  120 => 18,  116 => 17,  107 => 11,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Inscription{% endblock %}
+{% block title %}Inscription
+{% endblock %}
 
 {% block body %}
 
-<div class=\"register-page\">
+\t<div class=\"register-page\">
 
-    <div class=\"register-left\">
-        <img src=\"{{ asset('images/register.jpg') }}\" alt=\"\">
-    </div>
+\t\t<div class=\"register-left\">
+\t\t\t<img src=\"{{ asset('images/register.jpg') }}\" alt=\"\">
+\t\t</div>
 
-    <div class=\"register-right\">
-        <h1>Page inscription</h1>
+\t\t<div class=\"register-right\">
+\t\t\t<h1>Page inscription</h1>
 
-        {{ form_start(form) }}
-            {{ form_row(form.lastname) }}
-            {{ form_row(form.firstname) }}
-            {{ form_row(form.email) }}
-            {{ form_row(form.password) }}
-            {{ form_row(form.confirmPassword) }}
-            {{ form_row(form.acceptCgu) }}
+\t\t\t{{ form_start(form) }}
+\t\t\t{{ form_errors(form) }}
 
-            <button class=\"register-btn\">S’inscrire</button>
-        {{ form_end(form) }}
+\t\t\t{{ form_row(form.lastname) }}
+\t\t\t{{ form_row(form.firstname) }}
+\t\t\t{{ form_row(form.email) }}
+\t\t\t{{ form_row(form.password) }}
+\t\t\t{{ form_row(form.confirmPassword) }}
+\t\t\t{{ form_row(form.acceptCgu) }}
 
-        <p class=\"register-login\">
-            Déjà un compte ?
-            <a href=\"{{ path('app_login') }}\">Se connecter</a>
-        </p>
+\t\t\t<button class=\"register-btn\">S’inscrire</button>
+\t\t\t{{ form_end(form) }}
 
-    </div>
+\t\t\t<p class=\"register-login\">
+\t\t\t\tDéjà un compte ?
+\t\t\t\t<a href=\"{{ path('app_login') }}\">Se connecter</a>
+\t\t\t</p>
 
-</div>
+\t\t</div>
+
+\t</div>
 
 {% endblock %}
 ", "register/index.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/register/index.html.twig");
