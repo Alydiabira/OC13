@@ -73,7 +73,7 @@ class __TwigTemplate_4594286768efd8d9429f77efec33b851 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Hello RegisterController!";
+        yield "Inscription - GreenGoodies";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -97,23 +97,58 @@ class __TwigTemplate_4594286768efd8d9429f77efec33b851 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        yield "
+<div class=\"register-page\">
 
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        yield "! ✅</h1>
+    <!-- IMAGE GAUCHE -->
+    <div class=\"register-left\">
+        <img src=\"";
+        // line 11
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/register.jpg"), "html", null, true);
+        yield "\" alt=\"Green leaves\">
+    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/src/Controller/RegisterController.php</code></li>
-        <li>Your template at <code>/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/register/index.html.twig</code></li>
-    </ul>
+    <!-- FORMULAIRE -->
+    <div class=\"register-right\">
+        <h1>Page inscription</h1>
+
+        <form method=\"post\">
+
+            <label for=\"lastname\">Nom</label>
+            <input type=\"text\" id=\"lastname\" name=\"lastname\">
+
+            <label for=\"firstname\">Prénom</label>
+            <input type=\"text\" id=\"firstname\" name=\"firstname\">
+
+            <label for=\"email\">Adresse email</label>
+            <input type=\"email\" id=\"email\" name=\"email\">
+
+            <label for=\"password\">Mot de passe</label>
+            <input type=\"password\" id=\"password\" name=\"password\">
+
+            <label for=\"password_confirm\">Confirmation mot de passe</label>
+            <input type=\"password\" id=\"password_confirm\" name=\"password_confirm\">
+
+            <div class=\"checkbox\">
+                <input type=\"checkbox\" id=\"cgu\" name=\"cgu\">
+                <label for=\"cgu\">J’accepte les CGU de GreenGoodies</label>
+            </div>
+
+            <button type=\"submit\" class=\"register-btn\">S’inscrire</button>
+
+            <p class=\"register-login\">
+                Déjà un compte ?
+                <a href=\"";
+        // line 44
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        yield "\">Se connecter</a>
+            </p>
+
+        </form>
+    </div>
+
 </div>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -145,30 +180,62 @@ class __TwigTemplate_4594286768efd8d9429f77efec33b851 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  143 => 44,  107 => 11,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello RegisterController!{% endblock %}
+{% block title %}Inscription - GreenGoodies{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class=\"register-page\">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/src/Controller/RegisterController.php</code></li>
-        <li>Your template at <code>/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/register/index.html.twig</code></li>
-    </ul>
+    <!-- IMAGE GAUCHE -->
+    <div class=\"register-left\">
+        <img src=\"{{ asset('images/register.jpg') }}\" alt=\"Green leaves\">
+    </div>
+
+    <!-- FORMULAIRE -->
+    <div class=\"register-right\">
+        <h1>Page inscription</h1>
+
+        <form method=\"post\">
+
+            <label for=\"lastname\">Nom</label>
+            <input type=\"text\" id=\"lastname\" name=\"lastname\">
+
+            <label for=\"firstname\">Prénom</label>
+            <input type=\"text\" id=\"firstname\" name=\"firstname\">
+
+            <label for=\"email\">Adresse email</label>
+            <input type=\"email\" id=\"email\" name=\"email\">
+
+            <label for=\"password\">Mot de passe</label>
+            <input type=\"password\" id=\"password\" name=\"password\">
+
+            <label for=\"password_confirm\">Confirmation mot de passe</label>
+            <input type=\"password\" id=\"password_confirm\" name=\"password_confirm\">
+
+            <div class=\"checkbox\">
+                <input type=\"checkbox\" id=\"cgu\" name=\"cgu\">
+                <label for=\"cgu\">J’accepte les CGU de GreenGoodies</label>
+            </div>
+
+            <button type=\"submit\" class=\"register-btn\">S’inscrire</button>
+
+            <p class=\"register-login\">
+                Déjà un compte ?
+                <a href=\"{{ path('app_login') }}\">Se connecter</a>
+            </p>
+
+        </form>
+    </div>
+
 </div>
+
 {% endblock %}
 ", "register/index.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/register/index.html.twig");
     }

@@ -1,20 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RegisterController!{% endblock %}
+{% block title %}Inscription - GreenGoodies{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class="register-page">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/src/Controller/RegisterController.php</code></li>
-        <li>Your template at <code>/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/register/index.html.twig</code></li>
-    </ul>
+    <!-- IMAGE GAUCHE -->
+    <div class="register-left">
+        <img src="{{ asset('images/register.jpg') }}" alt="Green leaves">
+    </div>
+
+    <!-- FORMULAIRE -->
+    <div class="register-right">
+        <h1>Page inscription</h1>
+
+        <form method="post">
+
+            <label for="lastname">Nom</label>
+            <input type="text" id="lastname" name="lastname">
+
+            <label for="firstname">Prénom</label>
+            <input type="text" id="firstname" name="firstname">
+
+            <label for="email">Adresse email</label>
+            <input type="email" id="email" name="email">
+
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password">
+
+            <label for="password_confirm">Confirmation mot de passe</label>
+            <input type="password" id="password_confirm" name="password_confirm">
+
+            <div class="checkbox">
+                <input type="checkbox" id="cgu" name="cgu">
+                <label for="cgu">J’accepte les CGU de GreenGoodies</label>
+            </div>
+
+            <button type="submit" class="register-btn">S’inscrire</button>
+
+            <p class="register-login">
+                Déjà un compte ?
+                <a href="{{ path('app_login') }}">Se connecter</a>
+            </p>
+
+        </form>
+    </div>
+
 </div>
+
 {% endblock %}
