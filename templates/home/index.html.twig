@@ -1,48 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil - GreenGoodies
-{% endblock %}
+{% block title %}Accueil - GreenGoodies{% endblock %}
 
 {% block body %}
 
-	<section class="hero">
-		<h1>Bienvenue</h1>
-		<p>Découvrez notre univers de produits éco-responsables pour une consommation responsable.</p>
-	</section>
+<div class="hero">
+    <h1>Bienvenue</h1>
+    <p>Découvrez nos produits biologiques et éthiques.</p>
+</div>
 
-	<section class="products">
-		<h2>Nos produits</h2>
+<div class="container products">
+    <h2>Nos produits</h2>
 
-		<div class="product-grid">
-			{% for product in products %}
-				<div class="product-card">
-					<img src="{{ asset(product.picture) }}" alt="{{ product.name }}">
-
-					<h3>{{ product.name }}</h3>
-					<p class="price">{{ product.price }}
-						€</p>
-					<p class="short">{{ product.shortDescription }}</p>
-
-					<a class="btn" href="{{ path('app_product_show', {id: product.id}) }}">
-						Voir le produit
-					</a>
-
-				</div>
-			{% endfor %}
-		</div>
-	</section>
-
-	<section class="values">
-		<h2>Notre conviction</h2>
-		<p>
-			Chez GreenGoodies, nous croyons en un monde où la consommation responsable est la norme.
-									Nous sélectionnons des produits qui respectent l’environnement et les êtres humains.
-		</p>
-
-		<h2>Nos valeurs</h2>
-		<p>
-			Transparence, durabilité et respect sont les piliers de notre démarche.
-		</p>
-	</section>
+    <div class="product-grid">
+        {% for product in products %}
+            <div class="product-card">
+                <img src="{{ asset('uploads/' ~ product.image) }}" alt="{{ product.name }}">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.shortDescription }}</p>
+                <div class="price">{{ product.price }} €</div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}

@@ -1,11 +1,19 @@
-# yaml-language-server: $schema=../vendor/symfony/routing/Loader/schema/routing.schema.json
-
-# This file is the entry point to configure the routes of your app.
-# Methods with the #[Route] attribute are automatically imported.
-# See also https://symfony.com/doc/current/routing.html
-
-# To list all registered routes, run the following command:
-#   bin/console debug:router
-
+# Routes des controllers Symfony (MVC)
 controllers:
-    resource: routing.controllers
+    resource: ../src/Controller/
+    type: attribute
+
+# Routes du Web Profiler
+web_profiler_wdt:
+    resource: '@WebProfilerBundle/Resources/config/routing/wdt.php'
+    prefix: /_wdt
+
+web_profiler_profiler:
+    resource: '@WebProfilerBundle/Resources/config/routing/profiler.php'
+    prefix: /_profiler
+
+# Routes API Platform
+api_platform:
+    resource: .
+    type: api_platform
+    prefix: /api

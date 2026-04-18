@@ -88,6 +88,8 @@ class __TwigTemplate_70ded677f1fe1fb0bb5bc2e52e8bd960 extends Template
         // line 16
         yield "    </nav>
 </header>
+
+
 ";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -141,6 +143,8 @@ class __TwigTemplate_70ded677f1fe1fb0bb5bc2e52e8bd960 extends Template
         {% endif %}
     </nav>
 </header>
+
+
 ", "partials/header.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/partials/header.html.twig");
     }
 }
