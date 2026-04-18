@@ -34,17 +34,14 @@ final class RegisterController extends AbstractController
                 $this->addFlash('error', 'Les mots de passe ne correspondent pas.');
             } else {
 
-                // Hash du mot de passe
                 $hashedPassword = $passwordHasher->hashPassword($user, $plainPassword);
                 $user->setPassword($hashedPassword);
 
-                // Rôle par défaut
                 $user->setRoles(['ROLE_USER']);
 
-                // IMPORTANT : champ NOT NULL
+                // IMPORTANT
                 $user->setApiEnabled(false);
 
-                // Sauvegarde
                 $em->persist($user);
                 $em->flush();
 
