@@ -8,14 +8,42 @@
 
     <h1>Mon compte</h1>
 
-    <h2>Mes informations</h2>
-    <p><strong>Prénom :</strong> {{ user.firstname }}</p>
-    <p><strong>Nom :</strong> {{ user.lastname }}</p>
-    <p><strong>Email :</strong> {{ user.email }}</p>
+    <!-- ========================= -->
+    <!--   MES COMMANDES           -->
+    <!-- ========================= -->
+
+    <h2>Mes commandes</h2>
+
+    {% if orders is empty %}
+        <p>Aucune commande pour le moment.</p>
+    {% else %}
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Date</th>
+                    <th>Prix</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{ '%02d'|format(order.id) }}</td>
+                        <td>{{ order.createdAt|date('d/m/Y') }}</td>
+                        <td>{{ order.totalPrice|number_format(2, ',', ' ') }} €</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
 
     <hr>
 
-    <h2>Accès API</h2>
+    <!-- ========================= -->
+    <!--   ACCÈS API               -->
+    <!-- ========================= -->
+
+    <h2>Mon accès API</h2>
 
     {% if user.apiEnabled %}
         <p>Votre accès API est <strong>activé</strong>.</p>
@@ -31,34 +59,12 @@
 
     <hr>
 
-    <h2>Mes commandes</h2>
-
-    {% if orders is empty %}
-        <p>Aucune commande pour le moment.</p>
-    {% else %}
-        <table class="orders-table">
-            <thead>
-                <tr>
-                    <th>Numéro</th>
-                    <th>Date</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for order in orders %}
-                    <tr>
-                        <td>#{{ order.id }}</td>
-                        <td>{{ order.createdAt|date('d/m/Y H:i') }}</td>
-                        <td>{{ order.totalPrice }} €</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% endif %}
-
-    <hr>
+    <!-- ========================= -->
+    <!--   SUPPRESSION COMPTE      -->
+    <!-- ========================= -->
 
     <h2>Supprimer mon compte</h2>
+
     <a href="{{ path('app_account_delete') }}" class="btn btn-danger">
         Supprimer mon compte
     </a>

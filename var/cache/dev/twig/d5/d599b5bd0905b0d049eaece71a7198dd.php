@@ -46,7 +46,9 @@ class __TwigTemplate_ee420a8fa08a3ac35e6eba7b5071a6aa extends Template
 
         // line 1
         yield "<footer class=\"gg-footer\">
-    © GreenGoodies - 2024
+\t<div class=\"wrapper-1440 gg-footer-inner\">
+\t\t© GreenGoodies - 2024
+\t</div>
 </footer>
 ";
         
@@ -77,7 +79,9 @@ class __TwigTemplate_ee420a8fa08a3ac35e6eba7b5071a6aa extends Template
     public function getSourceContext(): Source
     {
         return new Source("<footer class=\"gg-footer\">
-    © GreenGoodies - 2024
+\t<div class=\"wrapper-1440 gg-footer-inner\">
+\t\t© GreenGoodies - 2024
+\t</div>
 </footer>
 ", "partials/footer.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/partials/footer.html.twig");
     }

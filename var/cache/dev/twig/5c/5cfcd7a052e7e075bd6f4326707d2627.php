@@ -46,50 +46,55 @@ class __TwigTemplate_70ded677f1fe1fb0bb5bc2e52e8bd960 extends Template
 
         // line 1
         yield "<header class=\"gg-header\">
-    <div class=\"gg-header-left\">
-        <a href=\"";
-        // line 3
+\t<div
+\t\tclass=\"wrapper-1440 gg-header-inner\">
+
+\t\t<!-- LOGO -->
+\t\t<div class=\"gg-header-left\">
+\t\t\t<a href=\"";
+        // line 7
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
         yield "\" class=\"gg-logo\">Green Goodies</a>
-    </div>
+\t\t</div>
 
-    <nav class=\"gg-header-right\">
-        ";
-        // line 7
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "user", [], "any", false, false, false, 7)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 8
-            yield "            <a href=\"";
+\t\t<!-- NAVIGATION -->
+\t\t<nav class=\"gg-header-right\">
+\t\t\t";
+        // line 12
+        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 13
+            yield "\t\t\t\t<a href=\"";
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_products");
             yield "\">Nos produits</a>
-            <a href=\"";
-            // line 9
+\t\t\t\t<a href=\"";
+            // line 14
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cart");
             yield "\">Mon panier</a>
-            <a href=\"";
-            // line 10
+\t\t\t\t<a href=\"";
+            // line 15
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account");
             yield "\">Mon compte</a>
-            <a href=\"";
-            // line 11
+\t\t\t\t<a href=\"";
+            // line 16
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             yield "\">Déconnexion</a>
-        ";
+\t\t\t";
         } else {
-            // line 13
-            yield "            <a href=\"";
+            // line 18
+            yield "\t\t\t\t<a href=\"";
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             yield "\">Connexion</a>
-            <a href=\"";
-            // line 14
+\t\t\t\t<a href=\"";
+            // line 19
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
             yield "\">Inscription</a>
-        ";
+\t\t\t";
         }
-        // line 16
-        yield "    </nav>
+        // line 21
+        yield "\t\t</nav>
+
+\t</div>
 </header>
-
-
 ";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -121,30 +126,35 @@ class __TwigTemplate_70ded677f1fe1fb0bb5bc2e52e8bd960 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  89 => 16,  84 => 14,  79 => 13,  74 => 11,  70 => 10,  66 => 9,  61 => 8,  59 => 7,  52 => 3,  48 => 1,);
+        return array (  94 => 21,  89 => 19,  84 => 18,  79 => 16,  75 => 15,  71 => 14,  66 => 13,  64 => 12,  56 => 7,  48 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("<header class=\"gg-header\">
-    <div class=\"gg-header-left\">
-        <a href=\"{{ path('app_home') }}\" class=\"gg-logo\">Green Goodies</a>
-    </div>
+\t<div
+\t\tclass=\"wrapper-1440 gg-header-inner\">
 
-    <nav class=\"gg-header-right\">
-        {% if app.user %}
-            <a href=\"{{ path('app_products') }}\">Nos produits</a>
-            <a href=\"{{ path('app_cart') }}\">Mon panier</a>
-            <a href=\"{{ path('app_account') }}\">Mon compte</a>
-            <a href=\"{{ path('app_logout') }}\">Déconnexion</a>
-        {% else %}
-            <a href=\"{{ path('app_login') }}\">Connexion</a>
-            <a href=\"{{ path('app_register') }}\">Inscription</a>
-        {% endif %}
-    </nav>
+\t\t<!-- LOGO -->
+\t\t<div class=\"gg-header-left\">
+\t\t\t<a href=\"{{ path('app_home') }}\" class=\"gg-logo\">Green Goodies</a>
+\t\t</div>
+
+\t\t<!-- NAVIGATION -->
+\t\t<nav class=\"gg-header-right\">
+\t\t\t{% if app.user %}
+\t\t\t\t<a href=\"{{ path('app_products') }}\">Nos produits</a>
+\t\t\t\t<a href=\"{{ path('app_cart') }}\">Mon panier</a>
+\t\t\t\t<a href=\"{{ path('app_account') }}\">Mon compte</a>
+\t\t\t\t<a href=\"{{ path('app_logout') }}\">Déconnexion</a>
+\t\t\t{% else %}
+\t\t\t\t<a href=\"{{ path('app_login') }}\">Connexion</a>
+\t\t\t\t<a href=\"{{ path('app_register') }}\">Inscription</a>
+\t\t\t{% endif %}
+\t\t</nav>
+
+\t</div>
 </header>
-
-
 ", "partials/header.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/partials/header.html.twig");
     }
 }
