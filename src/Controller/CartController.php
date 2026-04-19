@@ -103,4 +103,31 @@ class CartController extends AbstractController
 
         return $this->redirectToRoute('app_cart');
     }
+
+    #[Route('/panier/valider', name: 'app_cart_validate')]
+    public function validate(
+        CartRepository $cartRepository,
+        EntityManagerInterface $em
+    ): Response {
+        $user = $this->getUser();
+        if (!$user) {
+            return $this->redirectToRoute('app_login');
+        }
+
+        $cart = $cartRepository->findOneBy(['user' => $user]);
+
+        if ($cart) {
+            // Supprimer tous les items du panier
+            foreach ($cart->getCartItems() as $item) {
+                $em->remove($item);
+            }
+
+            $em->flush();
+        }
+
+        // Message de confirmation
+        $this->addFlash('success', 'Votre commande a été validée avec succès !');
+
+        return $this->redirectToRoute('app_cart');
+    }
 }

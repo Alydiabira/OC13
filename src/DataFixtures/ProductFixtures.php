@@ -12,35 +12,49 @@ class ProductFixtures extends Fixture
     {
         $products = [
             [
-                'name' => 'Savon bio au thé vert',
-                'short' => 'Un savon artisanal fabriqué à partir d’ingrédients 100% naturels.',
-                'full' => 'Ce savon biologique au thé vert est fabriqué à la main en France. Il hydrate la peau tout en respectant l’environnement. Sans parfum artificiel, sans colorant, sans huile de palme.',
-                'price' => 6.90,
-                'picture' => '/images/products/savon-the-vert.jpg',
+                "Savon bio",
+                "Savon naturel et écologique.",
+                "Un savon artisanal fabriqué à partir d’ingrédients 100% naturels. Idéal pour les peaux sensibles.",
+                8.50,
+                "savon.jpg"
             ],
             [
-                'name' => 'Infusion detox citron & gingembre',
-                'short' => 'Une infusion bio parfaite pour purifier l’organisme.',
-                'full' => 'Mélange biologique de citron, gingembre et plantes aromatiques. Idéal pour une pause bien-être. Sachets compostables et emballage recyclable.',
-                'price' => 4.50,
-                'picture' => '/images/products/infusion-detox.jpg',
+                "Gourde en bois",
+                "Gourde durable et réutilisable.",
+                "Une gourde écologique fabriquée en bois recyclé. Parfaite pour réduire les déchets plastiques.",
+                24.90,
+                "gourde.jpg"
             ],
             [
-                'name' => 'Sac réutilisable en coton bio',
-                'short' => 'Un sac durable pour vos courses du quotidien.',
-                'full' => 'Sac en coton biologique certifié GOTS. Résistant, lavable et réutilisable. Une alternative écologique aux sacs plastiques.',
-                'price' => 9.90,
-                'picture' => '/images/products/sac-coton-bio.jpg',
+                "Shampoing solide",
+                "Shampoing écologique sans plastique.",
+                "Un shampoing solide hydratant, zéro déchet, adapté à tous types de cheveux.",
+                9.90,
+                "shampoing.jpg"
+            ],
+            [
+                "Éponge naturelle",
+                "Éponge biodégradable.",
+                "Éponge 100% naturelle, compostable, idéale pour la cuisine ou la salle de bain.",
+                4.50,
+                "eponge.jpg"
+            ],
+            [
+                "Kit hygiène recyclé",
+                "Kit complet en matériaux recyclés.",
+                "Un kit comprenant brosse à dents, savon, gant et pochette en fibres recyclées.",
+                18.00,
+                "kit.jpg"
             ],
         ];
 
-        foreach ($products as $data) {
+        foreach ($products as $p) {
             $product = new Product();
-            $product->setName($data['name']);
-            $product->setShortDescription($data['short']);
-            $product->setFullDescription($data['full']);
-            $product->setPrice($data['price']);
-            $product->setPicture($data['picture']);
+            $product->setName($p[0]);
+            $product->setShortDescription($p[1]);
+            $product->setFullDescription($p[2]);
+            $product->setPrice($p[3]);
+            $product->setPicture($p[4]);
 
             $manager->persist($product);
         }

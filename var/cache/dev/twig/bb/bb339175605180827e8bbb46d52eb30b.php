@@ -143,7 +143,7 @@ class __TwigTemplate_484b1fe65f75117254b03b4d0dff72ba extends Template
 
         // line 11
         yield "\t\t\t<link rel=\"stylesheet\" href=\"";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/login.css"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/app.css"), "html", null, true);
         yield "\">
 \t\t";
         
@@ -267,7 +267,7 @@ class __TwigTemplate_484b1fe65f75117254b03b4d0dff72ba extends Template
 \t\t</title>
 
 \t\t{% block stylesheets %}
-\t\t\t<link rel=\"stylesheet\" href=\"{{ asset('css/login.css') }}\">
+\t\t\t<link rel=\"stylesheet\" href=\"{{ asset('styles/app.css') }}\">
 \t\t{% endblock %}
 
 \t\t{% block javascripts %}

@@ -4,13 +4,19 @@
 
 {% block body %}
 
-<section class="cart-page">
+<section class="cart-page wrapper-1440">
 
     <h1>Mon panier</h1>
+
+    {# --- Messages de confirmation / succès --- #}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
 
     {% if not cart or cart.cartItems is empty %}
         <p>Votre panier est vide.</p>
         <a href="{{ path('app_home') }}" class="btn">Retour aux produits</a>
+
     {% else %}
 
         <table class="cart-table">
@@ -33,11 +39,17 @@
 
                     <tr>
                         <td>{{ item.product.name }}</td>
+
                         <td>
-                            <img src="{{ asset('uploads/' ~ item.product.picture) }}" alt="{{ item.product.name }}" width="80">
+                            <img src="{{ asset('uploads/' ~ item.product.picture) }}"
+                                 alt="{{ item.product.name }}"
+                                 width="80">
                         </td>
+
                         <td>{{ item.quantity }}</td>
+
                         <td>{{ item.product.price }} €</td>
+
                         <td>{{ lineTotal }} €</td>
                     </tr>
                 {% endfor %}
@@ -51,7 +63,7 @@
                 Vider le panier
             </a>
 
-            <a href="#" class="btn btn-success">
+            <a href="{{ path('app_cart_validate') }}" class="btn btn-success">
                 Valider la commande
             </a>
         </div>

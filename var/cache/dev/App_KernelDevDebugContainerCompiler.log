@@ -1399,7 +1399,6 @@ Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inl
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.IAVS8nf" to ".service_locator.IAVS8nf.App\Controller\ApiController::products()".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.t8QaZRa" to ".service_locator.t8QaZRa.App\Controller\CartController::index()".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.uqMdrhc" to ".service_locator.uqMdrhc.App\Controller\CartController::add()".
-Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.rzdOKy_" to ".service_locator.rzdOKy_.App\Controller\CartController::clear()".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.qHOVbN9" to ".service_locator.qHOVbN9.App\Controller\ProductController::show()".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.j3kKXma" to ".service_locator.j3kKXma.App\Controller\RegisterController::index()".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.0MQaTBY" to ".service_locator.0MQaTBY.App\Controller\SecurityController::login()".

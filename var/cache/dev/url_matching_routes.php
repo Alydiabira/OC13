@@ -21,6 +21,7 @@ return [
         '/api/products' => [[['_route' => 'api_products', '_controller' => 'App\\Controller\\ApiController::products'], null, ['GET' => 0], null, false, false, null]],
         '/panier' => [[['_route' => 'app_cart', '_controller' => 'App\\Controller\\CartController::index'], null, null, null, false, false, null]],
         '/panier/vider' => [[['_route' => 'app_cart_clear', '_controller' => 'App\\Controller\\CartController::clear'], null, null, null, false, false, null]],
+        '/panier/valider' => [[['_route' => 'app_cart_validate', '_controller' => 'App\\Controller\\CartController::validate'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/products' => [[['_route' => 'app_products', '_controller' => 'App\\Controller\\ProductController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegisterController::index'], null, null, null, false, false, null]],

@@ -743,7 +743,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.Xl3Lkqd"/>
+      <argument type="service" id=".service_locator.4Xw9wcZ"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -3944,7 +3944,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.Xl3Lkqd"/>
+      <argument type="service" id=".service_locator.4Xw9wcZ"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -10323,6 +10323,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.rzdOKy_" method="withContext"/>
     </service>
+    <service id=".service_locator.rzdOKy_.App\Controller\CartController::validate()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CartController::validate()"/>
+      <argument>App\Controller\CartController::validate()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.rzdOKy_" method="withContext"/>
+    </service>
     <service id=".service_locator.dcfjolD" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -10378,7 +10384,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.0MQaTBY" method="withContext"/>
     </service>
-    <service id=".service_locator.Xl3Lkqd" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.4Xw9wcZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -10392,6 +10398,7 @@
         <argument key="App\Controller\CartController::index" type="service_closure" id=".service_locator.t8QaZRa.App\Controller\CartController::index()"/>
         <argument key="App\Controller\CartController::add" type="service_closure" id=".service_locator.uqMdrhc.App\Controller\CartController::add()"/>
         <argument key="App\Controller\CartController::clear" type="service_closure" id=".service_locator.rzdOKy_.App\Controller\CartController::clear()"/>
+        <argument key="App\Controller\CartController::validate" type="service_closure" id=".service_locator.rzdOKy_.App\Controller\CartController::validate()"/>
         <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.dcfjolD.App\Controller\HomeController::index()"/>
         <argument key="App\Controller\ProductController::index" type="service_closure" id=".service_locator.dcfjolD.App\Controller\ProductController::index()"/>
         <argument key="App\Controller\ProductController::show" type="service_closure" id=".service_locator.qHOVbN9.App\Controller\ProductController::show()"/>
@@ -10406,6 +10413,7 @@
         <argument key="App\Controller\CartController:index" type="service_closure" id=".service_locator.t8QaZRa.App\Controller\CartController::index()"/>
         <argument key="App\Controller\CartController:add" type="service_closure" id=".service_locator.uqMdrhc.App\Controller\CartController::add()"/>
         <argument key="App\Controller\CartController:clear" type="service_closure" id=".service_locator.rzdOKy_.App\Controller\CartController::clear()"/>
+        <argument key="App\Controller\CartController:validate" type="service_closure" id=".service_locator.rzdOKy_.App\Controller\CartController::validate()"/>
         <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.dcfjolD.App\Controller\HomeController::index()"/>
         <argument key="App\Controller\ProductController:index" type="service_closure" id=".service_locator.dcfjolD.App\Controller\ProductController::index()"/>
         <argument key="App\Controller\ProductController:show" type="service_closure" id=".service_locator.qHOVbN9.App\Controller\ProductController::show()"/>
@@ -13324,7 +13332,7 @@
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="api_platform.name_converter" alias="api_platform.hydra.name_converter.hydra_prefix"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Xl3Lkqd"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.4Xw9wcZ"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request" alias="monolog.logger.request"/>

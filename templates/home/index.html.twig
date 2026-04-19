@@ -1,27 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil - GreenGoodies{% endblock %}
+{% block title %}Accueil - GreenGoodies
+{% endblock %}
 
 {% block body %}
 
-<div class="hero">
-    <h1>Bienvenue</h1>
-    <p>Découvrez nos produits biologiques et éthiques.</p>
-</div>
+	<div class="hero">
+		<h1>Bienvenue</h1>
+		<p>Découvrez nos produits biologiques et éthiques.</p>
+	</div>
 
-<div class="container products">
-    <h2>Nos produits</h2>
+	<div class="container products">
+		<h2>Nos produits</h2>
 
-    <div class="product-grid">
-        {% for product in products %}
-            <div class="product-card">
-                <img src="{{ asset('uploads/' ~ product.image) }}" alt="{{ product.name }}">
-                <h3>{{ product.name }}</h3>
-                <p>{{ product.shortDescription }}</p>
-                <div class="price">{{ product.price }} €</div>
-            </div>
-        {% endfor %}
-    </div>
-</div>
+		<div class="product-grid">
+			{% for product in products %}
+				<div class="product-card">
+					<img src="{{ asset('uploads/' ~ product.picture) }}" alt="{{ product.name }}">
+					<h3>{{ product.name }}</h3>
+					<p>{{ product.shortDescription }}</p>
+					<div class="price">{{ product.price }}
+						€</div>
+				</div>
+			{% endfor %}
+		</div>
+
+	</div>
 
 {% endblock %}
