@@ -3,7 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b82d084b21e490b66cf4663710702d31e7a4e1a9',
+        'reference' => '07995c1b70b68881c6871e63a7e1ec11d7a6373b',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b82d084b21e490b66cf4663710702d31e7a4e1a9',
+            'reference' => '07995c1b70b68881c6871e63a7e1ec11d7a6373b',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -170,7 +170,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/data-fixtures',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'doctrine/dbal' => array(
             'pretty_version' => '4.4.3',
@@ -206,7 +206,7 @@
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../doctrine/doctrine-fixtures-bundle',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'doctrine/doctrine-migrations-bundle' => array(
             'pretty_version' => '4.0.0',

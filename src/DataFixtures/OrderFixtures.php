@@ -12,9 +12,10 @@ class OrderFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
-        $user = $this->getReference('user1');
-        $product1 = $this->getReference('product1');
-        $product2 = $this->getReference('product2');
+        // API ANCIENNE → 2 arguments obligatoires
+        $user = $this->getReference('user1', \App\Entity\User::class);
+        $product1 = $this->getReference('product1', \App\Entity\Product::class);
+        $product2 = $this->getReference('product2', \App\Entity\Product::class);
 
         $order = new Order();
         $order->setUser($user);

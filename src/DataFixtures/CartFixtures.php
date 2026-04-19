@@ -12,15 +12,15 @@ class CartFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
-        $user = $this->getReference('user1');
+        // Ancienne API → getReference($name, $class)
+        $user = $this->getReference('user1', \App\Entity\User::class);
 
         $cart = new Cart();
         $cart->setUser($user);
         $manager->persist($cart);
 
-        // Ajout de 3 produits aléatoires
         for ($i = 1; $i <= 3; $i++) {
-            $product = $this->getReference('product' . rand(1, 10));
+            $product = $this->getReference('product' . rand(1, 10), \App\Entity\Product::class);
 
             $item = new CartItem();
             $item->setCart($cart);
