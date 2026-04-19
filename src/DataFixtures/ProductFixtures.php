@@ -5,58 +5,26 @@ namespace App\DataFixtures;
 use App\Entity\Product;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Faker\Factory;
 
 class ProductFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $products = [
-            [
-                "Savon bio",
-                "Savon naturel et écologique.",
-                "Un savon artisanal fabriqué à partir d’ingrédients 100% naturels. Idéal pour les peaux sensibles.",
-                8.50,
-                "savon.jpg"
-            ],
-            [
-                "Gourde en bois",
-                "Gourde durable et réutilisable.",
-                "Une gourde écologique fabriquée en bois recyclé. Parfaite pour réduire les déchets plastiques.",
-                24.90,
-                "gourde.jpg"
-            ],
-            [
-                "Shampoing solide",
-                "Shampoing écologique sans plastique.",
-                "Un shampoing solide hydratant, zéro déchet, adapté à tous types de cheveux.",
-                9.90,
-                "shampoing.jpg"
-            ],
-            [
-                "Éponge naturelle",
-                "Éponge biodégradable.",
-                "Éponge 100% naturelle, compostable, idéale pour la cuisine ou la salle de bain.",
-                4.50,
-                "eponge.jpg"
-            ],
-            [
-                "Kit hygiène recyclé",
-                "Kit complet en matériaux recyclés.",
-                "Un kit comprenant brosse à dents, savon, gant et pochette en fibres recyclées.",
-                18.00,
-                "kit.jpg"
-            ],
-        ];
+        $faker = Factory::create('fr_FR');
 
-        foreach ($products as $p) {
+        for ($i = 1; $i <= 10; $i++) {
             $product = new Product();
-            $product->setName($p[0]);
-            $product->setShortDescription($p[1]);
-            $product->setFullDescription($p[2]);
-            $product->setPrice($p[3]);
-            $product->setPicture($p[4]);
+            $product->setName($faker->words(3, true));
+            $product->setShortDescription($faker->sentence());
+            $product->setFullDescription($faker->paragraph());
+            $product->setPrice($faker->randomFloat(2, 5, 50));
+            $product->setPicture("product$i.jpg");
 
             $manager->persist($product);
+
+            // Références pour CartFixtures et OrderFixtures
+            $this->addReference("product$i", $product);
         }
 
         $manager->flush();

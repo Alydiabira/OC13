@@ -73,7 +73,8 @@ class __TwigTemplate_16bb903989add8ae829a90ca51d90fe3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Mon compte - GreenGoodies";
+        yield "Mon compte - GreenGoodies
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_16bb903989add8ae829a90ca51d90fe3 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,116 +97,115 @@ class __TwigTemplate_16bb903989add8ae829a90ca51d90fe3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         yield "
-<section class=\"account-page\">
+\t<section class=\"account-page wrapper-1440\">
 
-    <h1>Mon compte</h1>
+\t\t<h1>Mon compte</h1>
 
-    <!-- ========================= -->
-    <!--   MES COMMANDES           -->
-    <!-- ========================= -->
+\t\t<!-- ========================= -->
+\t\t<!--   MES COMMANDES           -->
+\t\t<!-- ========================= --><h2>Mes commandes
+\t\t</h2>
 
-    <h2>Mes commandes</h2>
-
-    ";
+\t\t\t";
         // line 17
         if (Twig\Extension\CoreExtension::testEmpty((isset($context["orders"]) || array_key_exists("orders", $context) ? $context["orders"] : (function () { throw new RuntimeError('Variable "orders" does not exist.', 17, $this->source); })()))) {
-            // line 18
-            yield "        <p>Aucune commande pour le moment.</p>
-    ";
+            yield "<p>Aucune commande pour le moment.
+\t\t\t</p>
+\t\t";
         } else {
             // line 20
-            yield "        <table class=\"orders-table\">
-            <thead>
-                <tr>
-                    <th>N°</th>
-                    <th>Date</th>
-                    <th>Prix</th>
-                </tr>
-            </thead>
-            <tbody>
-                ";
+            yield "\t\t\t<table class=\"orders-table\">
+\t\t\t\t<thead>
+\t\t\t\t\t<tr>
+\t\t\t\t\t\t<th>N°</th>
+\t\t\t\t\t\t<th>Date</th>
+\t\t\t\t\t\t<th>Prix total</th>
+\t\t\t\t\t</tr>
+\t\t\t\t</thead>
+\t\t\t\t<tbody>
+\t\t\t\t\t";
             // line 29
             $context['_parent'] = $context;
             $context['_seq'] = CoreExtension::ensureTraversable((isset($context["orders"]) || array_key_exists("orders", $context) ? $context["orders"] : (function () { throw new RuntimeError('Variable "orders" does not exist.', 29, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["order"]) {
                 // line 30
-                yield "                    <tr>
-                        <td>";
+                yield "\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t<td>";
                 // line 31
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::sprintf("%02d", CoreExtension::getAttribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 31)), "html", null, true);
                 yield "</td>
-                        <td>";
+\t\t\t\t\t\t\t<td>";
                 // line 32
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["order"], "createdAt", [], "any", false, false, false, 32), "d/m/Y"), "html", null, true);
                 yield "</td>
-                        <td>";
+\t\t\t\t\t\t\t<td>";
                 // line 33
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatNumber(CoreExtension::getAttribute($this->env, $this->source, $context["order"], "totalPrice", [], "any", false, false, false, 33), 2, ",", " "), "html", null, true);
-                yield " €</td>
-                    </tr>
-                ";
+                yield "
+\t\t\t\t\t\t\t\t€</td>
+\t\t\t\t\t\t</tr>
+\t\t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['order'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 36
-            yield "            </tbody>
-        </table>
-    ";
+            // line 37
+            yield "\t\t\t\t</tbody>
+\t\t\t</table>
+\t\t";
         }
-        // line 39
+        // line 40
         yield "
-    <hr>
+\t\t<hr>
 
-    <!-- ========================= -->
-    <!--   ACCÈS API               -->
-    <!-- ========================= -->
+\t\t<!-- ========================= -->
+\t\t<!--   ACCÈS API               -->
+\t\t<!-- ========================= --><h2>Mon accès API
+\t\t</h2>
 
-    <h2>Mon accès API</h2>
-
-    ";
+\t\t\t";
         // line 48
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 48, $this->source); })()), "apiEnabled", [], "any", false, false, false, 48)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 49
-            yield "        <p>Votre accès API est <strong>activé</strong>.</p>
-        <a href=\"";
-            // line 50
+        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 48, $this->source); })()), "user", [], "any", false, false, false, 48), "apiEnabled", [], "any", false, false, false, 48)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            yield "<p>
+\t\t\t\tVotre accès API est<strong>activé</strong>.
+\t\t\t</p>
+\t\t\t\t<a href=\"";
+            // line 51
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_toggle_api");
-            yield "\" class=\"btn btn-warning\">
-            Désactiver mon accès API
-        </a>
-    ";
+            yield "\" class=\"btn btn-warning\"> Désactiver mon accès API
+\t\t\t</a>
+\t\t";
         } else {
             // line 54
-            yield "        <p>Votre accès API est <strong>désactivé</strong>.</p>
-        <a href=\"";
-            // line 55
+            yield "\t\t\t<p>Votre accès API est
+\t\t\t\t<strong>désactivé</strong>.</p>
+\t\t\t<a href=\"";
+            // line 56
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_toggle_api");
             yield "\" class=\"btn btn-success\">
-            Activer mon accès API
-        </a>
-    ";
+\t\t\t\tActiver mon accès API
+\t\t\t</a>
+\t\t";
         }
-        // line 59
+        // line 60
         yield "
-    <hr>
+\t\t<hr>
 
-    <!-- ========================= -->
-    <!--   SUPPRESSION COMPTE      -->
-    <!-- ========================= -->
+\t\t<!-- ========================= -->
+\t\t<!--   SUPPRESSION COMPTE      -->
+\t\t<!-- ========================= --><h2>Supprimer mon compte
+\t\t</h2>
 
-    <h2>Supprimer mon compte</h2>
-
-    <a href=\"";
+\t\t\t<a href=\"";
         // line 68
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_delete");
-        yield "\" class=\"btn btn-danger\">
-        Supprimer mon compte
-    </a>
+        yield "\" class=\"btn btn-danger delete-account-btn\" onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.');\"> Supprimer mon compte
+\t\t</a>
 
-</section>
+
+\t</section>
 
 ";
         
@@ -238,83 +238,83 @@ class __TwigTemplate_16bb903989add8ae829a90ca51d90fe3 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  203 => 68,  192 => 59,  185 => 55,  182 => 54,  175 => 50,  172 => 49,  170 => 48,  159 => 39,  154 => 36,  145 => 33,  141 => 32,  137 => 31,  134 => 30,  130 => 29,  119 => 20,  115 => 18,  113 => 17,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  203 => 68,  193 => 60,  186 => 56,  182 => 54,  176 => 51,  170 => 48,  160 => 40,  155 => 37,  145 => 33,  141 => 32,  137 => 31,  134 => 30,  130 => 29,  119 => 20,  113 => 17,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Mon compte - GreenGoodies{% endblock %}
+{% block title %}Mon compte - GreenGoodies
+{% endblock %}
 
 {% block body %}
 
-<section class=\"account-page\">
+\t<section class=\"account-page wrapper-1440\">
 
-    <h1>Mon compte</h1>
+\t\t<h1>Mon compte</h1>
 
-    <!-- ========================= -->
-    <!--   MES COMMANDES           -->
-    <!-- ========================= -->
+\t\t<!-- ========================= -->
+\t\t<!--   MES COMMANDES           -->
+\t\t<!-- ========================= --><h2>Mes commandes
+\t\t</h2>
 
-    <h2>Mes commandes</h2>
+\t\t\t{% if orders is empty %}<p>Aucune commande pour le moment.
+\t\t\t</p>
+\t\t{% else %}
+\t\t\t<table class=\"orders-table\">
+\t\t\t\t<thead>
+\t\t\t\t\t<tr>
+\t\t\t\t\t\t<th>N°</th>
+\t\t\t\t\t\t<th>Date</th>
+\t\t\t\t\t\t<th>Prix total</th>
+\t\t\t\t\t</tr>
+\t\t\t\t</thead>
+\t\t\t\t<tbody>
+\t\t\t\t\t{% for order in orders %}
+\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t<td>{{ '%02d'|format(order.id) }}</td>
+\t\t\t\t\t\t\t<td>{{ order.createdAt|date('d/m/Y') }}</td>
+\t\t\t\t\t\t\t<td>{{ order.totalPrice|number_format(2, ',', ' ') }}
+\t\t\t\t\t\t\t\t€</td>
+\t\t\t\t\t\t</tr>
+\t\t\t\t\t{% endfor %}
+\t\t\t\t</tbody>
+\t\t\t</table>
+\t\t{% endif %}
 
-    {% if orders is empty %}
-        <p>Aucune commande pour le moment.</p>
-    {% else %}
-        <table class=\"orders-table\">
-            <thead>
-                <tr>
-                    <th>N°</th>
-                    <th>Date</th>
-                    <th>Prix</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for order in orders %}
-                    <tr>
-                        <td>{{ '%02d'|format(order.id) }}</td>
-                        <td>{{ order.createdAt|date('d/m/Y') }}</td>
-                        <td>{{ order.totalPrice|number_format(2, ',', ' ') }} €</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% endif %}
+\t\t<hr>
 
-    <hr>
+\t\t<!-- ========================= -->
+\t\t<!--   ACCÈS API               -->
+\t\t<!-- ========================= --><h2>Mon accès API
+\t\t</h2>
 
-    <!-- ========================= -->
-    <!--   ACCÈS API               -->
-    <!-- ========================= -->
+\t\t\t{% if app.user.apiEnabled %}<p>
+\t\t\t\tVotre accès API est<strong>activé</strong>.
+\t\t\t</p>
+\t\t\t\t<a href=\"{{ path('app_account_toggle_api') }}\" class=\"btn btn-warning\"> Désactiver mon accès API
+\t\t\t</a>
+\t\t{% else %}
+\t\t\t<p>Votre accès API est
+\t\t\t\t<strong>désactivé</strong>.</p>
+\t\t\t<a href=\"{{ path('app_account_toggle_api') }}\" class=\"btn btn-success\">
+\t\t\t\tActiver mon accès API
+\t\t\t</a>
+\t\t{% endif %}
 
-    <h2>Mon accès API</h2>
+\t\t<hr>
 
-    {% if user.apiEnabled %}
-        <p>Votre accès API est <strong>activé</strong>.</p>
-        <a href=\"{{ path('app_account_toggle_api') }}\" class=\"btn btn-warning\">
-            Désactiver mon accès API
-        </a>
-    {% else %}
-        <p>Votre accès API est <strong>désactivé</strong>.</p>
-        <a href=\"{{ path('app_account_toggle_api') }}\" class=\"btn btn-success\">
-            Activer mon accès API
-        </a>
-    {% endif %}
+\t\t<!-- ========================= -->
+\t\t<!--   SUPPRESSION COMPTE      -->
+\t\t<!-- ========================= --><h2>Supprimer mon compte
+\t\t</h2>
 
-    <hr>
+\t\t\t<a href=\"{{ path('app_account_delete') }}\" class=\"btn btn-danger delete-account-btn\" onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.');\"> Supprimer mon compte
+\t\t</a>
 
-    <!-- ========================= -->
-    <!--   SUPPRESSION COMPTE      -->
-    <!-- ========================= -->
 
-    <h2>Supprimer mon compte</h2>
-
-    <a href=\"{{ path('app_account_delete') }}\" class=\"btn btn-danger\">
-        Supprimer mon compte
-    </a>
-
-</section>
+\t</section>
 
 {% endblock %}
 ", "account/index.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/account/index.html.twig");

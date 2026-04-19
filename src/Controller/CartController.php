@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Order;
+use App\Entity\OrderItem;
 use App\Entity\Cart;
 use App\Entity\CartItem;
 use App\Entity\Product;
@@ -116,8 +118,45 @@ class CartController extends AbstractController
 
         $cart = $cartRepository->findOneBy(['user' => $user]);
 
-        if ($cart) {
-            // Supprimer tous les items du panier
+        if ($cart && !$cart->getCartItems()->isEmpty()) {
+
+            // 1. Créer la commande
+            $order = new Order();
+            $order->setUser($user);
+            $order->setCreatedAt(new \DateTimeImmutable());
+
+            // 2. Générer un numéro de commande AVANT persist()
+            $orderNumber = str_pad((string) random_int(1, 999999), 6, '0', STR_PAD_LEFT);
+            $order->setNumber($orderNumber);
+
+            $total = 0;
+
+            // 3. Créer les OrderItem
+            foreach ($cart->getCartItems() as $cartItem) {
+
+                $orderItem = new OrderItem();
+                $orderItem->setOrderRef($order);
+                $orderItem->setProduct($cartItem->getProduct());
+                $orderItem->setQuantity($cartItem->getQuantity());
+                $orderItem->setPrice($cartItem->getProduct()->getPrice());
+
+                //  total de la ligne
+                $lineTotal = $cartItem->getProduct()->getPrice() * $cartItem->getQuantity();
+                $orderItem->setTotal($lineTotal);
+
+                $total += $lineTotal;
+
+                $em->persist($orderItem);
+            }
+
+
+            // 4. Total
+            $order->setTotalPrice($total);
+
+            // 5. On persiste la commande APRÈS setNumber()
+            $em->persist($order);
+
+            // 6. Vider le panier
             foreach ($cart->getCartItems() as $item) {
                 $em->remove($item);
             }
@@ -125,7 +164,6 @@ class CartController extends AbstractController
             $em->flush();
         }
 
-        // Message de confirmation
         $this->addFlash('success', 'Votre commande a été validée avec succès !');
 
         return $this->redirectToRoute('app_cart');

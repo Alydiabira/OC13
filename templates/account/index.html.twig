@@ -1,74 +1,74 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon compte - GreenGoodies{% endblock %}
+{% block title %}Mon compte - GreenGoodies
+{% endblock %}
 
 {% block body %}
 
-<section class="account-page">
+	<section class="account-page wrapper-1440">
 
-    <h1>Mon compte</h1>
+		<h1>Mon compte</h1>
 
-    <!-- ========================= -->
-    <!--   MES COMMANDES           -->
-    <!-- ========================= -->
+		<!-- ========================= -->
+		<!--   MES COMMANDES           -->
+		<!-- ========================= --><h2>Mes commandes
+		</h2>
 
-    <h2>Mes commandes</h2>
+			{% if orders is empty %}<p>Aucune commande pour le moment.
+			</p>
+		{% else %}
+			<table class="orders-table">
+				<thead>
+					<tr>
+						<th>N°</th>
+						<th>Date</th>
+						<th>Prix total</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for order in orders %}
+						<tr>
+							<td>{{ '%02d'|format(order.id) }}</td>
+							<td>{{ order.createdAt|date('d/m/Y') }}</td>
+							<td>{{ order.totalPrice|number_format(2, ',', ' ') }}
+								€</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% endif %}
 
-    {% if orders is empty %}
-        <p>Aucune commande pour le moment.</p>
-    {% else %}
-        <table class="orders-table">
-            <thead>
-                <tr>
-                    <th>N°</th>
-                    <th>Date</th>
-                    <th>Prix</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for order in orders %}
-                    <tr>
-                        <td>{{ '%02d'|format(order.id) }}</td>
-                        <td>{{ order.createdAt|date('d/m/Y') }}</td>
-                        <td>{{ order.totalPrice|number_format(2, ',', ' ') }} €</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% endif %}
+		<hr>
 
-    <hr>
+		<!-- ========================= -->
+		<!--   ACCÈS API               -->
+		<!-- ========================= --><h2>Mon accès API
+		</h2>
 
-    <!-- ========================= -->
-    <!--   ACCÈS API               -->
-    <!-- ========================= -->
+			{% if app.user.apiEnabled %}<p>
+				Votre accès API est<strong>activé</strong>.
+			</p>
+				<a href="{{ path('app_account_toggle_api') }}" class="btn btn-warning"> Désactiver mon accès API
+			</a>
+		{% else %}
+			<p>Votre accès API est
+				<strong>désactivé</strong>.</p>
+			<a href="{{ path('app_account_toggle_api') }}" class="btn btn-success">
+				Activer mon accès API
+			</a>
+		{% endif %}
 
-    <h2>Mon accès API</h2>
+		<hr>
 
-    {% if user.apiEnabled %}
-        <p>Votre accès API est <strong>activé</strong>.</p>
-        <a href="{{ path('app_account_toggle_api') }}" class="btn btn-warning">
-            Désactiver mon accès API
-        </a>
-    {% else %}
-        <p>Votre accès API est <strong>désactivé</strong>.</p>
-        <a href="{{ path('app_account_toggle_api') }}" class="btn btn-success">
-            Activer mon accès API
-        </a>
-    {% endif %}
+		<!-- ========================= -->
+		<!--   SUPPRESSION COMPTE      -->
+		<!-- ========================= --><h2>Supprimer mon compte
+		</h2>
 
-    <hr>
+			<a href="{{ path('app_account_delete') }}" class="btn btn-danger delete-account-btn" onclick="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.');"> Supprimer mon compte
+		</a>
 
-    <!-- ========================= -->
-    <!--   SUPPRESSION COMPTE      -->
-    <!-- ========================= -->
 
-    <h2>Supprimer mon compte</h2>
-
-    <a href="{{ path('app_account_delete') }}" class="btn btn-danger">
-        Supprimer mon compte
-    </a>
-
-</section>
+	</section>
 
 {% endblock %}

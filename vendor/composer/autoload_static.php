@@ -143,6 +143,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
             'Lexik\\Bundle\\JWTAuthenticationBundle\\' => 37,
             'Lcobucci\\JWT\\' => 13,
         ),
+        'F' =>
+        array (
+            'Faker\\' => 6,
+        ),
         'E' =>
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -552,6 +556,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         'Lcobucci\\JWT\\' =>
         array (
             0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
+        ),
+        'Faker\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
         'Egulias\\EmailValidator\\' =>
         array (

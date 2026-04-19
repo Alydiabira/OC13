@@ -46,6 +46,7 @@ return [
     'App\Controller\AccountController::index' => [[], ['_controller' => 'App\\Controller\\AccountController::index'], [], [['text', '/mon-compte']], [], [], []],
     'App\Controller\AccountController::toggleApi' => [[], ['_controller' => 'App\\Controller\\AccountController::toggleApi'], [], [['text', '/mon-compte/api/toggle']], [], [], []],
     'App\Controller\AccountController::deleteAccount' => [[], ['_controller' => 'App\\Controller\\AccountController::deleteAccount'], [], [['text', '/mon-compte/supprimer']], [], [], []],
+    'App\Controller\Api\ProductApiController::products' => [[], ['_controller' => 'App\\Controller\\ApiController::products'], [], [['text', '/api/products']], [], [], []],
     'App\Controller\ApiController::products' => [[], ['_controller' => 'App\\Controller\\ApiController::products'], [], [['text', '/api/products']], [], [], []],
     'App\Controller\CartController::index' => [[], ['_controller' => 'App\\Controller\\CartController::index'], [], [['text', '/panier']], [], [], []],
     'App\Controller\CartController::add' => [['id'], ['_controller' => 'App\\Controller\\CartController::add'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/panier/ajouter']], [], [], []],
