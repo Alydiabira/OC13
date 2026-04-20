@@ -98,7 +98,7 @@ class __TwigTemplate_08b493bb777d7d460784267b983779d3 extends Template
 
         // line 6
         yield "
-<section class=\"products-page\">
+<section class=\"products-page wrapper-1440\">
 
     <h1>Nos produits</h1>
 
@@ -207,7 +207,7 @@ class __TwigTemplate_08b493bb777d7d460784267b983779d3 extends Template
 
 {% block body %}
 
-<section class=\"products-page\">
+<section class=\"products-page wrapper-1440\">
 
     <h1>Nos produits</h1>
 

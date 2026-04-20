@@ -73,20 +73,53 @@ a {
     margin: 40px auto;
 }
 
+/* HERO SECTION */
 .hero {
-    width: 100%;
+    width: 1440px;
+    height: 751px;
+    display: flex;
     background: #f3f7f3;
-    padding: 60px 40px;
     border-radius: 12px;
-    text-align: center;
+    overflow: hidden;
+    position: relative;
 }
 
-.hero h1 {
-    font-size: 42px;
+.hero-left {
+    width: 709px;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-left h1 {
+    font-size: 48px;
     font-weight: 700;
     color: #2f4f2f;
+    margin-bottom: 20px;
 }
 
+.hero-left p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #3a3a3a;
+}
+
+.hero-right {
+    width: 731px;
+    height: 751px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.hero-right img {
+    width: 731px;
+    height: 751px;
+    object-fit: cover;
+}
+
+/* PRODUCTS */
 .products {
     margin-top: 60px;
 }
@@ -116,6 +149,54 @@ a {
 
 .product-info {
     flex: 1;
+}
+
+/* SECTION VALEURS */
+.values-section {
+    width: 1440px;
+    margin: 120px auto;
+}
+
+/* LIGNE STANDARD : texte gauche / image droite */
+.values-row {
+    width: 1440px;
+    height: 646px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+/* LIGNE INVERSEE : image gauche / texte droite */
+.values-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.values-text {
+    width: 850px;
+    padding: 60px;
+    background: #f3f7f3;
+    border-radius: 12px;
+}
+
+.values-text h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2f4f2f;
+    margin-bottom: 20px;
+}
+
+.values-text p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #3a3a3a;
+}
+
+.values-image img {
+    width: 487px;
+    height: 646px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 /* ------------------------------

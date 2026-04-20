@@ -99,49 +99,107 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 
         // line 7
         yield "
-\t<div class=\"hero\">
-\t\t<h1>Bienvenue</h1>
-\t\t<p>Découvrez nos produits biologiques et éthiques.</p>
-\t</div>
+\t<div class=\"home-page\">
 
-\t<div class=\"container products\">
-\t\t<h2>Nos produits</h2>
+\t\t<section class=\"hero\">
 
-\t\t<div class=\"product-grid\">
-\t\t\t";
-        // line 17
+\t\t\t<div class=\"hero-left\">
+\t\t\t\t<h1>Bienvenue</h1>
+\t\t\t\t<p>
+\t\t\t\t\tDécouvrez notre univers de produits durables et éthiques pour une consommation responsable.<br>
+\t\t\t\t\tRetrouvez des articles d’hygiène & beauté, des accessoires & boissons et du prêt-à-porter.
+\t\t\t\t</p>
+\t\t\t</div>
+
+\t\t\t<div class=\"hero-right\">
+\t\t\t\t<img src=\"";
+        // line 21
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/hero.jpg"), "html", null, true);
+        yield "\" alt=\"GreenGoodies Hero\">
+\t\t\t</div>
+
+\t\t</section>
+
+\t\t<div class=\"container products wrapper-1440\">
+\t\t\t<h2>Nos produits</h2>
+
+\t\t\t<div class=\"product-grid\">
+\t\t\t\t";
+        // line 30
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 17, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 30, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 18
-            yield "\t\t\t\t<div class=\"product-card\">
-\t\t\t\t\t<img src=\"";
-            // line 19
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 19))), "html", null, true);
+            // line 31
+            yield "\t\t\t\t\t<div class=\"product-card\">
+\t\t\t\t\t\t<img src=\"";
+            // line 32
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 32))), "html", null, true);
             yield "\" alt=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 19), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 32), "html", null, true);
             yield "\">
-\t\t\t\t\t<h3>";
-            // line 20
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 20), "html", null, true);
+\t\t\t\t\t\t<h3>";
+            // line 33
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 33), "html", null, true);
             yield "</h3>
-\t\t\t\t\t<p>";
-            // line 21
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "shortDescription", [], "any", false, false, false, 21), "html", null, true);
+\t\t\t\t\t\t<p>";
+            // line 34
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "shortDescription", [], "any", false, false, false, 34), "html", null, true);
             yield "</p>
-\t\t\t\t\t<div class=\"price\">";
-            // line 22
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 22), "html", null, true);
+\t\t\t\t\t\t<div class=\"price\">";
+            // line 35
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 35), "html", null, true);
             yield "
-\t\t\t\t\t\t€</div>
-\t\t\t\t</div>
-\t\t\t";
+\t\t\t\t\t\t\t€</div>
+\t\t\t\t\t</div>
+\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['product'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
-        yield "\t\t</div>
+        // line 39
+        yield "\t\t\t</div>
+\t\t</div>
+
+\t\t<section class=\"values-section\">
+
+\t\t\t<div class=\"values-row\">
+\t\t\t\t<div class=\"values-text\">
+\t\t\t\t\t<h2>Notre conviction</h2>
+\t\t\t\t\t<p>
+\t\t\t\t\t\tChez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
+\t\t\t\t\t\t\t\t\t\t\t\t                pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
+\t\t\t\t\t\t\t\t\t\t\t\t                de produits qui allient qualité, durabilité et éthique.
+\t\t\t\t\t</p>
+\t\t\t\t</div>
+
+\t\t\t\t<div class=\"values-image\">
+\t\t\t\t\t<img src=\"";
+        // line 55
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/11.jpg"), "html", null, true);
+        yield "\" alt=\"Conviction GreenGoodies\">
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"values-row reverse\">
+\t\t\t\t<div class=\"values-image\">
+\t\t\t\t\t<img src=\"";
+        // line 61
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/12.jpg"), "html", null, true);
+        yield "\" alt=\"Valeurs GreenGoodies\">
+\t\t\t\t</div>
+
+\t\t\t\t<div class=\"values-text\">
+\t\t\t\t\t<h2>Nos valeurs</h2>
+\t\t\t\t\t<p>
+\t\t\t\t\t\tDurabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>
+\t\t\t\t\t\tÉthique : Nous travaillons avec des partenaires qui partagent nos valeurs.<br>
+\t\t\t\t\t\tÉcologie : Nous privilégions les matériaux et pratiques respectueuses de l’écosystème.
+\t\t\t\t\t</p>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t</section>
+
 
 \t</div>
 
@@ -176,7 +234,7 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  144 => 26,  134 => 22,  130 => 21,  126 => 20,  120 => 19,  117 => 18,  113 => 17,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
+        return array (  187 => 61,  178 => 55,  160 => 39,  150 => 35,  146 => 34,  142 => 33,  136 => 32,  133 => 31,  129 => 30,  117 => 21,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -188,25 +246,74 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 
 {% block body %}
 
-\t<div class=\"hero\">
-\t\t<h1>Bienvenue</h1>
-\t\t<p>Découvrez nos produits biologiques et éthiques.</p>
-\t</div>
+\t<div class=\"home-page\">
 
-\t<div class=\"container products\">
-\t\t<h2>Nos produits</h2>
+\t\t<section class=\"hero\">
 
-\t\t<div class=\"product-grid\">
-\t\t\t{% for product in products %}
-\t\t\t\t<div class=\"product-card\">
-\t\t\t\t\t<img src=\"{{ asset('uploads/' ~ product.picture) }}\" alt=\"{{ product.name }}\">
-\t\t\t\t\t<h3>{{ product.name }}</h3>
-\t\t\t\t\t<p>{{ product.shortDescription }}</p>
-\t\t\t\t\t<div class=\"price\">{{ product.price }}
-\t\t\t\t\t\t€</div>
-\t\t\t\t</div>
-\t\t\t{% endfor %}
+\t\t\t<div class=\"hero-left\">
+\t\t\t\t<h1>Bienvenue</h1>
+\t\t\t\t<p>
+\t\t\t\t\tDécouvrez notre univers de produits durables et éthiques pour une consommation responsable.<br>
+\t\t\t\t\tRetrouvez des articles d’hygiène & beauté, des accessoires & boissons et du prêt-à-porter.
+\t\t\t\t</p>
+\t\t\t</div>
+
+\t\t\t<div class=\"hero-right\">
+\t\t\t\t<img src=\"{{ asset('images/hero.jpg') }}\" alt=\"GreenGoodies Hero\">
+\t\t\t</div>
+
+\t\t</section>
+
+\t\t<div class=\"container products wrapper-1440\">
+\t\t\t<h2>Nos produits</h2>
+
+\t\t\t<div class=\"product-grid\">
+\t\t\t\t{% for product in products %}
+\t\t\t\t\t<div class=\"product-card\">
+\t\t\t\t\t\t<img src=\"{{ asset('uploads/' ~ product.picture) }}\" alt=\"{{ product.name }}\">
+\t\t\t\t\t\t<h3>{{ product.name }}</h3>
+\t\t\t\t\t\t<p>{{ product.shortDescription }}</p>
+\t\t\t\t\t\t<div class=\"price\">{{ product.price }}
+\t\t\t\t\t\t\t€</div>
+\t\t\t\t\t</div>
+\t\t\t\t{% endfor %}
+\t\t\t</div>
 \t\t</div>
+
+\t\t<section class=\"values-section\">
+
+\t\t\t<div class=\"values-row\">
+\t\t\t\t<div class=\"values-text\">
+\t\t\t\t\t<h2>Notre conviction</h2>
+\t\t\t\t\t<p>
+\t\t\t\t\t\tChez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
+\t\t\t\t\t\t\t\t\t\t\t\t                pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
+\t\t\t\t\t\t\t\t\t\t\t\t                de produits qui allient qualité, durabilité et éthique.
+\t\t\t\t\t</p>
+\t\t\t\t</div>
+
+\t\t\t\t<div class=\"values-image\">
+\t\t\t\t\t<img src=\"{{ asset('images/11.jpg') }}\" alt=\"Conviction GreenGoodies\">
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"values-row reverse\">
+\t\t\t\t<div class=\"values-image\">
+\t\t\t\t\t<img src=\"{{ asset('images/12.jpg') }}\" alt=\"Valeurs GreenGoodies\">
+\t\t\t\t</div>
+
+\t\t\t\t<div class=\"values-text\">
+\t\t\t\t\t<h2>Nos valeurs</h2>
+\t\t\t\t\t<p>
+\t\t\t\t\t\tDurabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>
+\t\t\t\t\t\tÉthique : Nous travaillons avec des partenaires qui partagent nos valeurs.<br>
+\t\t\t\t\t\tÉcologie : Nous privilégions les matériaux et pratiques respectueuses de l’écosystème.
+\t\t\t\t\t</p>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t</section>
+
 
 \t</div>
 
