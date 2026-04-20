@@ -99,73 +99,83 @@ class __TwigTemplate_ac05c15ad31b66ac0d7da1a2c39415aa extends Template
 
         // line 6
         yield "
-<section class=\"product-page\">
+<section class=\"product-page wrapper-1440\">
 
-    <div class=\"product-container\">
-
-        <div class=\"product-image\">
-            <img src=\"";
-        // line 12
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 12, $this->source); })()), "picture", [], "any", false, false, false, 12))), "html", null, true);
+    <!-- IMAGE DU PRODUIT -->
+    <div class=\"product-image\">
+        <img src=\"";
+        // line 11
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 11, $this->source); })()), "picture", [], "any", false, false, false, 11))), "html", null, true);
         yield "\" alt=\"";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 12, $this->source); })()), "name", [], "any", false, false, false, 12), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 11, $this->source); })()), "name", [], "any", false, false, false, 11), "html", null, true);
         yield "\">
-        </div>
+    </div>
 
-        <div class=\"product-info\">
-            <h1>";
-        // line 16
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 16, $this->source); })()), "name", [], "any", false, false, false, 16), "html", null, true);
+    <!-- INFOS PRODUIT -->
+    <div class=\"product-info\">
+
+        <h1>";
+        // line 17
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 17, $this->source); })()), "name", [], "any", false, false, false, 17), "html", null, true);
         yield "</h1>
 
-            <p class=\"price\">";
-        // line 18
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 18, $this->source); })()), "price", [], "any", false, false, false, 18), "html", null, true);
+        <p class=\"price\">";
+        // line 19
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 19, $this->source); })()), "price", [], "any", false, false, false, 19), "html", null, true);
         yield " €</p>
 
-            <p class=\"description\">
-                ";
-        // line 21
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 21, $this->source); })()), "fullDescription", [], "any", false, false, false, 21), "html", null, true);
+        <p class=\"description\">
+            ";
+        // line 22
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 22, $this->source); })()), "fullDescription", [], "any", false, false, false, 22), "html", null, true);
         yield "
-            </p>
+        </p>
 
-            <div class=\"product-actions\">
+        <div class=\"product-actions\">
 
-                ";
-        // line 26
-        if ((($tmp =  !CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 27
-            yield "                    <a href=\"";
+            ";
+        // line 27
+        if ((($tmp =  !CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "user", [], "any", false, false, false, 27)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 28
+            yield "                <!-- UTILISATEUR NON CONNECTÉ -->
+                <a href=\"";
+            // line 29
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             yield "\" class=\"btn\">
-                        Se connecter pour acheter
-                    </a>
-                ";
+                    Se connecter pour acheter
+                </a>
+
+            ";
         } else {
-            // line 31
-            yield "                    <form method=\"post\" action=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cart_add", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 31, $this->source); })()), "id", [], "any", false, false, false, 31)]), "html", null, true);
-            yield "\">
-                        <label for=\"quantity\">Quantité</label>
-                        <input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"0\" value=\"";
-            // line 33
-            yield (((array_key_exists("quantity", $context) &&  !(null === $context["quantity"]))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["quantity"], "html", null, true)) : (1));
+            // line 34
+            yield "                <!-- UTILISATEUR CONNECTÉ -->
+                <form method=\"post\" action=\"";
+            // line 35
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cart_add", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 35, $this->source); })()), "id", [], "any", false, false, false, 35)]), "html", null, true);
             yield "\">
 
-                        <button class=\"btn\">
-                            ";
-            // line 36
-            yield ((array_key_exists("quantity", $context)) ? ("Mettre à jour") : ("Ajouter au panier"));
+                    <label for=\"quantity\">Quantité</label>
+                    <input type=\"number\"
+                           id=\"quantity\"
+                           name=\"quantity\"
+                           min=\"0\"
+                           value=\"";
+            // line 42
+            yield ((((isset($context["quantity"]) || array_key_exists("quantity", $context) ? $context["quantity"] : (function () { throw new RuntimeError('Variable "quantity" does not exist.', 42, $this->source); })()) > 0)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["quantity"]) || array_key_exists("quantity", $context) ? $context["quantity"] : (function () { throw new RuntimeError('Variable "quantity" does not exist.', 42, $this->source); })()), "html", null, true)) : (1));
+            yield "\">
+
+                    <button class=\"btn\">
+                        ";
+            // line 45
+            yield ((((isset($context["quantity"]) || array_key_exists("quantity", $context) ? $context["quantity"] : (function () { throw new RuntimeError('Variable "quantity" does not exist.', 45, $this->source); })()) > 0)) ? ("Mettre à jour") : ("Ajouter au panier"));
             yield "
-                        </button>
-                    </form>
-                ";
-        }
-        // line 40
-        yield "
-            </div>
+                    </button>
 
+                </form>
+            ";
+        }
+        // line 50
+        yield "
         </div>
 
     </div>
@@ -203,7 +213,7 @@ class __TwigTemplate_ac05c15ad31b66ac0d7da1a2c39415aa extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  166 => 40,  159 => 36,  153 => 33,  147 => 31,  139 => 27,  137 => 26,  129 => 21,  123 => 18,  118 => 16,  109 => 12,  101 => 6,  88 => 5,  64 => 3,  41 => 1,);
+        return array (  178 => 50,  170 => 45,  164 => 42,  154 => 35,  151 => 34,  143 => 29,  140 => 28,  138 => 27,  130 => 22,  124 => 19,  119 => 17,  108 => 11,  101 => 6,  88 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -214,41 +224,49 @@ class __TwigTemplate_ac05c15ad31b66ac0d7da1a2c39415aa extends Template
 
 {% block body %}
 
-<section class=\"product-page\">
+<section class=\"product-page wrapper-1440\">
 
-    <div class=\"product-container\">
+    <!-- IMAGE DU PRODUIT -->
+    <div class=\"product-image\">
+        <img src=\"{{ asset('uploads/' ~ product.picture) }}\" alt=\"{{ product.name }}\">
+    </div>
 
-        <div class=\"product-image\">
-            <img src=\"{{ asset('uploads/' ~ product.picture) }}\" alt=\"{{ product.name }}\">
-        </div>
+    <!-- INFOS PRODUIT -->
+    <div class=\"product-info\">
 
-        <div class=\"product-info\">
-            <h1>{{ product.name }}</h1>
+        <h1>{{ product.name }}</h1>
 
-            <p class=\"price\">{{ product.price }} €</p>
+        <p class=\"price\">{{ product.price }} €</p>
 
-            <p class=\"description\">
-                {{ product.fullDescription }}
-            </p>
+        <p class=\"description\">
+            {{ product.fullDescription }}
+        </p>
 
-            <div class=\"product-actions\">
+        <div class=\"product-actions\">
 
-                {% if not app.user %}
-                    <a href=\"{{ path('app_login') }}\" class=\"btn\">
-                        Se connecter pour acheter
-                    </a>
-                {% else %}
-                    <form method=\"post\" action=\"{{ path('app_cart_add', {id: product.id}) }}\">
-                        <label for=\"quantity\">Quantité</label>
-                        <input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"0\" value=\"{{ quantity ?? 1 }}\">
+            {% if not app.user %}
+                <!-- UTILISATEUR NON CONNECTÉ -->
+                <a href=\"{{ path('app_login') }}\" class=\"btn\">
+                    Se connecter pour acheter
+                </a>
 
-                        <button class=\"btn\">
-                            {{ quantity is defined ? 'Mettre à jour' : 'Ajouter au panier' }}
-                        </button>
-                    </form>
-                {% endif %}
+            {% else %}
+                <!-- UTILISATEUR CONNECTÉ -->
+                <form method=\"post\" action=\"{{ path('app_cart_add', { id: product.id }) }}\">
 
-            </div>
+                    <label for=\"quantity\">Quantité</label>
+                    <input type=\"number\"
+                           id=\"quantity\"
+                           name=\"quantity\"
+                           min=\"0\"
+                           value=\"{{ quantity > 0 ? quantity : 1 }}\">
+
+                    <button class=\"btn\">
+                        {{ quantity > 0 ? 'Mettre à jour' : 'Ajouter au panier' }}
+                    </button>
+
+                </form>
+            {% endif %}
 
         </div>
 

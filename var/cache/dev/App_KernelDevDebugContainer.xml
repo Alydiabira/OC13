@@ -595,6 +595,9 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Entity" class="App\Entity" abstract="true">
+      <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
+    </service>
     <service id="App\Controller\AccountController" class="App\Controller\AccountController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="routing.controller"/>
@@ -675,30 +678,6 @@
       <tag name="doctrine.fixture.orm"/>
       <argument type="service" id="security.user_password_hasher"/>
     </service>
-    <service id="App\Entity\Cart" class="App\Entity\Cart" autowire="true" autoconfigure="true">
-      <tag name="container.excluded" source="because it's a Doctrine entity"/>
-      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
-    </service>
-    <service id="App\Entity\CartItem" class="App\Entity\CartItem" autowire="true" autoconfigure="true">
-      <tag name="container.excluded" source="because it's a Doctrine entity"/>
-      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
-    </service>
-    <service id="App\Entity\Order" class="App\Entity\Order" autowire="true" autoconfigure="true">
-      <tag name="container.excluded" source="because it's a Doctrine entity"/>
-      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
-    </service>
-    <service id="App\Entity\OrderItem" class="App\Entity\OrderItem" autowire="true" autoconfigure="true">
-      <tag name="container.excluded" source="because it's a Doctrine entity"/>
-      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
-    </service>
-    <service id="App\Entity\Product" class="App\Entity\Product" autowire="true" autoconfigure="true">
-      <tag name="container.excluded" source="because it's a Doctrine entity"/>
-      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
-    </service>
-    <service id="App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true">
-      <tag name="container.excluded" source="because it's a Doctrine entity"/>
-      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
-    </service>
     <service id="App\EventSubscriber\ApiAccessSubscriber" class="App\EventSubscriber\ApiAccessSubscriber" autowire="true" autoconfigure="true">
       <tag name="kernel.event_subscriber"/>
     </service>
@@ -736,6 +715,9 @@
     <service id="App\Security\LoginFormAuthenticator" class="App\Security\LoginFormAuthenticator" autowire="true" autoconfigure="true">
       <argument type="service" id="router.default"/>
     </service>
+    <service id="App\Service\CartService" class="App\Service\CartService" autowire="true" autoconfigure="true">
+      <argument type="service" id="session.factory"/>
+    </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="argument_resolver.backed_enum_resolver" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver" priority="100">controller.argument_value_resolver</tag>
@@ -767,7 +749,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.fef1Ldg"/>
+      <argument type="service" id=".service_locator.pnfxYdl"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -3984,7 +3966,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.fef1Ldg"/>
+      <argument type="service" id=".service_locator.pnfxYdl"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -9934,18 +9916,6 @@
     <service id=".abstract.instanceof.App\DataFixtures\ProductFixtures" class="App\DataFixtures\ProductFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.App\Entity\Cart.0.App\Entity\Cart" class="App\Entity\Cart" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Entity\Cart" class="App\Entity\Cart" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.App\Entity\CartItem.0.App\Entity\CartItem" class="App\Entity\CartItem" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Entity\CartItem" class="App\Entity\CartItem" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.App\Entity\Order.0.App\Entity\Order" class="App\Entity\Order" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Entity\Order" class="App\Entity\Order" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.App\Entity\OrderItem.0.App\Entity\OrderItem" class="App\Entity\OrderItem" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Entity\OrderItem" class="App\Entity\OrderItem" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.App\Entity\Product.0.App\Entity\Product" class="App\Entity\Product" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Entity\Product" class="App\Entity\Product" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.App\Entity\User.0.App\Entity\User" class="App\Entity\User" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.App\EventSubscriber\ApiAccessSubscriber" class="App\EventSubscriber\ApiAccessSubscriber" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\EventSubscriber\ApiAccessSubscriber" class="App\EventSubscriber\ApiAccessSubscriber" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
@@ -10787,23 +10757,18 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.dcfjolD" method="withContext"/>
     </service>
-    <service id=".service_locator.dcfjolD.App\Controller\ProductController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProductController::index()"/>
-      <argument>App\Controller\ProductController::index()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.dcfjolD" method="withContext"/>
-    </service>
-    <service id=".service_locator.qHOVbN9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.kIsyveu" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="product" type="service_closure" id=".errored..service_locator.qHOVbN9.App\Entity\Product"/>
+        <argument key="product" type="service_closure" id=".errored..service_locator.kIsyveu.App\Entity\Product"/>
+        <argument key="cartService" type="service_closure" id="App\Service\CartService"/>
       </argument>
     </service>
-    <service id=".service_locator.qHOVbN9.App\Controller\ProductController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.kIsyveu.App\Controller\ProductController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ProductController::show()"/>
       <argument>App\Controller\ProductController::show()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.qHOVbN9" method="withContext"/>
+      <factory service=".service_locator.kIsyveu" method="withContext"/>
     </service>
     <service id=".service_locator.j3kKXma" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -10830,7 +10795,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.0MQaTBY" method="withContext"/>
     </service>
-    <service id=".service_locator.fef1Ldg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pnfxYdl" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -10847,8 +10812,7 @@
         <argument key="App\Controller\CartController::clear" type="service_closure" id=".service_locator.rzdOKy_.App\Controller\CartController::clear()"/>
         <argument key="App\Controller\CartController::validate" type="service_closure" id=".service_locator.rzdOKy_.App\Controller\CartController::validate()"/>
         <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.dcfjolD.App\Controller\HomeController::index()"/>
-        <argument key="App\Controller\ProductController::index" type="service_closure" id=".service_locator.dcfjolD.App\Controller\ProductController::index()"/>
-        <argument key="App\Controller\ProductController::show" type="service_closure" id=".service_locator.qHOVbN9.App\Controller\ProductController::show()"/>
+        <argument key="App\Controller\ProductController::show" type="service_closure" id=".service_locator.kIsyveu.App\Controller\ProductController::show()"/>
         <argument key="App\Controller\RegisterController::index" type="service_closure" id=".service_locator.j3kKXma.App\Controller\RegisterController::index()"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.0MQaTBY.App\Controller\SecurityController::login()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -10863,8 +10827,7 @@
         <argument key="App\Controller\CartController:clear" type="service_closure" id=".service_locator.rzdOKy_.App\Controller\CartController::clear()"/>
         <argument key="App\Controller\CartController:validate" type="service_closure" id=".service_locator.rzdOKy_.App\Controller\CartController::validate()"/>
         <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.dcfjolD.App\Controller\HomeController::index()"/>
-        <argument key="App\Controller\ProductController:index" type="service_closure" id=".service_locator.dcfjolD.App\Controller\ProductController::index()"/>
-        <argument key="App\Controller\ProductController:show" type="service_closure" id=".service_locator.qHOVbN9.App\Controller\ProductController::show()"/>
+        <argument key="App\Controller\ProductController:show" type="service_closure" id=".service_locator.kIsyveu.App\Controller\ProductController::show()"/>
         <argument key="App\Controller\RegisterController:index" type="service_closure" id=".service_locator.j3kKXma.App\Controller\RegisterController::index()"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.0MQaTBY.App\Controller\SecurityController::login()"/>
       </argument>
@@ -12365,10 +12328,10 @@
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.1vYpZ1B&quot;: it needs an instance of &quot;Symfony\Component\Config\Loader\LoaderInterface&quot; but this type has been excluded from autowiring."/>
     </service>
     <service id=".errored..service_locator.uqMdrhc.App\Entity\Product" class="App\Entity\Product">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.uqMdrhc&quot;: it needs an instance of &quot;App\Entity\Product&quot; but this type has been excluded because it's a Doctrine entity."/>
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.uqMdrhc&quot;: it needs an instance of &quot;App\Entity\Product&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
-    <service id=".errored..service_locator.qHOVbN9.App\Entity\Product" class="App\Entity\Product">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.qHOVbN9&quot;: it needs an instance of &quot;App\Entity\Product&quot; but this type has been excluded because it's a Doctrine entity."/>
+    <service id=".errored..service_locator.kIsyveu.App\Entity\Product" class="App\Entity\Product">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.kIsyveu&quot;: it needs an instance of &quot;App\Entity\Product&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
@@ -13814,7 +13777,7 @@
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="api_platform.name_converter" alias="api_platform.hydra.name_converter.hydra_prefix"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.fef1Ldg"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.pnfxYdl"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request" alias="monolog.logger.request"/>
@@ -13959,7 +13922,7 @@
     <service id=".service_locator.QWKk3Bs" alias=".service_locator.uqMdrhc"/>
     <service id=".service_locator.Qa.JjAC" alias=".service_locator.rzdOKy_"/>
     <service id=".service_locator.8yvv3rH" alias=".service_locator.dcfjolD"/>
-    <service id=".service_locator.lXQxQpo" alias=".service_locator.qHOVbN9"/>
+    <service id=".service_locator.PrVaHWG" alias=".service_locator.kIsyveu"/>
     <service id=".service_locator.rm_qkBw" alias=".service_locator.j3kKXma"/>
     <service id=".service_locator.uBwBrvQ" alias=".service_locator.0MQaTBY"/>
     <service id=".service_locator.D6tJ4Px" alias=".service_locator.TJNRSaV"/>

@@ -61,6 +61,7 @@ class CartController extends AbstractController
             'product' => $product
         ]);
 
+        // Si quantité <= 0 → suppression
         if ($quantity <= 0) {
             if ($cartItem) {
                 $em->remove($cartItem);
@@ -69,6 +70,7 @@ class CartController extends AbstractController
             return $this->redirectToRoute('app_cart');
         }
 
+        // Ajouter ou mettre à jour
         if (!$cartItem) {
             $cartItem = new CartItem();
             $cartItem->setCart($cart);
@@ -125,13 +127,13 @@ class CartController extends AbstractController
             $order->setUser($user);
             $order->setCreatedAt(new \DateTimeImmutable());
 
-            // 2. Générer un numéro de commande AVANT persist()
+            // 2. Numéro de commande
             $orderNumber = str_pad((string) random_int(1, 999999), 6, '0', STR_PAD_LEFT);
             $order->setNumber($orderNumber);
 
             $total = 0;
 
-            // 3. Créer les OrderItem
+            // 3. OrderItems
             foreach ($cart->getCartItems() as $cartItem) {
 
                 $orderItem = new OrderItem();
@@ -140,7 +142,6 @@ class CartController extends AbstractController
                 $orderItem->setQuantity($cartItem->getQuantity());
                 $orderItem->setPrice($cartItem->getProduct()->getPrice());
 
-                //  total de la ligne
                 $lineTotal = $cartItem->getProduct()->getPrice() * $cartItem->getQuantity();
                 $orderItem->setTotal($lineTotal);
 
@@ -149,11 +150,10 @@ class CartController extends AbstractController
                 $em->persist($orderItem);
             }
 
-
             // 4. Total
             $order->setTotalPrice($total);
 
-            // 5. On persiste la commande APRÈS setNumber()
+            // 5. Sauvegarde commande
             $em->persist($order);
 
             // 6. Vider le panier

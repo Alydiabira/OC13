@@ -24,44 +24,58 @@
 		</section>
 
 		<div class="container products wrapper-1440">
-			<h2>Nos produits</h2>
 
+			<h2>Nos produits</h2>
 			<div class="product-grid">
 				{% for product in products %}
 					<div class="product-card">
-						<img src="{{ asset('uploads/' ~ product.picture) }}" alt="{{ product.name }}">
-						<h3>{{ product.name }}</h3>
-						<p>{{ product.shortDescription }}</p>
-						<div class="price">{{ product.price }}
-							€</div>
+
+						<div class="product-card-image">
+							<img src="{{ asset('uploads/' ~ product.picture) }}" alt="{{ product.name }}">
+						</div>
+
+						<h2 class="product-card-title">{{ product.name }}</h2>
+						<p class="product-card-price">{{ product.price }}
+							€</p>
+						<p class="product-card-description">{{ product.shortDescription }}</p>
+
+						<a href="{{ path('app_product_show', { id: product.id }) }}" class="btn">
+							Voir le produit
+						</a>
+
 					</div>
 				{% endfor %}
+
 			</div>
+
 		</div>
 
-		<section class="values-section">
+		<section
+			class="values-section">
 
+			<!-- LIGNE 1 : texte gauche / image droite -->
 			<div class="values-row">
-				<div class="values-text">
+				<div class="values-text bg-beige">
 					<h2>Notre conviction</h2>
 					<p>
 						Chez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
-												                pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
-												                de produits qui allient qualité, durabilité et éthique.
+																																																						                pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
+																																																						                de produits qui allient qualité, durabilité et éthique.
 					</p>
 				</div>
 
 				<div class="values-image">
-					<img src="{{ asset('images/11.jpg') }}" alt="Conviction GreenGoodies">
+					<img src="{{ asset('images/11.jpg') }}" alt="">
 				</div>
 			</div>
 
+			<!-- LIGNE 2 : image gauche / texte droite -->
 			<div class="values-row reverse">
 				<div class="values-image">
-					<img src="{{ asset('images/12.jpg') }}" alt="Valeurs GreenGoodies">
+					<img src="{{ asset('images/12.jpg') }}" alt="">
 				</div>
 
-				<div class="values-text">
+				<div class="values-text bg-green">
 					<h2>Nos valeurs</h2>
 					<p>
 						Durabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>

@@ -102,7 +102,7 @@ class __TwigTemplate_08b493bb777d7d460784267b983779d3 extends Template
 
     <h1>Nos produits</h1>
 
-    <div class=\"products-grid\">
+    <div class=\"products-grid container products\">
 
         ";
         // line 13
@@ -211,7 +211,7 @@ class __TwigTemplate_08b493bb777d7d460784267b983779d3 extends Template
 
     <h1>Nos produits</h1>
 
-    <div class=\"products-grid\">
+    <div class=\"products-grid container products\">
 
         {% for product in products %}
             <div class=\"product-card\">

@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
+    #[Route('/home', name: 'app_home_alt')]
     public function index(ProductRepository $productRepository): Response
     {
         $products = $productRepository->findAll();
