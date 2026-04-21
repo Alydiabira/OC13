@@ -28,12 +28,17 @@ a {
     padding: 0 20px;
 }
 
-/*-------- HEADER --------*/
+.gg-header-right {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* ESPACEMENT ENTRE LES LIENS */
+}
 
 .gg-header {
     width: 100%;
     background: #fffdf7;
     border-bottom: 1px solid #f6f5f0;
+    gap: 40px;
 }
 
 .gg-header-inner {
@@ -60,8 +65,3 @@ a {
     font-size: 14px;
     color: #333;
 }
-
-
-
-
-
