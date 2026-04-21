@@ -70,7 +70,10 @@
 /* CARD PRODUIT */
 .home-page .product-card {
     background: #fffdf7;
+    border-radius: 12px;
+    padding: 3px;
     text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .home-page .product-card-image img {
