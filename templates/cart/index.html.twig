@@ -1,75 +1,78 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon panier - GreenGoodies{% endblock %}
+{% block title %}Mon panier - GreenGoodies
+{% endblock %}
 
 {% block body %}
 
-<section class="cart-page wrapper-1440">
+	<section class="cart-page wrapper-1440">
 
-    <h1>Mon panier</h1>
+		<h1>Mon panier</h1>
 
-    {# --- Messages de confirmation / succès --- #}
-    {% for message in app.flashes('success') %}
-        <div class="alert alert-success">{{ message }}</div>
-    {% endfor %}
+		{# Messages de confirmation #}
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">{{ message }}</div>
+		{% endfor %}
 
-    {% if not cart or cart.cartItems is empty %}
-        <p>Votre panier est vide.</p>
-        <a href="{{ path('app_home') }}" class="btn">Retour aux produits</a>
+		{% if not cart or cart.cartItems is empty %}
+			<p>Votre panier est vide.</p>
+			<a href="{{ path('app_home') }}" class="btn">Retour aux produits</a>
 
-    {% else %}
+		{% else %}
 
-        <table class="cart-table">
-            <thead>
-                <tr>
-                    <th>Produit</th>
-                    <th>Photo</th>
-                    <th>Quantité</th>
-                    <th>Prix unitaire</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
+			<div class="cart-items">
 
-            <tbody>
-                {% set total = 0 %}
+				{% set total = 0 %}
 
-                {% for item in cart.cartItems %}
-                    {% set lineTotal = item.product.price * item.quantity %}
-                    {% set total = total + lineTotal %}
+				{% for item in cart.cartItems %}
+					{% set lineTotal = item.product.price * item.quantity %}
+					{% set total = total + lineTotal %}
 
-                    <tr>
-                        <td>{{ item.product.name }}</td>
+					<div class="cart-item">
 
-                        <td>
-                            <img src="{{ asset('uploads/' ~ item.product.picture) }}"
-                                 alt="{{ item.product.name }}"
-                                 width="80">
-                        </td>
+						<div class="cart-item-left">
+							<img src="{{ asset('uploads/' ~ item.product.picture) }}" alt="{{ item.product.name }}" class="cart-item-img">
+						</div>
 
-                        <td>{{ item.quantity }}</td>
+						<div class="cart-item-right">
+							<h2 class="cart-item-name">{{ item.product.name }}</h2>
 
-                        <td>{{ item.product.price }} €</td>
+							<p class="cart-item-qty">
+								Quantité :
+								<strong>{{ item.quantity }}</strong>
+							</p>
 
-                        <td>{{ lineTotal }} €</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+							<p class="cart-item-price">
+								Prix :
+								<strong>{{ item.product.price }}€</strong>
+							</p>
+						</div>
 
-        <div class="cart-summary">
-            <p><strong>Total :</strong> {{ total }} €</p>
+					</div>
 
-            <a href="{{ path('app_cart_clear') }}" class="btn btn-danger">
-                Vider le panier
-            </a>
+				{% endfor %}
+			</div>
 
-            <a href="{{ path('app_cart_validate') }}" class="btn btn-success">
-                Valider la commande
-            </a>
-        </div>
+			<div class="cart-summary">
 
-    {% endif %}
+				<p class="summary-line">
+					<span>Total panier :</span>
+					<strong>{{ total }}€</strong>
+				</p>
 
-</section>
+				<p class="summary-line">
+					<span>Frais de livraison :</span>
+					<strong>Offert</strong>
+				</p>
+
+				<a href="{{ path('app_cart_validate') }}" class="btn btn-success big-btn">
+					Valider la commande
+				</a>
+
+			</div>
+
+		{% endif %}
+
+	</section>
 
 {% endblock %}

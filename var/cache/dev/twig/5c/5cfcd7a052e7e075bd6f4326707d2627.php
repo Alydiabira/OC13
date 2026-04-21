@@ -64,7 +64,7 @@ class __TwigTemplate_70ded677f1fe1fb0bb5bc2e52e8bd960 extends Template
         if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
             // line 13
             yield "\t\t\t\t<a href=\"";
-            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_products");
             yield "\">Nos produits</a>
 \t\t\t\t<a href=\"";
             // line 14
@@ -143,7 +143,7 @@ class __TwigTemplate_70ded677f1fe1fb0bb5bc2e52e8bd960 extends Template
 \t\t<!-- NAVIGATION -->
 \t\t<nav class=\"gg-header-right\">
 \t\t\t{% if app.user %}
-\t\t\t\t<a href=\"{{ path('app_home') }}\">Nos produits</a>
+\t\t\t\t<a href=\"{{ path('app_products') }}\">Nos produits</a>
 \t\t\t\t<a href=\"{{ path('app_cart') }}\">Mon panier</a>
 \t\t\t\t<a href=\"{{ path('app_account') }}\">Mon compte</a>
 \t\t\t\t<a href=\"{{ path('app_logout') }}\">Déconnexion</a>

@@ -1,0 +1,41 @@
+/*-------- PAGE COMPTE --------*/
+.account-page {
+    margin: 40px auto;
+}
+
+.account-page h1 {
+    margin-bottom: 30px;
+}
+
+.account-page h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table th,
+.orders-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.orders-table th {
+    font-weight: 600;
+}
+
+.orders-table tr:last-child td {
+    border-bottom: none;
+}
+
+hr {
+    margin: 40px 0;
+}
+
+.delete-account-btn {
+    margin-top: 10px;
+}

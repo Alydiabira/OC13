@@ -103,7 +103,7 @@ class __TwigTemplate_b45544500c892a613eeb1f1b5a8fb870 extends Template
     <div class=\"login-left\">
         <img src=\"";
         // line 10
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/login.jpg"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/14.jpg"), "html", null, true);
         yield "\" alt=\"\">
     </div>
 
@@ -207,7 +207,7 @@ class __TwigTemplate_b45544500c892a613eeb1f1b5a8fb870 extends Template
 <div class=\"login-page\">
 
     <div class=\"login-left\">
-        <img src=\"{{ asset('images/login.jpg') }}\" alt=\"\">
+        <img src=\"{{ asset('images/14.jpg') }}\" alt=\"\">
     </div>
 
     <div class=\"login-right\">

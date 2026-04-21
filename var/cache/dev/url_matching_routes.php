@@ -24,6 +24,7 @@ return [
         '/panier/valider' => [[['_route' => 'app_cart_validate', '_controller' => 'App\\Controller\\CartController::validate'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/home' => [[['_route' => 'app_home_alt', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/produits' => [[['_route' => 'app_products', '_controller' => 'App\\Controller\\ProductController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegisterController::index'], null, null, null, false, false, null]],
         '/security' => [[['_route' => 'app_security', '_controller' => 'App\\Controller\\SecurityController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],

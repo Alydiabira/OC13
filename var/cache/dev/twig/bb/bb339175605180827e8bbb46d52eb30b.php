@@ -64,33 +64,33 @@ class __TwigTemplate_484b1fe65f75117254b03b4d0dff72ba extends Template
 \t\t";
         // line 10
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 13
+        // line 21
         yield "
 \t\t";
-        // line 14
+        // line 22
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 19
+        // line 27
         yield "
 \t</head>
 
 \t<body>
 
 \t\t";
-        // line 24
-        yield from $this->load("partials/header.html.twig", 24)->unwrap()->yield($context);
-        // line 25
+        // line 32
+        yield from $this->load("partials/header.html.twig", 32)->unwrap()->yield($context);
+        // line 33
         yield "
 \t\t<main>
 \t\t\t";
-        // line 27
+        // line 35
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 28
+        // line 36
         yield "\t\t</main>
 
 \t\t";
-        // line 30
-        yield from $this->load("partials/footer.html.twig", 30)->unwrap()->yield($context);
-        // line 31
+        // line 38
+        yield from $this->load("partials/footer.html.twig", 38)->unwrap()->yield($context);
+        // line 39
         yield "
 \t</body>
 </html>
@@ -145,6 +145,35 @@ class __TwigTemplate_484b1fe65f75117254b03b4d0dff72ba extends Template
         yield "\t\t\t<link rel=\"stylesheet\" href=\"";
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/app.css"), "html", null, true);
         yield "\">
+\t\t\t<link rel=\"stylesheet\" href=\"";
+        // line 12
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/home.css"), "html", null, true);
+        yield "\">
+\t\t\t<link rel=\"stylesheet\" href=\"";
+        // line 13
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/produit.css"), "html", null, true);
+        yield "\">
+\t\t\t<link rel=\"stylesheet\" href=\"";
+        // line 14
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/panier.css"), "html", null, true);
+        yield "\">
+\t\t\t<link rel=\"stylesheet\" href=\"";
+        // line 15
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/compt.css"), "html", null, true);
+        yield "\">
+\t\t\t<link rel=\"stylesheet\" href=\"";
+        // line 16
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/login.css"), "html", null, true);
+        yield "\">
+\t\t\t<link rel=\"stylesheet\" href=\"";
+        // line 17
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/register.css"), "html", null, true);
+        yield "\">
+\t\t\t<link rel=\"stylesheet\" href=\"";
+        // line 18
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/show.css"), "html", null, true);
+        yield "\">
+
 \t\t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -155,7 +184,7 @@ class __TwigTemplate_484b1fe65f75117254b03b4d0dff72ba extends Template
         yield from [];
     }
 
-    // line 14
+    // line 22
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -168,10 +197,10 @@ class __TwigTemplate_484b1fe65f75117254b03b4d0dff72ba extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 15
+        // line 23
         yield "\t\t\t";
         yield from $this->unwrap()->yieldBlock('importmap', $context, $blocks);
-        // line 18
+        // line 26
         yield "\t\t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -182,7 +211,7 @@ class __TwigTemplate_484b1fe65f75117254b03b4d0dff72ba extends Template
         yield from [];
     }
 
-    // line 15
+    // line 23
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -195,7 +224,7 @@ class __TwigTemplate_484b1fe65f75117254b03b4d0dff72ba extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "importmap"));
 
-        // line 16
+        // line 24
         yield "\t\t\t\t";
         yield $this->env->getRuntime('Symfony\Bridge\Twig\Extension\ImportMapRuntime')->importmap("app");
         yield "
@@ -209,7 +238,7 @@ class __TwigTemplate_484b1fe65f75117254b03b4d0dff72ba extends Template
         yield from [];
     }
 
-    // line 27
+    // line 35
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -252,7 +281,7 @@ class __TwigTemplate_484b1fe65f75117254b03b4d0dff72ba extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  213 => 27,  199 => 16,  186 => 15,  175 => 18,  172 => 15,  159 => 14,  145 => 11,  132 => 10,  108 => 6,  94 => 31,  92 => 30,  88 => 28,  86 => 27,  82 => 25,  80 => 24,  73 => 19,  71 => 14,  68 => 13,  66 => 10,  62 => 8,  60 => 6,  53 => 1,);
+        return array (  242 => 35,  228 => 24,  215 => 23,  204 => 26,  201 => 23,  188 => 22,  174 => 18,  170 => 17,  166 => 16,  162 => 15,  158 => 14,  154 => 13,  150 => 12,  145 => 11,  132 => 10,  108 => 6,  94 => 39,  92 => 38,  88 => 36,  86 => 35,  82 => 33,  80 => 32,  73 => 27,  71 => 22,  68 => 21,  66 => 10,  62 => 8,  60 => 6,  53 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -268,6 +297,14 @@ class __TwigTemplate_484b1fe65f75117254b03b4d0dff72ba extends Template
 
 \t\t{% block stylesheets %}
 \t\t\t<link rel=\"stylesheet\" href=\"{{ asset('styles/app.css') }}\">
+\t\t\t<link rel=\"stylesheet\" href=\"{{ asset('styles/home.css') }}\">
+\t\t\t<link rel=\"stylesheet\" href=\"{{ asset('styles/produit.css') }}\">
+\t\t\t<link rel=\"stylesheet\" href=\"{{ asset('styles/panier.css') }}\">
+\t\t\t<link rel=\"stylesheet\" href=\"{{ asset('styles/compt.css') }}\">
+\t\t\t<link rel=\"stylesheet\" href=\"{{ asset('styles/login.css') }}\">
+\t\t\t<link rel=\"stylesheet\" href=\"{{ asset('styles/register.css') }}\">
+\t\t\t<link rel=\"stylesheet\" href=\"{{ asset('styles/show.css') }}\">
+
 \t\t{% endblock %}
 
 \t\t{% block javascripts %}

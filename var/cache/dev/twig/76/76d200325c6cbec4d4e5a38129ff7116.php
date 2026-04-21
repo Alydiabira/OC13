@@ -73,7 +73,8 @@ class __TwigTemplate_08b493bb777d7d460784267b983779d3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Nos produits - GreenGoodies";
+        yield "Nos produits - GreenGoodies
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_08b493bb777d7d460784267b983779d3 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,74 +97,67 @@ class __TwigTemplate_08b493bb777d7d460784267b983779d3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         yield "
-<section class=\"products-page wrapper-1440\">
+\t<section class=\"nosproduits-page wrapper-1440\">
 
-    <h1>Nos produits</h1>
+\t\t<h1 class=\"products-title\">Nos produits</h1>
 
-    <div class=\"products-grid container products\">
+\t\t<div class=\"products-grid\">
 
-        ";
-        // line 13
+\t\t\t";
+        // line 14
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 13, $this->source); })()));
-        $context['_iterated'] = false;
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 14, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 14
-            yield "            <div class=\"product-card\">
+            // line 15
+            yield "\t\t\t\t<div class=\"product-card\">
 
-                <div class=\"product-card-image\">
-                    <img src=\"";
-            // line 17
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 17))), "html", null, true);
+\t\t\t\t\t<div class=\"product-image\">
+\t\t\t\t\t\t<img src=\"";
+            // line 18
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 18))), "html", null, true);
             yield "\" alt=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 17), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 18), "html", null, true);
             yield "\">
-                </div>
+\t\t\t\t\t</div>
 
-                <h2 class=\"product-card-title\">";
-            // line 20
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 20), "html", null, true);
+\t\t\t\t\t<h2 class=\"product-name\">";
+            // line 21
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 21), "html", null, true);
             yield "</h2>
 
-                <p class=\"product-card-price\">";
-            // line 22
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 22), "html", null, true);
-            yield " €</p>
-
-                <p class=\"product-card-description\">
-                    ";
-            // line 25
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "shortDescription", [], "any", false, false, false, 25), "html", null, true);
+\t\t\t\t\t<p class=\"price\">";
+            // line 23
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 23), "html", null, true);
             yield "
-                </p>
+\t\t\t\t\t\t€</p>
 
-                <a href=\"";
-            // line 28
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 28)]), "html", null, true);
-            yield "\" class=\"btn\">
-                    Voir le produit
-                </a>
+\t\t\t\t\t<p class=\"short-description\">
+\t\t\t\t\t\t";
+            // line 27
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "shortDescription", [], "any", false, false, false, 27), "html", null, true);
+            yield "
+\t\t\t\t\t</p>
 
-            </div>
-        ";
-            $context['_iterated'] = true;
-        }
-        // line 33
-        if (!$context['_iterated']) {
-            // line 34
-            yield "            <p>Aucun produit disponible pour le moment.</p>
-        ";
+\t\t\t\t\t<a href=\"";
+            // line 30
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+            yield "\" class=\"btn product-btn\">
+\t\t\t\t\t\tVoir le produit
+\t\t\t\t\t</a>
+
+\t\t\t\t</div>
+\t\t\t";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_key'], $context['product'], $context['_parent'], $context['_iterated']);
+        unset($context['_seq'], $context['_key'], $context['product'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 36
         yield "
-    </div>
+\t\t</div>
 
-</section>
+\t</section>
 
 ";
         
@@ -196,50 +190,50 @@ class __TwigTemplate_08b493bb777d7d460784267b983779d3 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  163 => 36,  156 => 34,  154 => 33,  144 => 28,  138 => 25,  132 => 22,  127 => 20,  119 => 17,  114 => 14,  109 => 13,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  157 => 36,  145 => 30,  139 => 27,  132 => 23,  127 => 21,  119 => 18,  114 => 15,  110 => 14,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Nos produits - GreenGoodies{% endblock %}
+{% block title %}Nos produits - GreenGoodies
+{% endblock %}
 
 {% block body %}
 
-<section class=\"products-page wrapper-1440\">
+\t<section class=\"nosproduits-page wrapper-1440\">
 
-    <h1>Nos produits</h1>
+\t\t<h1 class=\"products-title\">Nos produits</h1>
 
-    <div class=\"products-grid container products\">
+\t\t<div class=\"products-grid\">
 
-        {% for product in products %}
-            <div class=\"product-card\">
+\t\t\t{% for product in products %}
+\t\t\t\t<div class=\"product-card\">
 
-                <div class=\"product-card-image\">
-                    <img src=\"{{ asset('uploads/' ~ product.picture) }}\" alt=\"{{ product.name }}\">
-                </div>
+\t\t\t\t\t<div class=\"product-image\">
+\t\t\t\t\t\t<img src=\"{{ asset('uploads/' ~ product.picture) }}\" alt=\"{{ product.name }}\">
+\t\t\t\t\t</div>
 
-                <h2 class=\"product-card-title\">{{ product.name }}</h2>
+\t\t\t\t\t<h2 class=\"product-name\">{{ product.name }}</h2>
 
-                <p class=\"product-card-price\">{{ product.price }} €</p>
+\t\t\t\t\t<p class=\"price\">{{ product.price }}
+\t\t\t\t\t\t€</p>
 
-                <p class=\"product-card-description\">
-                    {{ product.shortDescription }}
-                </p>
+\t\t\t\t\t<p class=\"short-description\">
+\t\t\t\t\t\t{{ product.shortDescription }}
+\t\t\t\t\t</p>
 
-                <a href=\"{{ path('app_product_show', { id: product.id }) }}\" class=\"btn\">
-                    Voir le produit
-                </a>
+\t\t\t\t\t<a href=\"{{ path('app_product_show', { id: product.id }) }}\" class=\"btn product-btn\">
+\t\t\t\t\t\tVoir le produit
+\t\t\t\t\t</a>
 
-            </div>
-        {% else %}
-            <p>Aucun produit disponible pour le moment.</p>
-        {% endfor %}
+\t\t\t\t</div>
+\t\t\t{% endfor %}
 
-    </div>
+\t\t</div>
 
-</section>
+\t</section>
 
 {% endblock %}
 ", "product/index.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/product/index.html.twig");

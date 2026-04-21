@@ -6,8 +6,10 @@ use App\Repository\CartRepository;
 use App\Repository\OrderRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 class AccountController extends AbstractController
 {
@@ -56,7 +58,10 @@ class AccountController extends AbstractController
     #[Route('/mon-compte/supprimer', name: 'app_account_delete')]
     public function deleteAccount(
         EntityManagerInterface $em,
-        CartRepository $cartRepository
+        CartRepository $cartRepository,
+        OrderRepository $orderRepository,
+        TokenStorageInterface $tokenStorage,
+        RequestStack $requestStack
     ): Response {
         $user = $this->getUser();
 
@@ -64,7 +69,7 @@ class AccountController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
-        // Supprimer le panier et ses items
+        // 1. Supprimer le panier et ses items
         $cart = $cartRepository->findOneBy(['user' => $user]);
 
         if ($cart) {
@@ -74,7 +79,21 @@ class AccountController extends AbstractController
             $em->remove($cart);
         }
 
-        //  Supprimer l'utilisateur (les commandes sont supprimées via cascade)
+        // 2. Supprimer les commandes et leurs items
+        $orders = $orderRepository->findBy(['user' => $user]);
+
+        foreach ($orders as $order) {
+            foreach ($order->getOrderItems() as $orderItem) {
+                $em->remove($orderItem);
+            }
+            $em->remove($order);
+        }
+
+        // 3. Déconnecter l'utilisateur AVANT suppression
+        $tokenStorage->setToken(null);
+        $requestStack->getSession()->invalidate();
+
+        // 4. Supprimer l'utilisateur
         $em->remove($user);
         $em->flush();
 

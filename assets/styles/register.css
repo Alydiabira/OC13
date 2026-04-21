@@ -1,0 +1,155 @@
+/* --- PAGE register --- */
+.register-page {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 80px); /* header/footer exclus */
+    background: #ffffff;
+}
+
+/* --- LEFT IMAGE --- */
+.register-left {
+    width: 50%;
+    height: 100%;
+}
+
+.register-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- RIGHT FORM AREA --- */
+.register-right {
+    width: 50%;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-right h1 {
+    font-family: Inter, sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.register-subtitle {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* --- FORM GROUPS --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+/* --- INPUTS --- */
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background: #fafafa;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4caf50;
+    background: #fff;
+}
+
+/* --- ERRORS --- */
+.form-group .form-error-message,
+.form-group ul li {
+    color: #d9534f;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* --- CHECKBOX --- */
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input {
+    width: auto;
+    height: auto;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* --- SUBMIT BUTTON --- */
+.register-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    background: #4caf50;
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.register-btn:hover {
+    background: #43a047;
+}
+
+/* --- LOGIN LINK --- */
+.register-login {
+    margin-top: 20px;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.register-login a {
+    color: #4caf50;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-login a:hover {
+    text-decoration: underline;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .register-page {
+        flex-direction: column;
+    }
+
+    .register-left {
+        width: 100%;
+        height: 250px;
+    }
+
+    .register-right {
+        width: 100%;
+        padding: 40px 30px;
+    }
+}

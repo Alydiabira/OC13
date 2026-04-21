@@ -1,0 +1,149 @@
+/* ------------------------------
+   HOME PAGE
+------------------------------ */
+
+.home-page {
+    width: 100%;
+    max-width: 1440px;
+    margin: 40px auto;
+}
+
+/* HERO */
+.home-page .hero {
+    width: 100%;
+    height: 751px;
+    display: flex;
+    background: #f3f7f3;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.home-page .hero-left {
+    width: 50%;
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-page .hero-left h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2f4f2f;
+    margin-bottom: 20px;
+}
+
+.home-page .hero-left p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #3a3a3a;
+}
+
+.home-page .hero-right {
+    width: 50%;
+    height: 751px;
+}
+
+.home-page .hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TITRE "Nos produits" */
+.home-page h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #333;
+    margin: 60px 0 40px 0;
+}
+
+/* GRID PRODUITS */
+.home-page .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+/* CARD PRODUIT */
+.home-page .product-card {
+    background: #fffdf7;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.home-page .product-card-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.home-page .product-card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.home-page .product-card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.home-page .product-card-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    min-height: 50px;
+}
+
+/* SECTION VALEURS */
+.values-section {
+    margin: 120px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.values-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.values-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.values-text {
+    flex: 1;
+    padding: 60px;
+    border-radius: 12px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.bg-beige {
+    background: #f3f0e8;
+}
+
+.bg-green {
+    background: #e7f3e7;
+}
+
+.values-image img {
+    width: 487px;
+    height: 646px;
+    object-fit: cover;
+    border-radius: 12px;
+}

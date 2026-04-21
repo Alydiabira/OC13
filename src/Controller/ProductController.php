@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use App\Repository\ProductRepository;
 use App\Service\CartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,6 +19,14 @@ class ProductController extends AbstractController
         return $this->render('product/show.html.twig', [
             'product' => $product,
             'quantity' => $quantity
+        ]);
+    }
+
+    #[Route('/produits', name: 'app_products')]
+    public function index(ProductRepository $repo): Response
+    {
+        return $this->render('product/index.html.twig', [
+            'products' => $repo->findAll(),
         ]);
     }
 }

@@ -1,0 +1,109 @@
+
+/* =============================== */
+/*   LAYOUT GLOBAL                 */
+/* =============================== */
+
+.gg-product-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin: 60px auto;
+    align-items: start;
+}
+
+/* =============================== */
+/*   IMAGE PRODUIT                 */
+/* =============================== */
+
+.gg-product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* =============================== */
+/*   INFOS PRODUIT                 */
+/* =============================== */
+
+.gg-product-info h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.gg-product-price {
+    font-size: 26px;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 25px;
+}
+
+.gg-product-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    color: #444;
+}
+
+/* =============================== */
+/*   FORMULAIRE / ACTIONS          */
+/* =============================== */
+
+.gg-product-actions form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 260px;
+}
+
+.gg-product-actions label {
+    font-weight: 600;
+}
+
+.gg-product-actions input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* =============================== */
+/*   BOUTONS                       */
+/* =============================== */
+
+.gg-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #2e7d32;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.gg-btn:hover {
+    background-color: #256628;
+}
+
+/* =============================== */
+/*   RESPONSIVE                    */
+/* =============================== */
+
+@media (max-width: 900px) {
+    .gg-product-page {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .gg-product-info h1 {
+        font-size: 26px;
+    }
+
+    .gg-product-price {
+        font-size: 22px;
+    }
+}
