@@ -1,54 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion{% endblock %}
+{% block title %}Connexion
+{% endblock %}
 
 {% block body %}
 
-<div class="login-page">
+	<div class="login-page">
 
-    <div class="login-left">
-        <img src="{{ asset('images/14.jpg') }}" alt="">
-    </div>
+		<div class="login-left">
+			<img src="{{ asset('images/14.jpg') }}" alt="">
+		</div>
 
-    <div class="login-right">
-        <div class="login-box">
+		<div class="login-right">
+			<div class="login-box">
 
-            <h1 class="login-title">Connexion</h1>
+				<h1 class="login-title">Connexion</h1>
 
-            {% if error %}
-                <div class="error">
-                    {{ error.messageKey|trans(error.messageData, 'security') }}
-                </div>
-            {% endif %}
+				{% if error %}
+					<div class="error">
+						{{ error.messageKey|trans(error.messageData, 'security') }}
+					</div>
+				{% endif %}
 
-            <form method="post">
+				<form method="post">
+					<p>Adresse email</p>
+					<label for="email"></label>
+					<input type="email" id="email" name="_username" value="{{ last_username }}" required>
+					<p>Mot de passe</p>
+					<label for="password"></label>
+					<input type="password" id="password" name="_password" required>
 
-                <label for="email">Adresse email</label>
-                <input type="email"
-                       id="email"
-                       name="_username"
-                       value="{{ last_username }}"
-                       required
-                >
+					<button class="login-btn">Se connecter</button>
+				</form>
 
-                <label for="password">Mot de passe</label>
-                <input type="password"
-                       id="password"
-                       name="_password"
-                       required
-                >
+				<p class="login-register">
+					Pas encore de compte ?
+					<a href="{{ path('app_register') }}">Créer un compte</a>
+				</p>
 
-                <button class="login-btn">Se connecter</button>
-            </form>
+			</div>
+		</div>
 
-            <p class="login-register">
-                Pas encore de compte ?
-                <a href="{{ path('app_register') }}">Créer un compte</a>
-            </p>
-
-        </div>
-    </div>
-
-</div>
+	</div>
 
 {% endblock %}

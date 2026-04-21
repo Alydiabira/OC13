@@ -1,90 +1,97 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil - GreenGoodies{% endblock %}
+{% block title %}Accueil - GreenGoodies
+{% endblock %}
 
 {% block body %}
 
-<div class="home-page">
+	<div
+		class="home-page">
 
-    <!-- HERO -->
-    <section class="hero">
+		<!-- HERO -->
+		<section class="hero">
 
-        <div class="hero-left">
-            <h1>Bienvenue</h1>
-            <p>
-                Découvrez notre univers de produits durables et éthiques pour une consommation responsable.<br>
-                Retrouvez des articles d’hygiène & beauté, des accessoires & boissons et du prêt-à-porter.
-            </p>
-        </div>
+			<div class="hero-left">
+				<h1>Bienvenue</h1>
+				<p>
+					Découvrez notre univers de produits durables et éthiques pour une consommation responsable.<br>
+					Retrouvez des articles d’hygiène & beauté, des accessoires & boissons et du prêt-à-porter.
+				</p>
+			</div>
 
-        <div class="hero-right">
-            <img src="{{ asset('images/hero.jpg') }}" alt="GreenGoodies Hero">
-        </div>
+			<div class="hero-right">
+				<img src="{{ asset('images/hero.jpg') }}" alt="GreenGoodies Hero">
+			</div>
 
-    </section>
+		</section>
 
-    <!-- PRODUITS -->
-    <section class="wrapper-1440">
+		<!-- PRODUITS -->
+		<section class="wrapper-1440">
 
-        <h2>Nos produits</h2>
+			<h2>Nos produits</h2>
 
-        <div class="products-grid">
-            {% for product in products %}
-                <div class="product-card">
+			<div class="products-grid">
+				{% for product in products %}
+					<div class="product-card">
 
-                    <div class="product-card-image">
-                        <img src="{{ asset('uploads/' ~ product.picture) }}" alt="{{ product.name }}">
-                    </div>
+						<div class="product-card-image">
+							<img src="{{ asset('uploads/' ~ product.picture) }}" alt="{{ product.name }}">
+						</div>
 
-                    <h2 class="product-card-title">{{ product.name }}</h2>
-                    <p class="product-card-price">{{ product.price }} €</p>
-                    <p class="product-card-description">{{ product.shortDescription }}</p>
+						<h2 class="product-card-title">{{ product.name }}</h2>
+						<p class="product-card-price">{{ product.price }}
+							€</p>
+						<p class="product-card-description">{{ product.shortDescription }}</p>
 
-                    <a href="{{ path('app_product_show', { id: product.id }) }}" class="btn">
-                        Voir le produit
-                    </a>
+						<a href="{{ path('app_product_show', { id: product.id }) }}" class="btn">
+							Voir le produit
+						</a>
 
-                </div>
-            {% endfor %}
-        </div>
+					</div>
+				{% endfor %}
+			</div>
 
-    </section>
+		</section>
 
-    <!-- VALEURS -->
-    <section class="values-section">
+		<section
+			class="values-section">
 
-        <div class="values-row">
-            <div class="values-text bg-beige">
-                <h2>Notre conviction</h2>
-                <p>
-                    Chez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
-                    pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
-                    de produits qui allient qualité, durabilité et éthique.
-                </p>
-            </div>
+			<!-- BLOC 1 : texte à gauche, image à droite -->
+			<div class="values-block left">
+				<div class="values-text bg-beige">
+					<h2>Notre conviction</h2>
+					<p>
+						Chez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
+						                pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
+						                de produits qui allient qualité, durabilité et éthique.
+					</p>
+				</div>
 
-            <div class="values-image">
-                <img src="{{ asset('images/11.jpg') }}" alt="">
-            </div>
-        </div>
+				<div class="values-image">
+					<img src="{{ asset('images/11.jpg') }}" alt="Notre conviction">
+				</div>
+			</div>
 
-        <div class="values-row reverse">
-            <div class="values-image">
-                <img src="{{ asset('images/12.jpg') }}" alt="">
-            </div>
+			<!-- BLOC 2 : image à gauche, texte à droite -->
+			<div class="values-block right">
+				<div class="values-image">
+					<img src="{{ asset('images/12.jpg') }}" alt="Nos valeurs">
+				</div>
 
-            <div class="values-text bg-green">
-                <h2>Nos valeurs</h2>
-                <p>
-                    Durabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>
-                    Éthique : Nous travaillons avec des partenaires qui partagent nos valeurs.<br>
-                    Écologie : Nous privilégions les matériaux et pratiques respectueuses de l’écosystème.
-                </p>
-            </div>
-        </div>
+				<div class="values-text bg-green">
+					<h2>Nos valeurs</h2>
+					<p>
+						Durabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>
+						Éthique : Nous travaillons avec des partenaires qui partagent nos valeurs.<br>
+						Écologie : Nous privilégions les matériaux et pratiques respectueuses de l’écosystème.
+					</p>
+				</div>
+			</div>
 
-    </section>
+		</section>
 
-</div>
+
+	</div>
+
 
 {% endblock %}

@@ -73,7 +73,8 @@ class __TwigTemplate_b45544500c892a613eeb1f1b5a8fb870 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Connexion";
+        yield "Connexion
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_b45544500c892a613eeb1f1b5a8fb870 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,71 +97,62 @@ class __TwigTemplate_b45544500c892a613eeb1f1b5a8fb870 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         yield "
-<div class=\"login-page\">
+\t<div class=\"login-page\">
 
-    <div class=\"login-left\">
-        <img src=\"";
-        // line 10
+\t\t<div class=\"login-left\">
+\t\t\t<img src=\"";
+        // line 11
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/14.jpg"), "html", null, true);
         yield "\" alt=\"\">
-    </div>
+\t\t</div>
 
-    <div class=\"login-right\">
-        <div class=\"login-box\">
+\t\t<div class=\"login-right\">
+\t\t\t<div class=\"login-box\">
 
-            <h1 class=\"login-title\">Connexion</h1>
+\t\t\t\t<h1 class=\"login-title\">Connexion</h1>
 
-            ";
-        // line 18
-        if ((($tmp = (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 18, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 19
-            yield "                <div class=\"error\">
-                    ";
+\t\t\t\t";
+        // line 19
+        if ((($tmp = (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 19, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
             // line 20
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(CoreExtension::getAttribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 20, $this->source); })()), "messageKey", [], "any", false, false, false, 20), CoreExtension::getAttribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 20, $this->source); })()), "messageData", [], "any", false, false, false, 20), "security"), "html", null, true);
+            yield "\t\t\t\t\t<div class=\"error\">
+\t\t\t\t\t\t";
+            // line 21
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(CoreExtension::getAttribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 21, $this->source); })()), "messageKey", [], "any", false, false, false, 21), CoreExtension::getAttribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 21, $this->source); })()), "messageData", [], "any", false, false, false, 21), "security"), "html", null, true);
             yield "
-                </div>
-            ";
+\t\t\t\t\t</div>
+\t\t\t\t";
         }
-        // line 23
+        // line 24
         yield "
-            <form method=\"post\">
+\t\t\t\t<form method=\"post\">
+\t\t\t\t\t<p>Adresse email</p>
+\t\t\t\t\t<label for=\"email\"></label>
+\t\t\t\t\t<input type=\"email\" id=\"email\" name=\"_username\" value=\"";
+        // line 28
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 28, $this->source); })()), "html", null, true);
+        yield "\" required>
+\t\t\t\t\t<p>Mot de passe</p>
+\t\t\t\t\t<label for=\"password\"></label>
+\t\t\t\t\t<input type=\"password\" id=\"password\" name=\"_password\" required>
 
-                <label for=\"email\">Adresse email</label>
-                <input type=\"email\"
-                       id=\"email\"
-                       name=\"_username\"
-                       value=\"";
-        // line 30
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 30, $this->source); })()), "html", null, true);
-        yield "\"
-                       required
-                >
+\t\t\t\t\t<button class=\"login-btn\">Se connecter</button>
+\t\t\t\t</form>
 
-                <label for=\"password\">Mot de passe</label>
-                <input type=\"password\"
-                       id=\"password\"
-                       name=\"_password\"
-                       required
-                >
-
-                <button class=\"login-btn\">Se connecter</button>
-            </form>
-
-            <p class=\"login-register\">
-                Pas encore de compte ?
-                <a href=\"";
-        // line 46
+\t\t\t\t<p class=\"login-register\">
+\t\t\t\t\tPas encore de compte ?
+\t\t\t\t\t<a href=\"";
+        // line 38
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
         yield "\">Créer un compte</a>
-            </p>
+\t\t\t\t</p>
 
-        </div>
-    </div>
+\t\t\t</div>
+\t\t</div>
 
-</div>
+\t</div>
 
 ";
         
@@ -193,63 +185,55 @@ class __TwigTemplate_b45544500c892a613eeb1f1b5a8fb870 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  156 => 46,  137 => 30,  128 => 23,  122 => 20,  119 => 19,  117 => 18,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  148 => 38,  135 => 28,  129 => 24,  123 => 21,  120 => 20,  118 => 19,  107 => 11,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Connexion{% endblock %}
+{% block title %}Connexion
+{% endblock %}
 
 {% block body %}
 
-<div class=\"login-page\">
+\t<div class=\"login-page\">
 
-    <div class=\"login-left\">
-        <img src=\"{{ asset('images/14.jpg') }}\" alt=\"\">
-    </div>
+\t\t<div class=\"login-left\">
+\t\t\t<img src=\"{{ asset('images/14.jpg') }}\" alt=\"\">
+\t\t</div>
 
-    <div class=\"login-right\">
-        <div class=\"login-box\">
+\t\t<div class=\"login-right\">
+\t\t\t<div class=\"login-box\">
 
-            <h1 class=\"login-title\">Connexion</h1>
+\t\t\t\t<h1 class=\"login-title\">Connexion</h1>
 
-            {% if error %}
-                <div class=\"error\">
-                    {{ error.messageKey|trans(error.messageData, 'security') }}
-                </div>
-            {% endif %}
+\t\t\t\t{% if error %}
+\t\t\t\t\t<div class=\"error\">
+\t\t\t\t\t\t{{ error.messageKey|trans(error.messageData, 'security') }}
+\t\t\t\t\t</div>
+\t\t\t\t{% endif %}
 
-            <form method=\"post\">
+\t\t\t\t<form method=\"post\">
+\t\t\t\t\t<p>Adresse email</p>
+\t\t\t\t\t<label for=\"email\"></label>
+\t\t\t\t\t<input type=\"email\" id=\"email\" name=\"_username\" value=\"{{ last_username }}\" required>
+\t\t\t\t\t<p>Mot de passe</p>
+\t\t\t\t\t<label for=\"password\"></label>
+\t\t\t\t\t<input type=\"password\" id=\"password\" name=\"_password\" required>
 
-                <label for=\"email\">Adresse email</label>
-                <input type=\"email\"
-                       id=\"email\"
-                       name=\"_username\"
-                       value=\"{{ last_username }}\"
-                       required
-                >
+\t\t\t\t\t<button class=\"login-btn\">Se connecter</button>
+\t\t\t\t</form>
 
-                <label for=\"password\">Mot de passe</label>
-                <input type=\"password\"
-                       id=\"password\"
-                       name=\"_password\"
-                       required
-                >
+\t\t\t\t<p class=\"login-register\">
+\t\t\t\t\tPas encore de compte ?
+\t\t\t\t\t<a href=\"{{ path('app_register') }}\">Créer un compte</a>
+\t\t\t\t</p>
 
-                <button class=\"login-btn\">Se connecter</button>
-            </form>
+\t\t\t</div>
+\t\t</div>
 
-            <p class=\"login-register\">
-                Pas encore de compte ?
-                <a href=\"{{ path('app_register') }}\">Créer un compte</a>
-            </p>
-
-        </div>
-    </div>
-
-</div>
+\t</div>
 
 {% endblock %}
 ", "security/login.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/security/login.html.twig");

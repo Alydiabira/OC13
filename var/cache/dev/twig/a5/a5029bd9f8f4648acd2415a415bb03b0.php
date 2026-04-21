@@ -73,7 +73,8 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Accueil - GreenGoodies";
+        yield "Accueil - GreenGoodies
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,126 +97,132 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         yield "
-<div class=\"home-page\">
+\t<div
+\t\tclass=\"home-page\">
 
-    <!-- HERO -->
-    <section class=\"hero\">
+\t\t<!-- HERO -->
+\t\t<section class=\"hero\">
 
-        <div class=\"hero-left\">
-            <h1>Bienvenue</h1>
-            <p>
-                Découvrez notre univers de produits durables et éthiques pour une consommation responsable.<br>
-                Retrouvez des articles d’hygiène & beauté, des accessoires & boissons et du prêt-à-porter.
-            </p>
-        </div>
+\t\t\t<div class=\"hero-left\">
+\t\t\t\t<h1>Bienvenue</h1>
+\t\t\t\t<p>
+\t\t\t\t\tDécouvrez notre univers de produits durables et éthiques pour une consommation responsable.<br>
+\t\t\t\t\tRetrouvez des articles d’hygiène & beauté, des accessoires & boissons et du prêt-à-porter.
+\t\t\t\t</p>
+\t\t\t</div>
 
-        <div class=\"hero-right\">
-            <img src=\"";
-        // line 21
+\t\t\t<div class=\"hero-right\">
+\t\t\t\t<img src=\"";
+        // line 23
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/hero.jpg"), "html", null, true);
         yield "\" alt=\"GreenGoodies Hero\">
-        </div>
+\t\t\t</div>
 
-    </section>
+\t\t</section>
 
-    <!-- PRODUITS -->
-    <section class=\"wrapper-1440\">
+\t\t<!-- PRODUITS -->
+\t\t<section class=\"wrapper-1440\">
 
-        <h2>Nos produits</h2>
+\t\t\t<h2>Nos produits</h2>
 
-        <div class=\"products-grid\">
-            ";
-        // line 32
+\t\t\t<div class=\"products-grid\">
+\t\t\t\t";
+        // line 34
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 32, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 34, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 33
-            yield "                <div class=\"product-card\">
+            // line 35
+            yield "\t\t\t\t\t<div class=\"product-card\">
 
-                    <div class=\"product-card-image\">
-                        <img src=\"";
-            // line 36
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 36))), "html", null, true);
+\t\t\t\t\t\t<div class=\"product-card-image\">
+\t\t\t\t\t\t\t<img src=\"";
+            // line 38
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 38))), "html", null, true);
             yield "\" alt=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 36), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 38), "html", null, true);
             yield "\">
-                    </div>
+\t\t\t\t\t\t</div>
 
-                    <h2 class=\"product-card-title\">";
-            // line 39
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 39), "html", null, true);
-            yield "</h2>
-                    <p class=\"product-card-price\">";
-            // line 40
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 40), "html", null, true);
-            yield " €</p>
-                    <p class=\"product-card-description\">";
+\t\t\t\t\t\t<h2 class=\"product-card-title\">";
             // line 41
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "shortDescription", [], "any", false, false, false, 41), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 41), "html", null, true);
+            yield "</h2>
+\t\t\t\t\t\t<p class=\"product-card-price\">";
+            // line 42
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 42), "html", null, true);
+            yield "
+\t\t\t\t\t\t\t€</p>
+\t\t\t\t\t\t<p class=\"product-card-description\">";
+            // line 44
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "shortDescription", [], "any", false, false, false, 44), "html", null, true);
             yield "</p>
 
-                    <a href=\"";
-            // line 43
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 43)]), "html", null, true);
+\t\t\t\t\t\t<a href=\"";
+            // line 46
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 46)]), "html", null, true);
             yield "\" class=\"btn\">
-                        Voir le produit
-                    </a>
+\t\t\t\t\t\t\tVoir le produit
+\t\t\t\t\t\t</a>
 
-                </div>
-            ";
+\t\t\t\t\t</div>
+\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['product'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 49
-        yield "        </div>
+        // line 52
+        yield "\t\t\t</div>
 
-    </section>
+\t\t</section>
 
-    <!-- VALEURS -->
-    <section class=\"values-section\">
+\t\t<section
+\t\t\tclass=\"values-section\">
 
-        <div class=\"values-row\">
-            <div class=\"values-text bg-beige\">
-                <h2>Notre conviction</h2>
-                <p>
-                    Chez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
-                    pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
-                    de produits qui allient qualité, durabilité et éthique.
-                </p>
-            </div>
+\t\t\t<!-- BLOC 1 : texte à gauche, image à droite -->
+\t\t\t<div class=\"values-block left\">
+\t\t\t\t<div class=\"values-text bg-beige\">
+\t\t\t\t\t<h2>Notre conviction</h2>
+\t\t\t\t\t<p>
+\t\t\t\t\t\tChez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
+\t\t\t\t\t\t                pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
+\t\t\t\t\t\t                de produits qui allient qualité, durabilité et éthique.
+\t\t\t\t\t</p>
+\t\t\t\t</div>
 
-            <div class=\"values-image\">
-                <img src=\"";
-        // line 67
+\t\t\t\t<div class=\"values-image\">
+\t\t\t\t\t<img src=\"";
+        // line 71
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/11.jpg"), "html", null, true);
-        yield "\" alt=\"\">
-            </div>
-        </div>
+        yield "\" alt=\"Notre conviction\">
+\t\t\t\t</div>
+\t\t\t</div>
 
-        <div class=\"values-row reverse\">
-            <div class=\"values-image\">
-                <img src=\"";
-        // line 73
+\t\t\t<!-- BLOC 2 : image à gauche, texte à droite -->
+\t\t\t<div class=\"values-block right\">
+\t\t\t\t<div class=\"values-image\">
+\t\t\t\t\t<img src=\"";
+        // line 78
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/12.jpg"), "html", null, true);
-        yield "\" alt=\"\">
-            </div>
+        yield "\" alt=\"Nos valeurs\">
+\t\t\t\t</div>
 
-            <div class=\"values-text bg-green\">
-                <h2>Nos valeurs</h2>
-                <p>
-                    Durabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>
-                    Éthique : Nous travaillons avec des partenaires qui partagent nos valeurs.<br>
-                    Écologie : Nous privilégions les matériaux et pratiques respectueuses de l’écosystème.
-                </p>
-            </div>
-        </div>
+\t\t\t\t<div class=\"values-text bg-green\">
+\t\t\t\t\t<h2>Nos valeurs</h2>
+\t\t\t\t\t<p>
+\t\t\t\t\t\tDurabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>
+\t\t\t\t\t\tÉthique : Nous travaillons avec des partenaires qui partagent nos valeurs.<br>
+\t\t\t\t\t\tÉcologie : Nous privilégions les matériaux et pratiques respectueuses de l’écosystème.
+\t\t\t\t\t</p>
+\t\t\t\t</div>
+\t\t\t</div>
 
-    </section>
+\t\t</section>
 
-</div>
+
+\t</div>
+
 
 ";
         
@@ -248,99 +255,106 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  202 => 73,  193 => 67,  173 => 49,  161 => 43,  156 => 41,  152 => 40,  148 => 39,  140 => 36,  135 => 33,  131 => 32,  117 => 21,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  207 => 78,  197 => 71,  176 => 52,  164 => 46,  159 => 44,  154 => 42,  150 => 41,  142 => 38,  137 => 35,  133 => 34,  119 => 23,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Accueil - GreenGoodies{% endblock %}
+{% block title %}Accueil - GreenGoodies
+{% endblock %}
 
 {% block body %}
 
-<div class=\"home-page\">
+\t<div
+\t\tclass=\"home-page\">
 
-    <!-- HERO -->
-    <section class=\"hero\">
+\t\t<!-- HERO -->
+\t\t<section class=\"hero\">
 
-        <div class=\"hero-left\">
-            <h1>Bienvenue</h1>
-            <p>
-                Découvrez notre univers de produits durables et éthiques pour une consommation responsable.<br>
-                Retrouvez des articles d’hygiène & beauté, des accessoires & boissons et du prêt-à-porter.
-            </p>
-        </div>
+\t\t\t<div class=\"hero-left\">
+\t\t\t\t<h1>Bienvenue</h1>
+\t\t\t\t<p>
+\t\t\t\t\tDécouvrez notre univers de produits durables et éthiques pour une consommation responsable.<br>
+\t\t\t\t\tRetrouvez des articles d’hygiène & beauté, des accessoires & boissons et du prêt-à-porter.
+\t\t\t\t</p>
+\t\t\t</div>
 
-        <div class=\"hero-right\">
-            <img src=\"{{ asset('images/hero.jpg') }}\" alt=\"GreenGoodies Hero\">
-        </div>
+\t\t\t<div class=\"hero-right\">
+\t\t\t\t<img src=\"{{ asset('images/hero.jpg') }}\" alt=\"GreenGoodies Hero\">
+\t\t\t</div>
 
-    </section>
+\t\t</section>
 
-    <!-- PRODUITS -->
-    <section class=\"wrapper-1440\">
+\t\t<!-- PRODUITS -->
+\t\t<section class=\"wrapper-1440\">
 
-        <h2>Nos produits</h2>
+\t\t\t<h2>Nos produits</h2>
 
-        <div class=\"products-grid\">
-            {% for product in products %}
-                <div class=\"product-card\">
+\t\t\t<div class=\"products-grid\">
+\t\t\t\t{% for product in products %}
+\t\t\t\t\t<div class=\"product-card\">
 
-                    <div class=\"product-card-image\">
-                        <img src=\"{{ asset('uploads/' ~ product.picture) }}\" alt=\"{{ product.name }}\">
-                    </div>
+\t\t\t\t\t\t<div class=\"product-card-image\">
+\t\t\t\t\t\t\t<img src=\"{{ asset('uploads/' ~ product.picture) }}\" alt=\"{{ product.name }}\">
+\t\t\t\t\t\t</div>
 
-                    <h2 class=\"product-card-title\">{{ product.name }}</h2>
-                    <p class=\"product-card-price\">{{ product.price }} €</p>
-                    <p class=\"product-card-description\">{{ product.shortDescription }}</p>
+\t\t\t\t\t\t<h2 class=\"product-card-title\">{{ product.name }}</h2>
+\t\t\t\t\t\t<p class=\"product-card-price\">{{ product.price }}
+\t\t\t\t\t\t\t€</p>
+\t\t\t\t\t\t<p class=\"product-card-description\">{{ product.shortDescription }}</p>
 
-                    <a href=\"{{ path('app_product_show', { id: product.id }) }}\" class=\"btn\">
-                        Voir le produit
-                    </a>
+\t\t\t\t\t\t<a href=\"{{ path('app_product_show', { id: product.id }) }}\" class=\"btn\">
+\t\t\t\t\t\t\tVoir le produit
+\t\t\t\t\t\t</a>
 
-                </div>
-            {% endfor %}
-        </div>
+\t\t\t\t\t</div>
+\t\t\t\t{% endfor %}
+\t\t\t</div>
 
-    </section>
+\t\t</section>
 
-    <!-- VALEURS -->
-    <section class=\"values-section\">
+\t\t<section
+\t\t\tclass=\"values-section\">
 
-        <div class=\"values-row\">
-            <div class=\"values-text bg-beige\">
-                <h2>Notre conviction</h2>
-                <p>
-                    Chez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
-                    pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
-                    de produits qui allient qualité, durabilité et éthique.
-                </p>
-            </div>
+\t\t\t<!-- BLOC 1 : texte à gauche, image à droite -->
+\t\t\t<div class=\"values-block left\">
+\t\t\t\t<div class=\"values-text bg-beige\">
+\t\t\t\t\t<h2>Notre conviction</h2>
+\t\t\t\t\t<p>
+\t\t\t\t\t\tChez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
+\t\t\t\t\t\t                pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
+\t\t\t\t\t\t                de produits qui allient qualité, durabilité et éthique.
+\t\t\t\t\t</p>
+\t\t\t\t</div>
 
-            <div class=\"values-image\">
-                <img src=\"{{ asset('images/11.jpg') }}\" alt=\"\">
-            </div>
-        </div>
+\t\t\t\t<div class=\"values-image\">
+\t\t\t\t\t<img src=\"{{ asset('images/11.jpg') }}\" alt=\"Notre conviction\">
+\t\t\t\t</div>
+\t\t\t</div>
 
-        <div class=\"values-row reverse\">
-            <div class=\"values-image\">
-                <img src=\"{{ asset('images/12.jpg') }}\" alt=\"\">
-            </div>
+\t\t\t<!-- BLOC 2 : image à gauche, texte à droite -->
+\t\t\t<div class=\"values-block right\">
+\t\t\t\t<div class=\"values-image\">
+\t\t\t\t\t<img src=\"{{ asset('images/12.jpg') }}\" alt=\"Nos valeurs\">
+\t\t\t\t</div>
 
-            <div class=\"values-text bg-green\">
-                <h2>Nos valeurs</h2>
-                <p>
-                    Durabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>
-                    Éthique : Nous travaillons avec des partenaires qui partagent nos valeurs.<br>
-                    Écologie : Nous privilégions les matériaux et pratiques respectueuses de l’écosystème.
-                </p>
-            </div>
-        </div>
+\t\t\t\t<div class=\"values-text bg-green\">
+\t\t\t\t\t<h2>Nos valeurs</h2>
+\t\t\t\t\t<p>
+\t\t\t\t\t\tDurabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>
+\t\t\t\t\t\tÉthique : Nous travaillons avec des partenaires qui partagent nos valeurs.<br>
+\t\t\t\t\t\tÉcologie : Nous privilégions les matériaux et pratiques respectueuses de l’écosystème.
+\t\t\t\t\t</p>
+\t\t\t\t</div>
+\t\t\t</div>
 
-    </section>
+\t\t</section>
 
-</div>
+
+\t</div>
+
 
 {% endblock %}
 ", "home/index.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/home/index.html.twig");
