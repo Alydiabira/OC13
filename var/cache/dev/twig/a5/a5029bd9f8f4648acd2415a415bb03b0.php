@@ -184,14 +184,14 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t\t<div class=\"values-block left\">
 \t\t\t\t<div class=\"values-text bg-beige\">
 \t\t\t\t\t<h2>Notre conviction</h2>
-\t\t\t\t\t<p>
+\t\t\t\t\t<p class=\"values-text-left\">
 \t\t\t\t\t\tChez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
 \t\t\t\t\t\t                pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
 \t\t\t\t\t\t                de produits qui allient qualité, durabilité et éthique.
 \t\t\t\t\t</p>
 \t\t\t\t</div>
 
-\t\t\t\t<div class=\"values-image\">
+\t\t\t\t<div class=\"values-image11\">
 \t\t\t\t\t<img src=\"";
         // line 71
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/11.jpg"), "html", null, true);
@@ -201,7 +201,7 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 
 \t\t\t<!-- BLOC 2 : image à gauche, texte à droite -->
 \t\t\t<div class=\"values-block right\">
-\t\t\t\t<div class=\"values-image\">
+\t\t\t\t<div class=\"values-image12\">
 \t\t\t\t\t<img src=\"";
         // line 78
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/12.jpg"), "html", null, true);
@@ -210,7 +210,7 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 
 \t\t\t\t<div class=\"values-text bg-green\">
 \t\t\t\t\t<h2>Nos valeurs</h2>
-\t\t\t\t\t<p>
+\t\t\t\t\t<p class=\"values-text-right\">
 \t\t\t\t\t\tDurabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>
 \t\t\t\t\t\tÉthique : Nous travaillons avec des partenaires qui partagent nos valeurs.<br>
 \t\t\t\t\t\tÉcologie : Nous privilégions les matériaux et pratiques respectueuses de l’écosystème.
@@ -322,27 +322,27 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t\t<div class=\"values-block left\">
 \t\t\t\t<div class=\"values-text bg-beige\">
 \t\t\t\t\t<h2>Notre conviction</h2>
-\t\t\t\t\t<p>
+\t\t\t\t\t<p class=\"values-text-left\">
 \t\t\t\t\t\tChez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
 \t\t\t\t\t\t                pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
 \t\t\t\t\t\t                de produits qui allient qualité, durabilité et éthique.
 \t\t\t\t\t</p>
 \t\t\t\t</div>
 
-\t\t\t\t<div class=\"values-image\">
+\t\t\t\t<div class=\"values-image11\">
 \t\t\t\t\t<img src=\"{{ asset('images/11.jpg') }}\" alt=\"Notre conviction\">
 \t\t\t\t</div>
 \t\t\t</div>
 
 \t\t\t<!-- BLOC 2 : image à gauche, texte à droite -->
 \t\t\t<div class=\"values-block right\">
-\t\t\t\t<div class=\"values-image\">
+\t\t\t\t<div class=\"values-image12\">
 \t\t\t\t\t<img src=\"{{ asset('images/12.jpg') }}\" alt=\"Nos valeurs\">
 \t\t\t\t</div>
 
 \t\t\t\t<div class=\"values-text bg-green\">
 \t\t\t\t\t<h2>Nos valeurs</h2>
-\t\t\t\t\t<p>
+\t\t\t\t\t<p class=\"values-text-right\">
 \t\t\t\t\t\tDurabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>
 \t\t\t\t\t\tÉthique : Nous travaillons avec des partenaires qui partagent nos valeurs.<br>
 \t\t\t\t\t\tÉcologie : Nous privilégions les matériaux et pratiques respectueuses de l’écosystème.
