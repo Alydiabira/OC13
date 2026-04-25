@@ -183,11 +183,11 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t\t<!-- BLOC 1 : texte à gauche, image à droite -->
 \t\t\t<div class=\"values-block left\">
 \t\t\t\t<div class=\"values-text bg-beige\">
-\t\t\t\t\t<h2>Notre conviction</h2>
+\t\t\t\t\t<h2 class=\"values-text-title\">Notre conviction</h2>
 \t\t\t\t\t<p class=\"values-text-left\">
 \t\t\t\t\t\tChez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
-\t\t\t\t\t\t                pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
-\t\t\t\t\t\t                de produits qui allient qualité, durabilité et éthique.
+\t\t\t\t\t\t<br>pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
+\t\t\t\t\t\t<br>de produits qui allient qualité, durabilité et éthique.
 \t\t\t\t\t</p>
 \t\t\t\t</div>
 
@@ -321,11 +321,11 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t\t<!-- BLOC 1 : texte à gauche, image à droite -->
 \t\t\t<div class=\"values-block left\">
 \t\t\t\t<div class=\"values-text bg-beige\">
-\t\t\t\t\t<h2>Notre conviction</h2>
+\t\t\t\t\t<h2 class=\"values-text-title\">Notre conviction</h2>
 \t\t\t\t\t<p class=\"values-text-left\">
 \t\t\t\t\t\tChez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être
-\t\t\t\t\t\t                pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
-\t\t\t\t\t\t                de produits qui allient qualité, durabilité et éthique.
+\t\t\t\t\t\t<br>pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
+\t\t\t\t\t\t<br>de produits qui allient qualité, durabilité et éthique.
 \t\t\t\t\t</p>
 \t\t\t\t</div>
 
