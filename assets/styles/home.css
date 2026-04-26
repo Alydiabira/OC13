@@ -117,17 +117,7 @@
 }
 
 /* SECTION VALEURS */
-.values-section {
-    width: 1440px;
-    display: flex;
-    flex-direction: column;
-    height: 1292px;
-    top: 2999px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* nombre de lignes */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
+
 
 /* BLOC GÉNÉRIQUE */
 .values-block {
