@@ -159,15 +159,15 @@
     color: #333;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* pousse le contenu en bas */
-    height: 20%;
 }
 
 .values-text-left {
-    background: #ebe3d3;
-    max-height: 100%;
-    overflow: hidden;
-    margin: 30px;
+    margin: 10px 26px 30px;
+    
+}
+
+.values-text-right {
+    margin: 10px 60% 30px;
 }
 
 .beige-text-title {
@@ -175,6 +175,7 @@
     flex-direction: column;
     justify-content: flex-end; /* pousse le contenu en bas */
     height: 100%; /* obligatoire */
+    margin-left: 20px;
 }
 
 .green-text-title {
@@ -182,6 +183,7 @@
     flex-direction: column;
     justify-content: flex-end; /* pousse le contenu en bas */
     height: 100%; /* obligatoire */
+    margin-left:  60%;
 }
 
 /* IMAGE (masque) */

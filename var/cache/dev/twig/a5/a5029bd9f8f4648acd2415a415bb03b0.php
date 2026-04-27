@@ -183,17 +183,19 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t\t<!-- BLOC 1 : texte à gauche, image à droite -->
 \t\t\t<div class=\"values-block left\">
 \t\t\t\t<div class=\"values-text bg-beige\">
-\t\t\t\t\t<h2 class=\"beige-text-title\">Notre conviction</h2>
+\t\t\t\t\t<h3 class=\"beige-text-title\">Notre conviction</h3>
 \t\t\t\t\t<p class=\"values-text-left\">
-\t\t\t\t\t\tChez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être.<br>
-\t\t\t\t\t\tpour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse.<br>
+\t\t\t\t\t\tChez GreenGoodies, nous croyons en un monde <br>
+\t\t\t\t\t\toù le commerce peut être synonyme de bien‑être.<br>
+\t\t\t\t\t\tpour la planète et ses habitants. <br>
+\t\t\t\t\t\tNotre mission est de vous proposer une sélection rigoureuse.<br>
 \t\t\t\t\t\tde produits qui allient qualité, durabilité et éthique.
 \t\t\t\t\t</p>
 \t\t\t\t</div>
 
 \t\t\t\t<div class=\"values-image11\">
 \t\t\t\t\t<img src=\"";
-        // line 71
+        // line 73
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/11.jpg"), "html", null, true);
         yield "\" alt=\"Notre conviction\">
 \t\t\t\t</div>
@@ -203,17 +205,20 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t\t<div class=\"values-block right\">
 \t\t\t\t<div class=\"values-image12\">
 \t\t\t\t\t<img src=\"";
-        // line 78
+        // line 80
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/12.jpg"), "html", null, true);
         yield "\" alt=\"Nos valeurs\">
 \t\t\t\t</div>
 
 \t\t\t\t<div class=\"values-text bg-green\">
-\t\t\t\t\t<h2 class=\"green-text-title\">Nos valeurs</h2>
+\t\t\t\t\t<h3 class=\"green-text-title\">Nos valeurs</h3>
 \t\t\t\t\t<p class=\"values-text-right\">
-\t\t\t\t\t\tDurabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>
-\t\t\t\t\t\tÉthique : Nous travaillons avec des partenaires qui partagent nos valeurs.<br>
-\t\t\t\t\t\tÉcologie : Nous privilégions les matériaux et pratiques respectueuses de l’écosystème.
+\t\t\t\t\t\tDurabilité : Nous sélectionnons soigneusement <br> 
+\t\t\t\t\t\tdes produits qui respectent l’environnement.<br>
+\t\t\t\t\t\tÉthique : Nous travaillons avec<br> 
+\t\t\t\t\t\tdes partenaires qui partagent nos valeurs.<br>
+\t\t\t\t\t\tÉcologie : Nous privilégions <br>
+\t\t\t\t\t\tles matériaux et pratiques respectueuses de l’écosystème.
 \t\t\t\t\t</p>
 \t\t\t\t</div>
 \t\t\t</div>
@@ -255,7 +260,7 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  207 => 78,  197 => 71,  176 => 52,  164 => 46,  159 => 44,  154 => 42,  150 => 41,  142 => 38,  137 => 35,  133 => 34,  119 => 23,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
+        return array (  209 => 80,  199 => 73,  176 => 52,  164 => 46,  159 => 44,  154 => 42,  150 => 41,  142 => 38,  137 => 35,  133 => 34,  119 => 23,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -321,10 +326,12 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t\t<!-- BLOC 1 : texte à gauche, image à droite -->
 \t\t\t<div class=\"values-block left\">
 \t\t\t\t<div class=\"values-text bg-beige\">
-\t\t\t\t\t<h2 class=\"beige-text-title\">Notre conviction</h2>
+\t\t\t\t\t<h3 class=\"beige-text-title\">Notre conviction</h3>
 \t\t\t\t\t<p class=\"values-text-left\">
-\t\t\t\t\t\tChez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien‑être.<br>
-\t\t\t\t\t\tpour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse.<br>
+\t\t\t\t\t\tChez GreenGoodies, nous croyons en un monde <br>
+\t\t\t\t\t\toù le commerce peut être synonyme de bien‑être.<br>
+\t\t\t\t\t\tpour la planète et ses habitants. <br>
+\t\t\t\t\t\tNotre mission est de vous proposer une sélection rigoureuse.<br>
 \t\t\t\t\t\tde produits qui allient qualité, durabilité et éthique.
 \t\t\t\t\t</p>
 \t\t\t\t</div>
@@ -341,11 +348,14 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t\t\t</div>
 
 \t\t\t\t<div class=\"values-text bg-green\">
-\t\t\t\t\t<h2 class=\"green-text-title\">Nos valeurs</h2>
+\t\t\t\t\t<h3 class=\"green-text-title\">Nos valeurs</h3>
 \t\t\t\t\t<p class=\"values-text-right\">
-\t\t\t\t\t\tDurabilité : Nous sélectionnons soigneusement des produits qui respectent l’environnement.<br>
-\t\t\t\t\t\tÉthique : Nous travaillons avec des partenaires qui partagent nos valeurs.<br>
-\t\t\t\t\t\tÉcologie : Nous privilégions les matériaux et pratiques respectueuses de l’écosystème.
+\t\t\t\t\t\tDurabilité : Nous sélectionnons soigneusement <br> 
+\t\t\t\t\t\tdes produits qui respectent l’environnement.<br>
+\t\t\t\t\t\tÉthique : Nous travaillons avec<br> 
+\t\t\t\t\t\tdes partenaires qui partagent nos valeurs.<br>
+\t\t\t\t\t\tÉcologie : Nous privilégions <br>
+\t\t\t\t\t\tles matériaux et pratiques respectueuses de l’écosystème.
 \t\t\t\t\t</p>
 \t\t\t\t</div>
 \t\t\t</div>
