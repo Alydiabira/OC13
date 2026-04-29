@@ -7,6 +7,8 @@
 
 	<section class="cart-page wrapper-1440">
 
+
+		
 		<h1>Mon panier</h1>
 
 		{# Messages de confirmation #}
@@ -19,6 +21,10 @@
 			<a href="{{ path('app_home') }}" class="btn">Retour aux produits</a>
 
 		{% else %}
+
+		<a href="{{ path('app_cart_clear') }}" class="gg-clear-cart">
+			X Vider le panier
+		</a>
 
 			<div class="cart-items">
 

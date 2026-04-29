@@ -105,41 +105,43 @@ class __TwigTemplate_ac05c15ad31b66ac0d7da1a2c39415aa extends Template
         yield "
 \t<section class=\"gg-product-page wrapper-1440\">
 
+\t\t
+
 \t\t<div class=\"gg-product-image\">
 \t\t\t<img src=\"";
-        // line 13
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 13, $this->source); })()), "picture", [], "any", false, false, false, 13))), "html", null, true);
+        // line 15
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 15, $this->source); })()), "picture", [], "any", false, false, false, 15))), "html", null, true);
         yield "\" alt=\"";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 13, $this->source); })()), "name", [], "any", false, false, false, 13), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 15, $this->source); })()), "name", [], "any", false, false, false, 15), "html", null, true);
         yield "\">
 \t\t</div>
 
 \t\t<div class=\"gg-product-info\">
 
 \t\t\t<h1>";
-        // line 18
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 18, $this->source); })()), "name", [], "any", false, false, false, 18), "html", null, true);
+        // line 20
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 20, $this->source); })()), "name", [], "any", false, false, false, 20), "html", null, true);
         yield "</h1>
 
 \t\t\t<p class=\"gg-product-price\">";
-        // line 20
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 20, $this->source); })()), "price", [], "any", false, false, false, 20), "html", null, true);
+        // line 22
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 22, $this->source); })()), "price", [], "any", false, false, false, 22), "html", null, true);
         yield "
 \t\t\t\t€</p>
 
 \t\t\t<p class=\"gg-product-description\">
 \t\t\t\t";
-        // line 24
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 24, $this->source); })()), "fullDescription", [], "any", false, false, false, 24), "html", null, true);
+        // line 26
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 26, $this->source); })()), "fullDescription", [], "any", false, false, false, 26), "html", null, true);
         yield "
 \t\t\t</p>
 
 \t\t\t<div class=\"gg-product-actions\">
 
 \t\t\t\t";
-        // line 29
-        if ((($tmp =  !CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 30
+        // line 31
+        if ((($tmp =  !CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "user", [], "any", false, false, false, 31)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 32
             yield "\t\t\t\t\t<a href=\"";
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             yield "\" class=\"gg-btn\">
@@ -148,35 +150,34 @@ class __TwigTemplate_ac05c15ad31b66ac0d7da1a2c39415aa extends Template
 
 \t\t\t\t";
         } else {
-            // line 35
+            // line 37
             yield "\t\t\t\t\t<form method=\"post\" action=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cart_add", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 35, $this->source); })()), "id", [], "any", false, false, false, 35)]), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cart_add", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 37, $this->source); })()), "id", [], "any", false, false, false, 37)]), "html", null, true);
             yield "\">
 
 \t\t\t\t\t\t<label for=\"quantity\">Quantité</label>
 \t\t\t\t\t\t<input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"0\" value=\"";
-            // line 38
-            yield ((((isset($context["quantity"]) || array_key_exists("quantity", $context) ? $context["quantity"] : (function () { throw new RuntimeError('Variable "quantity" does not exist.', 38, $this->source); })()) > 0)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["quantity"]) || array_key_exists("quantity", $context) ? $context["quantity"] : (function () { throw new RuntimeError('Variable "quantity" does not exist.', 38, $this->source); })()), "html", null, true)) : (1));
+            // line 40
+            yield ((((isset($context["quantity"]) || array_key_exists("quantity", $context) ? $context["quantity"] : (function () { throw new RuntimeError('Variable "quantity" does not exist.', 40, $this->source); })()) > 0)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["quantity"]) || array_key_exists("quantity", $context) ? $context["quantity"] : (function () { throw new RuntimeError('Variable "quantity" does not exist.', 40, $this->source); })()), "html", null, true)) : (1));
             yield "\">
 
 \t\t\t\t\t\t<button class=\"gg-btn\">
 \t\t\t\t\t\t\t";
-            // line 41
-            yield ((((isset($context["quantity"]) || array_key_exists("quantity", $context) ? $context["quantity"] : (function () { throw new RuntimeError('Variable "quantity" does not exist.', 41, $this->source); })()) > 0)) ? ("Mettre à jour") : ("Ajouter au panier"));
+            // line 43
+            yield ((((isset($context["quantity"]) || array_key_exists("quantity", $context) ? $context["quantity"] : (function () { throw new RuntimeError('Variable "quantity" does not exist.', 43, $this->source); })()) > 0)) ? ("Mettre à jour") : ("Ajouter au panier"));
             yield "
 \t\t\t\t\t\t</button>
 
 \t\t\t\t\t</form>
 \t\t\t\t";
         }
-        // line 46
+        // line 48
         yield "
 \t\t\t</div>
 
 \t\t</div>
 
 \t</section>
-
 
 ";
         
@@ -209,7 +210,7 @@ class __TwigTemplate_ac05c15ad31b66ac0d7da1a2c39415aa extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  173 => 46,  165 => 41,  159 => 38,  152 => 35,  143 => 30,  141 => 29,  133 => 24,  126 => 20,  121 => 18,  111 => 13,  105 => 9,  92 => 8,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  175 => 48,  167 => 43,  161 => 40,  154 => 37,  145 => 32,  143 => 31,  135 => 26,  128 => 22,  123 => 20,  113 => 15,  105 => 9,  92 => 8,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -224,6 +225,8 @@ class __TwigTemplate_ac05c15ad31b66ac0d7da1a2c39415aa extends Template
 {% block body %}
 
 \t<section class=\"gg-product-page wrapper-1440\">
+
+\t\t
 
 \t\t<div class=\"gg-product-image\">
 \t\t\t<img src=\"{{ asset('uploads/' ~ product.picture) }}\" alt=\"{{ product.name }}\">
@@ -265,7 +268,6 @@ class __TwigTemplate_ac05c15ad31b66ac0d7da1a2c39415aa extends Template
 \t\t</div>
 
 \t</section>
-
 
 {% endblock %}
 ", "product/show.html.twig", "/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates/product/show.html.twig");

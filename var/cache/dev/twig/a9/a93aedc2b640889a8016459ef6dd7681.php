@@ -101,15 +101,17 @@ class __TwigTemplate_96b54be08d95a2d98c4238cf87557117 extends Template
         yield "
 \t<section class=\"cart-page wrapper-1440\">
 
+
+\t\t
 \t\t<h1>Mon panier</h1>
 
 \t\t";
-        // line 13
+        // line 15
         yield "\t\t";
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "flashes", ["success"], "method", false, false, false, 13));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "flashes", ["success"], "method", false, false, false, 15));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 14
+            // line 16
             yield "\t\t\t<div class=\"alert alert-success\">";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
             yield "</div>
@@ -118,72 +120,79 @@ class __TwigTemplate_96b54be08d95a2d98c4238cf87557117 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 16
+        // line 18
         yield "
 \t\t";
-        // line 17
-        if (( !(isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 17, $this->source); })()) || Twig\Extension\CoreExtension::testEmpty(CoreExtension::getAttribute($this->env, $this->source, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 17, $this->source); })()), "cartItems", [], "any", false, false, false, 17)))) {
-            // line 18
+        // line 19
+        if (( !(isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 19, $this->source); })()) || Twig\Extension\CoreExtension::testEmpty(CoreExtension::getAttribute($this->env, $this->source, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 19, $this->source); })()), "cartItems", [], "any", false, false, false, 19)))) {
+            // line 20
             yield "\t\t\t<p>Votre panier est vide.</p>
 \t\t\t<a href=\"";
-            // line 19
+            // line 21
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
             yield "\" class=\"btn\">Retour aux produits</a>
 
 \t\t";
         } else {
-            // line 22
+            // line 24
             yield "
+\t\t<a href=\"";
+            // line 25
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cart_clear");
+            yield "\" class=\"gg-clear-cart\">
+\t\t\tX Vider le panier
+\t\t</a>
+
 \t\t\t<div class=\"cart-items\">
 
 \t\t\t\t";
-            // line 25
+            // line 31
             $context["total"] = 0;
-            // line 26
+            // line 32
             yield "
 \t\t\t\t";
-            // line 27
+            // line 33
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 27, $this->source); })()), "cartItems", [], "any", false, false, false, 27));
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 33, $this->source); })()), "cartItems", [], "any", false, false, false, 33));
             foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                // line 28
+                // line 34
                 yield "\t\t\t\t\t";
-                $context["lineTotal"] = (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 28), "price", [], "any", false, false, false, 28) * CoreExtension::getAttribute($this->env, $this->source, $context["item"], "quantity", [], "any", false, false, false, 28));
-                // line 29
+                $context["lineTotal"] = (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 34), "price", [], "any", false, false, false, 34) * CoreExtension::getAttribute($this->env, $this->source, $context["item"], "quantity", [], "any", false, false, false, 34));
+                // line 35
                 yield "\t\t\t\t\t";
-                $context["total"] = ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 29, $this->source); })()) + (isset($context["lineTotal"]) || array_key_exists("lineTotal", $context) ? $context["lineTotal"] : (function () { throw new RuntimeError('Variable "lineTotal" does not exist.', 29, $this->source); })()));
-                // line 30
+                $context["total"] = ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 35, $this->source); })()) + (isset($context["lineTotal"]) || array_key_exists("lineTotal", $context) ? $context["lineTotal"] : (function () { throw new RuntimeError('Variable "lineTotal" does not exist.', 35, $this->source); })()));
+                // line 36
                 yield "
 \t\t\t\t\t<div class=\"cart-item\">
 
 \t\t\t\t\t\t<div class=\"cart-item-left\">
 \t\t\t\t\t\t\t<img src=\"";
-                // line 34
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 34), "picture", [], "any", false, false, false, 34))), "html", null, true);
+                // line 40
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 40), "picture", [], "any", false, false, false, 40))), "html", null, true);
                 yield "\" alt=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 34), "name", [], "any", false, false, false, 34), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 40), "name", [], "any", false, false, false, 40), "html", null, true);
                 yield "\" class=\"cart-item-img\">
 \t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t<div class=\"cart-item-right\">
 \t\t\t\t\t\t\t<h2 class=\"cart-item-name\">";
-                // line 38
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 38), "name", [], "any", false, false, false, 38), "html", null, true);
+                // line 44
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 44), "name", [], "any", false, false, false, 44), "html", null, true);
                 yield "</h2>
 
 \t\t\t\t\t\t\t<p class=\"cart-item-qty\">
 \t\t\t\t\t\t\t\tQuantité :
 \t\t\t\t\t\t\t\t<strong>";
-                // line 42
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["item"], "quantity", [], "any", false, false, false, 42), "html", null, true);
+                // line 48
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["item"], "quantity", [], "any", false, false, false, 48), "html", null, true);
                 yield "</strong>
 \t\t\t\t\t\t\t</p>
 
 \t\t\t\t\t\t\t<p class=\"cart-item-price\">
 \t\t\t\t\t\t\t\tPrix :
 \t\t\t\t\t\t\t\t<strong>";
-                // line 47
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 47), "price", [], "any", false, false, false, 47), "html", null, true);
+                // line 53
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 53), "price", [], "any", false, false, false, 53), "html", null, true);
                 yield "€</strong>
 \t\t\t\t\t\t\t</p>
 \t\t\t\t\t\t</div>
@@ -195,7 +204,7 @@ class __TwigTemplate_96b54be08d95a2d98c4238cf87557117 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['item'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 54
+            // line 60
             yield "\t\t\t</div>
 
 \t\t\t<div class=\"cart-summary\">
@@ -203,8 +212,8 @@ class __TwigTemplate_96b54be08d95a2d98c4238cf87557117 extends Template
 \t\t\t\t<p class=\"summary-line\">
 \t\t\t\t\t<span>Total panier :</span>
 \t\t\t\t\t<strong>";
-            // line 60
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 60, $this->source); })()), "html", null, true);
+            // line 66
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 66, $this->source); })()), "html", null, true);
             yield "€</strong>
 \t\t\t\t</p>
 
@@ -214,7 +223,7 @@ class __TwigTemplate_96b54be08d95a2d98c4238cf87557117 extends Template
 \t\t\t\t</p>
 
 \t\t\t\t<a href=\"";
-            // line 68
+            // line 74
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cart_validate");
             yield "\" class=\"btn btn-success big-btn\">
 \t\t\t\t\tValider la commande
@@ -224,7 +233,7 @@ class __TwigTemplate_96b54be08d95a2d98c4238cf87557117 extends Template
 
 \t\t";
         }
-        // line 75
+        // line 81
         yield "
 \t</section>
 
@@ -259,7 +268,7 @@ class __TwigTemplate_96b54be08d95a2d98c4238cf87557117 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  228 => 75,  218 => 68,  207 => 60,  199 => 54,  186 => 47,  178 => 42,  171 => 38,  162 => 34,  156 => 30,  153 => 29,  150 => 28,  146 => 27,  143 => 26,  141 => 25,  136 => 22,  130 => 19,  127 => 18,  125 => 17,  122 => 16,  113 => 14,  108 => 13,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
+        return array (  237 => 81,  227 => 74,  216 => 66,  208 => 60,  195 => 53,  187 => 48,  180 => 44,  171 => 40,  165 => 36,  162 => 35,  159 => 34,  155 => 33,  152 => 32,  150 => 31,  141 => 25,  138 => 24,  132 => 21,  129 => 20,  127 => 19,  124 => 18,  115 => 16,  110 => 15,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -273,6 +282,8 @@ class __TwigTemplate_96b54be08d95a2d98c4238cf87557117 extends Template
 
 \t<section class=\"cart-page wrapper-1440\">
 
+
+\t\t
 \t\t<h1>Mon panier</h1>
 
 \t\t{# Messages de confirmation #}
@@ -285,6 +296,10 @@ class __TwigTemplate_96b54be08d95a2d98c4238cf87557117 extends Template
 \t\t\t<a href=\"{{ path('app_home') }}\" class=\"btn\">Retour aux produits</a>
 
 \t\t{% else %}
+
+\t\t<a href=\"{{ path('app_cart_clear') }}\" class=\"gg-clear-cart\">
+\t\t\tX Vider le panier
+\t\t</a>
 
 \t\t\t<div class=\"cart-items\">
 
