@@ -45,7 +45,7 @@
 .price {
     font-size: 18px;
     font-weight: 600;
-    color: #4a7c59;
+    color: #555;
     margin: 0;
 }
 
@@ -66,10 +66,6 @@
     border-radius: 8px;
     text-decoration: none;
     transition: 0.2s;
-}
-
-.product-btn:hover {
-    background: #3a6347;
 }
 
 /* --- RESPONSIVE --- */

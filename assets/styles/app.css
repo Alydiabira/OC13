@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 body {
@@ -10,7 +9,6 @@ body {
     background-color: #fafafa;
     color: #333;
     line-height: 1.6;
-    
 }
 
 img {
@@ -51,7 +49,7 @@ a {
     padding: 31px 100px;
 }
 
-/*-------- FOOTER --------*/
+/* ===== FOOTER ===== */
 
 .gg-footer {
     width: 100%;
@@ -59,11 +57,14 @@ a {
     border-top: 1px solid #f6f5f0;
 }
 
+/* Bloc interne = dimensions exactes Figma */
 .gg-footer-inner {
+    width: 1440px; 
     height: 81px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    color: #333;
+    color: #333333;
 }
