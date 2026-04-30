@@ -1,6 +1,13 @@
 /*-------- PAGE COMPTE --------*/
 .account-page {
     margin: 40px auto;
+    background: #fffdf7;
+    width: 604px;
+    height: 100%;
+    angle: 0 deg;
+    opacity: 1;
+    top: 191px;
+    left: 418px;
 }
 
 .account-page h1 {
@@ -38,4 +45,17 @@ hr {
 
 .delete-account-btn {
     margin-top: 10px;
+}
+.btn.btn-success {
+    width: 604px;
+    height: 244px;
+    background: #565656;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }

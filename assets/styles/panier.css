@@ -89,7 +89,9 @@
     display: inline-block;
     margin-bottom: 20px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 400px;
     color: #666666;
     text-decoration: none;
+    margin-left: 30%;
+
 }

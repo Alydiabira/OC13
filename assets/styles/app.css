@@ -24,11 +24,11 @@ a {
 }
 
 /* Conteneur centré */
-.wrapper-1440 {
+/* .wrapper-1440 {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
-}
+} */
 
 .gg-header-right {
     display: flex;
