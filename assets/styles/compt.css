@@ -3,7 +3,6 @@
     width: 604px;
     background: #fffdf7;
     padding: 40px;
-    border-radius: 8px;
     margin: 40px auto;
 }
 
@@ -41,18 +40,16 @@ hr {
 }
 
 .btn-api {
-    width: 479px;
     height: 77px;
     background: #565656;
     color: #ffffff;
     font-size: 18px;
     font-weight: 500;
-    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 30px 183px;
+    padding: 30px 155px;
     margin: 20px 0;
 }
 
@@ -61,17 +58,15 @@ hr {
 }
 
 .btn-delete-account {
-    width: 479px;
     height: 77px;
     background: #565656;
     color: #ffffff;
     font-size: 18px;
     font-weight: 500;
-    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 30px 183px;
+    padding: 30px 165px;
     margin-top: 20px;
 }
