@@ -21,6 +21,10 @@ a {
     color: inherit;
 }
 
+h1{
+   text-align: center;
+}
+
 /* Conteneur centré */
 /* .wrapper-1440 {
     max-width: 1440px;

@@ -1,15 +1,11 @@
 /*-------- PAGE PANIER --------*/
 
-.cart-page {
-    margin: 40px auto;
-}
 
 .cart-page .cart-items,
 .cart-page .cart-summary {
     max-width: 604px;
     background: #fffdf7;
     padding: 20px;
-    border-radius: 8px;
     margin: 0 auto 20px;
 }
 
@@ -32,7 +28,7 @@
    PAGE PANIER
 ------------------------------*/
 .cart-page {
-    padding: 40px 0;
+    padding: 40px;
 }
 
 .cart-items {
