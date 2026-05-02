@@ -1,4 +1,8 @@
 /*-------- PAGE COMPTE --------*/
+body {
+    background: #f7f1ec;
+}
+
 .account-box {
     width: 604px;
     background: #fffdf7;

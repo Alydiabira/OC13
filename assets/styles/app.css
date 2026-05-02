@@ -6,9 +6,9 @@
 
 body {
     font-family: "Inter", Arial, sans-serif;
-    background-color: #fafafa;
     color: #333;
     line-height: 1.6;
+    background: #f7f1ec;
 }
 
 img {
@@ -21,8 +21,8 @@ a {
     color: inherit;
 }
 
-h1{
-   text-align: center;
+h1 {
+    text-align: center;
 }
 
 /* Conteneur centré */
@@ -63,7 +63,7 @@ h1{
 
 /* Bloc interne = dimensions exactes Figma */
 .gg-footer-inner {
-    width: 1440px; 
+    width: 1440px;
     height: 81px;
     margin: 0 auto;
     display: flex;

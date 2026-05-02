@@ -4,7 +4,6 @@
 
 .login-page {
     display: flex;
-    width: 1440px;
     height: 1150px;
     margin: 0 auto;
     background: #fffdf7; /* couleur de fond Figma */
@@ -33,7 +32,6 @@
     width: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 /* =============================== */

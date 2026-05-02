@@ -1,6 +1,5 @@
 /*-------- PAGE PANIER --------*/
 
-
 .cart-page .cart-items,
 .cart-page .cart-summary {
     max-width: 604px;
@@ -22,7 +21,6 @@
     border-radius: 8px;
     margin: 0 auto;
 }
-
 
 /*------------------------------
    PAGE PANIER
@@ -80,7 +78,6 @@
     color: white;
 }
 
-
 .gg-clear-cart {
     display: inline-block;
     margin-bottom: 20px;
@@ -89,5 +86,4 @@
     color: #666666;
     text-decoration: none;
     margin-left: 30%;
-
 }
