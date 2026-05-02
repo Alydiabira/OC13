@@ -8,7 +8,10 @@ body {
     font-family: "Inter", Arial, sans-serif;
     color: #333;
     line-height: 1.6;
-    background: #f7f1ec;
+}
+
+.home-page {
+    background: #FFFDF7;
 }
 
 img {
