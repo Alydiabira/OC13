@@ -10,15 +10,14 @@ security:
                 property: email
 
     firewalls:
-        # Profiler, assets, etc.
         dev:
             pattern: ^/(_profiler|_wdt|assets|build)/
             security: false
 
-        #  Login API (JWT)
         api_login:
             pattern: ^/api/login
             stateless: true
+            provider: app_user_provider
             json_login:
                 check_path: /api/login
                 username_path: username
@@ -26,37 +25,27 @@ security:
                 success_handler: App\Security\ApiLoginSuccessHandler
                 failure_handler: App\Security\ApiLoginFailureHandler
 
-        #  API sécurisée par JWT
         api:
             pattern: ^/api
             stateless: true
+            provider: app_user_provider
             jwt: ~
 
-        # 🔐 Site web classique
         main:
             lazy: true
             provider: app_user_provider
-
             form_login:
                 login_path: app_login
                 check_path: app_login
                 username_parameter: _username
                 password_parameter: _password
-
             logout:
                 path: app_logout
                 target: app_login
 
     access_control:
-        # Pages publiques
+        - { path: ^/api/login, roles: PUBLIC_ACCESS }
         - { path: ^/login, roles: PUBLIC_ACCESS }
         - { path: ^/register, roles: PUBLIC_ACCESS }
-
-        # API login public
-        - { path: ^/api/login, roles: PUBLIC_ACCESS }
-
-        # API produits → nécessite JWT
         - { path: ^/api/products, roles: IS_AUTHENTICATED_FULLY }
-
-        # Tout le reste → utilisateur connecté
         - { path: ^/, roles: ROLE_USER }

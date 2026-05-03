@@ -18,6 +18,7 @@ return [
         '/mon-compte' => [[['_route' => 'app_account', '_controller' => 'App\\Controller\\AccountController::index'], null, null, null, false, false, null]],
         '/mon-compte/api/toggle' => [[['_route' => 'app_account_toggle_api', '_controller' => 'App\\Controller\\AccountController::toggleApi'], null, null, null, false, false, null]],
         '/mon-compte/supprimer' => [[['_route' => 'app_account_delete', '_controller' => 'App\\Controller\\AccountController::deleteAccount'], null, null, null, false, false, null]],
+        '/api/login' => [[['_route' => 'api_login', '_controller' => 'App\\Controller\\ApiAuthController::login'], null, ['POST' => 0], null, false, false, null]],
         '/api/products' => [[['_route' => 'api_products', '_controller' => 'App\\Controller\\ApiController::products'], null, ['GET' => 0], null, false, false, null]],
         '/panier' => [[['_route' => 'app_cart', '_controller' => 'App\\Controller\\CartController::index'], null, null, null, false, false, null]],
         '/panier/vider' => [[['_route' => 'app_cart_clear', '_controller' => 'App\\Controller\\CartController::clear'], null, null, null, false, false, null]],

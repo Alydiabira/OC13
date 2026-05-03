@@ -614,6 +614,10 @@
         <argument type="service" id=".service_locator.TJNRSaV.App\Controller\Api\ProductApiController"/>
       </call>
     </service>
+    <service id="App\Controller\ApiAuthController" class="App\Controller\ApiAuthController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="routing.controller"/>
+    </service>
     <service id="App\Controller\ApiController" class="App\Controller\ApiController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="routing.controller"/>
@@ -4045,6 +4049,7 @@
       <argument type="collection">
         <argument>App\Controller\AccountController</argument>
         <argument>App\Controller\Api\ProductApiController</argument>
+        <argument>App\Controller\ApiAuthController</argument>
         <argument>App\Controller\ApiController</argument>
         <argument>App\Controller\CartController</argument>
         <argument>App\Controller\HomeController</argument>
@@ -7402,6 +7407,13 @@
     </service>
     <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap">
       <call method="add">
+        <argument type="service" id=".security.request_matcher.S.FPR_b"/>
+        <argument type="collection">
+          <argument>PUBLIC_ACCESS</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
         <argument type="service" id=".security.request_matcher.BhpRUZK"/>
         <argument type="collection">
           <argument>PUBLIC_ACCESS</argument>
@@ -7410,13 +7422,6 @@
       </call>
       <call method="add">
         <argument type="service" id=".security.request_matcher.7hffHUr"/>
-        <argument type="collection">
-          <argument>PUBLIC_ACCESS</argument>
-        </argument>
-        <argument>null</argument>
-      </call>
-      <call method="add">
-        <argument type="service" id=".security.request_matcher.S.FPR_b"/>
         <argument type="collection">
           <argument>PUBLIC_ACCESS</argument>
         </argument>
@@ -7877,6 +7882,10 @@
         <argument type="service" id=".security.request_matcher..tvo6Vp"/>
       </argument>
     </service>
+    <service id="security.listener.api_login.user_provider" class="Symfony\Component\Security\Http\EventListener\UserProviderListener">
+      <tag name="kernel.event_listener" dispatcher="debug.security.event_dispatcher.api_login" event="Symfony\Component\Security\Http\Event\CheckPassportEvent" priority="2048" method="checkPassport"/>
+      <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
+    </service>
     <service id="security.user_checker.chain.api_login" class="Symfony\Component\Security\Core\User\ChainUserChecker">
       <argument type="tagged_iterator" tag="security.user_checker.api_login"/>
     </service>
@@ -7988,6 +7997,10 @@
       <argument type="collection">
         <argument type="service" id=".security.request_matcher.3qgJVJN"/>
       </argument>
+    </service>
+    <service id="security.listener.api.user_provider" class="Symfony\Component\Security\Http\EventListener\UserProviderListener">
+      <tag name="kernel.event_listener" dispatcher="debug.security.event_dispatcher.api" event="Symfony\Component\Security\Http\Event\CheckPassportEvent" priority="2048" method="checkPassport"/>
+      <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
     </service>
     <service id="security.user_checker.chain.api" class="Symfony\Component\Security\Core\User\ChainUserChecker">
       <argument type="tagged_iterator" tag="security.user_checker.api"/>
@@ -8234,6 +8247,11 @@
         <argument key="security.firewall.map.context.main" type="service_closure" id="security.firewall.map.context.main"/>
       </argument>
     </service>
+    <service id=".security.request_matcher.S.FPR_b" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
+      <argument type="collection">
+        <argument type="service" id=".security.request_matcher..tvo6Vp"/>
+      </argument>
+    </service>
     <service id=".security.request_matcher.T8BdVIN" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
       <argument>^/login</argument>
     </service>
@@ -8248,11 +8266,6 @@
     <service id=".security.request_matcher.7hffHUr" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
       <argument type="collection">
         <argument type="service" id=".security.request_matcher.LORg6t3"/>
-      </argument>
-    </service>
-    <service id=".security.request_matcher.S.FPR_b" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
-      <argument type="collection">
-        <argument type="service" id=".security.request_matcher..tvo6Vp"/>
       </argument>
     </service>
     <service id=".security.request_matcher.7hxith." class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
@@ -9882,6 +9895,8 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Api\ProductApiController" class="App\Controller\Api\ProductApiController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\Api\ProductApiController.0.App\Controller\Api\ProductApiController" class="App\Controller\Api\ProductApiController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Api\ProductApiController" class="App\Controller\Api\ProductApiController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\ApiAuthController.0.App\Controller\ApiAuthController" class="App\Controller\ApiAuthController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ApiAuthController" class="App\Controller\ApiAuthController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ApiController" class="App\Controller\ApiController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ApiController" class="App\Controller\ApiController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\ApiController.0.App\Controller\ApiController" class="App\Controller\ApiController" autowire="true" abstract="true"/>
@@ -9974,6 +9989,14 @@
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
         <argument type="collection">
+          <argument type="service_closure" id="security.listener.api_login.user_provider"/>
+          <argument>checkPassport</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
+        <argument type="collection">
           <argument type="service_closure" id="security.listener.user_checker.api_login"/>
           <argument>preCheckCredentials</argument>
         </argument>
@@ -10037,6 +10060,14 @@
       <argument type="service" id="debug.stopwatch"/>
       <argument type="service" id="monolog.logger.event" on-invalid="null"/>
       <argument type="service" id="request_stack" on-invalid="null"/>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.listener.api.user_provider"/>
+          <argument>checkPassport</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
         <argument type="collection">
@@ -11872,6 +11903,7 @@
           <argument>App\Kernel</argument>
           <argument>App\Controller\AccountController</argument>
           <argument>App\Controller\Api\ProductApiController</argument>
+          <argument>App\Controller\ApiAuthController</argument>
           <argument>App\Controller\ApiController</argument>
           <argument>App\Controller\CartController</argument>
           <argument>App\Controller\HomeController</argument>
