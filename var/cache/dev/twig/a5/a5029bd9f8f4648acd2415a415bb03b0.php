@@ -125,7 +125,7 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t<!-- PRODUITS -->
 \t\t<section class=\"wrapper-1440\">
 
-\t\t\t<h2>Nos produits</h2>
+\t\t\t<h2 class=\"produits\">Nos produits</h2>
 
 \t\t\t<div class=\"products-grid\">
 \t\t\t\t";
@@ -295,7 +295,7 @@ class __TwigTemplate_be619175e6321bb8f25bfdd3a461d0d9 extends Template
 \t\t<!-- PRODUITS -->
 \t\t<section class=\"wrapper-1440\">
 
-\t\t\t<h2>Nos produits</h2>
+\t\t\t<h2 class=\"produits\">Nos produits</h2>
 
 \t\t\t<div class=\"products-grid\">
 \t\t\t\t{% for product in products %}
