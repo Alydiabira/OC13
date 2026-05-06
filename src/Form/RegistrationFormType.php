@@ -65,10 +65,19 @@ class RegistrationFormType extends AbstractType
             ]);
     }
 
+    // public function configureOptions(OptionsResolver $resolver): void
+    // {
+    //     $resolver->setDefaults([
+    //         'data_class' => User::class,
+    //     ]);
+    // }
+
     public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-            'data_class' => User::class,
-        ]);
-    }
+{
+    $resolver->setDefaults([
+        'data_class' => User::class,
+        'csrf_protection' => false,
+    ]);
+}
+
 }

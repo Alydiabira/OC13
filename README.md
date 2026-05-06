@@ -1,91 +1,131 @@
-# 1) LANCER LE SERVEUR SYMFONY
+✨ Fonctionnalités principales
+🛍️ Côté utilisateur
+Inscription et connexion
+Consultation des produits
+Ajout au panier
+Validation du panier (création de commande)
+Historique des commandes
+Activation / désactivation de l’accès API
+ API sécurisée (JWT)
+Authentification via /api/login
+Récupération des produits via /api/products
+Accès API conditionné à l’activation dans le profil utilisateur
+🛠️ Côté technique
+Symfony 6+
+Doctrine ORM
+Fixtures pour les données de test
+Serializer Symfony (Groupes)
+Sécurité via JWT (LexikJWTAuthenticationBundle)
+Assets optimisés
 
+ Installation
+1. Cloner le projet
+bash
+git clone https://github.com/votre-repo/greengoodies.git
+cd greengoodies
+2. Installer les dépendances PHP
+bash
+composer install
+3. Configurer l’environnement
+Créer un fichier .env.local :
+bash
+cp .env .env.local
+Configurer la base de données :
+Code
+DATABASE_URL="mysql://root:password@127.0.0.1:3306/greengoodies?serverVersion=8.0"
+4. Base de données
+bash
+php bin/console doctrine:database:create
+php bin/console doctrine:migrations:migrate
+php bin/console doctrine:fixtures:load -n
+5. Lancer le serveur Symfony
+
+bash
 symfony server:start -d
+Le site sera disponible sur :
+Code
+https://127.0.0.1:8001/
+🌐 Tests Web (via cURL)
+Page d’accueil
+bash
+curl -k https://127.0.0.1:8001/
+Inscription
+bash
 
-# 2) PAGE D’ACCUEIL (liste des produits)
-
-curl -k https://127.0.0.1:8000/
-
-# 3) INSCRIPTION UTILISATEUR
-
-curl -k -X POST https://127.0.0.1:8000/register \
+curl -k -X POST https://127.0.0.1:8001/register \
  -H "Content-Type: application/x-www-form-urlencoded" \
- -d "registration_form[email]=newuser@gmail.com&registration_form[plainPassword]=password&registration_form[firstname]=Aly&registration_form[lastname]=Diabira"
+ -d "registration_form[lastname]=Test&registration_form[firstname]=User&registration_form[email]=test@gmail.com&registration_form[password]=password&registration_form[confirmPassword]=password&registration_form[acceptCgu]=1"
 
-# 4) CONNEXION UTILISATEUR
 
-curl -k -X POST https://127.0.0.1:8000/login \
+Connexion (avec cookies)
+bash
+curl -k -c cookies.txt -b cookies.txt -X POST https://127.0.0.1:8001/login \
  -H "Content-Type: application/x-www-form-urlencoded" \
- -d "\_username=newuser@gmail.com&\_password=password"
+ -d "_username=test@gmail.com&_password=password"
+Ajouter un produit au panier
+bash
+curl -k -c cookies.txt -b cookies.txt https://127.0.0.1:8001/panier/ajouter/1
+Afficher le panier
+bash
+curl -k -c cookies.txt -b cookies.txt https://127.0.0.1:8001/panier
+Valider le panier
+bash
+curl -k -c cookies.txt -b cookies.txt https://127.0.0.1:8001/panier/valider
+Historique des commandes
+bash
+curl -k -c cookies.txt -b cookies.txt https://127.0.0.1:8001/mon-compte
+Activer / désactiver l’accès API
+bash
+curl -k -c cookies.txt -b cookies.txt -X POST https://127.0.0.1:8001/mon-compte/api/toggle
+🔥 Tests API (via cURL)
 
-# 5) PANIER : AJOUTER UN PRODUIT
 
-curl -k https://127.0.0.1:8000/panier/ajouter/1
-
-# 6) PANIER : AFFICHER LE PANIER
-
-curl -k https://127.0.0.1:8000/panier
-
-# 7) PANIER : VALIDER LE PANIER (CRÉE UNE COMMANDE)
-
-curl -k https://127.0.0.1:8000/panier/valider
-
-# 8) MON COMPTE : HISTORIQUE DES COMMANDES
-
-curl -k https://127.0.0.1:8000/mon-compte
-
-# 9) MON COMPTE : ACTIVER / DÉSACTIVER L’ACCÈS API
-
-curl -k https://127.0.0.1:8000/mon-compte/api/toggle
-
-# 10) API : LOGIN AVEC IDENTIFIANTS CORRECTS
-
-curl -k -X POST https://127.0.0.1:8000/api/login \
+Login API (identifiants corrects)
+bash
+curl -k -X POST https://127.0.0.1:8001/api/login \
  -H "Content-Type: application/json" \
  -d '{"username":"test@gmail.com","password":"password"}'
+Login API (mauvais mot de passe)
 
-# 11) API : LOGIN AVEC MAUVAIS MOT DE PASSE
+bash
 
-curl -k -X POST https://127.0.0.1:8000/api/login \
+curl -k -X POST https://127.0.0.1:8001/api/login \
  -H "Content-Type: application/json" \
  -d '{"username":"test@gmail.com","password":"wrong"}'
 
-# 12) API : LOGIN AVEC ACCÈS API DÉSACTIVÉ
-
-# (désactiver d’abord via /mon-compte/api/toggle)
-
-curl -k -X POST https://127.0.0.1:8000/api/login \
+Login API avec accès API désactivé
+bash
+curl -k -X POST https://127.0.0.1:8001/api/login \
  -H "Content-Type: application/json" \
  -d '{"username":"test@gmail.com","password":"password"}'
+ 
+Résultat attendu : 403 Forbidden
+Récupérer les produits avec JWT
+bash
+TOKEN=$(curl -sk -X POST https://127.0.0.1:8001/api/login \
+ -H "Content-Type: application/json" \
+ -d '{"username":"test@gmail.com","password":"password"}' | jq -r .token)
 
-# 13) API : RÉCUPÉRER LES PRODUITS AVEC JWT
-
-# (REMPLACER TON_TOKEN_ICI PAR LE TOKEN REÇU)
-
-curl -k https://127.0.0.1:8000/api/products \
- -H "Authorization: Bearer TON_TOKEN_ICI"
-
-# 14) API : TOKEN INVALIDE
-
-curl -k https://127.0.0.1:8000/api/products \
+curl -k https://127.0.0.1:8001/api/products \
+ -H "Authorization: Bearer $TOKEN"
+Token invalide
+bash
+curl -k https://127.0.0.1:8001/api/products \
  -H "Authorization: Bearer INVALID"
 
-# 15) DOCTRINE : VALIDATION DU SCHÉMA
-
+🧪 Vérifications techniques
+Valider le schéma Doctrine
+bash
 php bin/console doctrine:schema:validate
-
-# 16) DOCTRINE : RECHARGER LES FIXTURES
-
+Recharger les fixtures
+bash
 php bin/console doctrine:fixtures:load -n
-
-# 17) COMPOSER : VÉRIFIER LES DÉPENDANCES
-
-composer show
-
-# 18) VÉRIFIER LES IMAGES OPTIMISÉES
-
+Vérifier les assets
+bash
+ls -lh public/assets
+Vérifier les images optimisées
+bash
 ls -lh public/uploads
-
-# 19) VÉRIFIER LES ASSETS MINIFIÉS
-
-ls -lh public/build
+📄 Licence
+Projet réalisé dans le cadre du parcours OpenClassrooms – Développeur d’Applications PHP/Symfony.
+Usage pédagogique uniquement.
