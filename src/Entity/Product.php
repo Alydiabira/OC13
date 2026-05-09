@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
@@ -14,21 +15,27 @@ class Product
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['api'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['api'])]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['api'])]
     private ?string $shortDescription = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups(['api'])]
     private ?string $fullDescription = null;
 
     #[ORM\Column]
+    #[Groups(['api'])]
     private ?float $price = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['api'])]
     private ?string $picture = null;
 
     /**
@@ -62,7 +69,6 @@ class Product
     public function setName(string $name): static
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -74,7 +80,6 @@ class Product
     public function setShortDescription(string $shortDescription): static
     {
         $this->shortDescription = $shortDescription;
-
         return $this;
     }
 
@@ -86,7 +91,6 @@ class Product
     public function setFullDescription(string $fullDescription): static
     {
         $this->fullDescription = $fullDescription;
-
         return $this;
     }
 
@@ -98,7 +102,6 @@ class Product
     public function setPrice(float $price): static
     {
         $this->price = $price;
-
         return $this;
     }
 
@@ -110,7 +113,6 @@ class Product
     public function setPicture(string $picture): static
     {
         $this->picture = $picture;
-
         return $this;
     }
 
@@ -128,19 +130,16 @@ class Product
             $this->quantity->add($quantity);
             $quantity->setProduct($this);
         }
-
         return $this;
     }
 
     public function removeQuantity(CartItem $quantity): static
     {
         if ($this->quantity->removeElement($quantity)) {
-            // set the owning side to null (unless already changed)
             if ($quantity->getProduct() === $this) {
                 $quantity->setProduct(null);
             }
         }
-
         return $this;
     }
 
@@ -158,19 +157,16 @@ class Product
             $this->orderItems->add($orderItem);
             $orderItem->setProduct($this);
         }
-
         return $this;
     }
 
     public function removeOrderItem(OrderItem $orderItem): static
     {
         if ($this->orderItems->removeElement($orderItem)) {
-            // set the owning side to null (unless already changed)
             if ($orderItem->getProduct() === $this) {
                 $orderItem->setProduct(null);
             }
         }
-
         return $this;
     }
 }

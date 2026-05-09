@@ -714,6 +714,10 @@
     <service id="App\Security\ApiLoginSuccessHandler" class="App\Security\ApiLoginSuccessHandler" autowire="true" autoconfigure="true">
       <argument type="service" id="lexik_jwt_authentication.jwt_manager"/>
     </service>
+    <service id="App\Security\JWTLoginFailureHandler" class="App\Security\JWTLoginFailureHandler" autowire="true" autoconfigure="true"/>
+    <service id="App\Security\JWTLoginSuccessHandler" class="App\Security\JWTLoginSuccessHandler" autowire="true" autoconfigure="true">
+      <argument type="service" id="lexik_jwt_authentication.jwt_manager"/>
+    </service>
     <service id="App\Security\LoginFormAuthenticator" class="App\Security\LoginFormAuthenticator" autowire="true" autoconfigure="true">
       <argument type="service" id="router.default"/>
     </service>
