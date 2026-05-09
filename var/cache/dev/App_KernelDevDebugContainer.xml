@@ -7890,7 +7890,7 @@
     </service>
     <service id="security.authentication.success_handler.api_login.json_login" class="Symfony\Component\Security\Http\Authentication\CustomAuthenticationSuccessHandler">
       <argument type="service">
-        <service class="App\Security\ApiLoginSuccessHandler" autowire="true">
+        <service class="App\Security\JWTLoginSuccessHandler" autowire="true">
           <argument type="service" id="lexik_jwt_authentication.jwt_manager"/>
         </service>
       </argument>
@@ -7899,7 +7899,7 @@
     </service>
     <service id="security.authentication.failure_handler.api_login.json_login" class="Symfony\Component\Security\Http\Authentication\CustomAuthenticationFailureHandler">
       <argument type="service">
-        <service class="App\Security\ApiLoginFailureHandler" autowire="true"/>
+        <service class="App\Security\JWTLoginFailureHandler" autowire="true"/>
       </argument>
       <argument type="collection"/>
     </service>
