@@ -186,7 +186,7 @@
     <parameter key="kernel.allowed_http_method_override">null</parameter>
     <parameter key="kernel.trust_x_sendfile_type_header">%env(bool:default::SYMFONY_TRUST_X_SENDFILE_TYPE_HEADER)%</parameter>
     <parameter key="kernel.trusted_hosts">%env(default::SYMFONY_TRUSTED_HOSTS)%</parameter>
-    <parameter key="kernel.default_locale">en</parameter>
+    <parameter key="kernel.default_locale">fr</parameter>
     <parameter key="kernel.enabled_locales" type="collection"/>
     <parameter key="kernel.error_controller">error_controller</parameter>
     <parameter key="kernel.trusted_proxies">%env(default::SYMFONY_TRUSTED_PROXIES)%</parameter>
@@ -261,6 +261,8 @@
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates</parameter>
+    <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
+    <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection"/>
     <parameter key="security.access.denied_url">null</parameter>
     <parameter key="security.authentication.manager.erase_credentials">true</parameter>
@@ -778,7 +780,7 @@
       <tag name="container.hot_path"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="request_stack"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="service" id="router.default" on-invalid="ignore"/>
       <argument>false</argument>
       <argument type="collection"/>
@@ -1122,7 +1124,7 @@
     </service>
     <service id="slugger" class="Symfony\Component\String\Slugger\AsciiSlugger">
       <tag name="kernel.locale_aware"/>
-      <argument>en</argument>
+      <argument>fr</argument>
     </service>
     <service id="container.getenv" class="Closure">
       <tag name="routing.expression_language_function" function="env"/>
@@ -1702,7 +1704,7 @@
       <argument type="service" id="translation.writer"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument>/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/translations</argument>
       <argument>/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13/templates</argument>
       <argument type="collection">
@@ -1739,7 +1741,7 @@
       <argument type="service" id="translation.provider_collection"/>
       <argument type="service" id="translation.writer"/>
       <argument type="service" id="translation.reader"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="collection"/>
       <argument type="collection"/>
       <call method="setName">
@@ -2558,7 +2560,7 @@
       <tag name="kernel.locale_aware"/>
       <argument type="service" id=".service_locator.6KVxCv0"/>
       <argument type="service" id="translator.formatter.default"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="collection">
         <argument key="translation.loader.php" type="collection">
           <argument>php</argument>
@@ -2939,7 +2941,7 @@
       </call>
       <call method="setFallbackLocales">
         <argument type="collection">
-          <argument>en</argument>
+          <argument>fr</argument>
         </argument>
       </call>
     </service>
@@ -3235,7 +3237,7 @@
     <service id="translation.locale_switcher" class="Symfony\Component\Translation\LocaleSwitcher">
       <tag name="kernel.reset" method="reset"/>
       <tag name="kernel.locale_aware"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="tagged_iterator" tag="kernel.locale_aware" exclude="translation.locale_switcher"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
     </service>
@@ -3839,6 +3841,14 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>kernel.response</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="web_profiler.debug_toolbar"/>
+          <argument>onKernelResponse</argument>
+        </argument>
+        <argument>-128</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.controller_arguments</argument>
         <argument type="collection">
           <argument type="service_closure" id="controller.is_granted_attribute_listener"/>
@@ -4091,7 +4101,7 @@
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="parameter_bag" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.router" on-invalid="ignore"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <call method="setConfigCacheFactory">
         <argument type="service" id="config_cache_factory"/>
       </call>
@@ -4108,7 +4118,7 @@
       <call method="setParameters">
         <argument type="collection">
           <argument key="_functions" type="service" id="router.expression_language_provider" on-invalid="ignore"/>
-          <argument key="_locale">en</argument>
+          <argument key="_locale">fr</argument>
         </argument>
       </call>
     </service>
@@ -6522,7 +6532,7 @@
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
       <argument>UTF-8</argument>
-      <argument>null</argument>
+      <argument type="service" id=".virtual_request_stack"/>
       <argument type="service" id="var_dumper.server_connection"/>
       <argument>%env(bool:default::key:web:default:kernel.runtime_mode:)%</argument>
     </service>
@@ -7079,6 +7089,18 @@
       <argument type="service" id="debug.file_link_formatter"/>
       <argument>/Users/diabiraaly/Desktop/Bureau - MacBook Air de DIABIRA/Openclassrooms/OC13</argument>
       <argument>UTF-8</argument>
+    </service>
+    <service id="web_profiler.debug_toolbar" class="Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+      <argument type="service" id="twig"/>
+      <argument>false</argument>
+      <argument>2</argument>
+      <argument type="service" id="router.default" on-invalid="ignore"/>
+      <argument>^/((index|app(_[\w]+)?)\.php/)?_wdt</argument>
+      <argument type="service" id="web_profiler.csp.handler"/>
+      <argument type="service" id="data_collector.dump" on-invalid="ignore"/>
+      <argument>false</argument>
     </service>
     <service id="stimulus.helper" class="Symfony\UX\StimulusBundle\Helper\StimulusHelper">
       <argument type="service" id="twig" on-invalid="null"/>

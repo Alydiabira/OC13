@@ -1,6 +1,13 @@
 framework:
     secret: '%env(APP_SECRET)%'
 
+    default_locale: '%env(APP_LOCALE)%'
+
+    translator:
+        default_path: '%kernel.project_dir%/translations'
+        fallbacks:
+            - fr
+
     session:
         enabled: true
         handler_id: null
