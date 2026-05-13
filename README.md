@@ -79,13 +79,21 @@ Assets optimisés
 
 ⚙️ Installation
 
+/---------------------------------------/
+
 1. Cloner le projet
 bash
 git clone https://github.com/votre-repo/greengoodies.git
 cd greengoodies
+
+/---------------------------------------/
+
 2. Installer les dépendances
 bash
 composer install
+
+/---------------------------------------/
+
 3. Configurer l’environnement
 bash
 cp .env .env.local
@@ -93,6 +101,10 @@ Modifier :
 Code
 DATABASE_URL="mysql://root:password@127.0.0.1:3306/greengoodies?serverVersion=8.0"
 
+<<<<<<< HEAD
+=======
+/---------------------------------------/
+>>>>>>> b8a34173 (Mise à jour)
 
 4. Base de données
 bash
@@ -100,6 +112,10 @@ php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 php bin/console doctrine:fixtures:load -n
 
+<<<<<<< HEAD
+=======
+/---------------------------------------/
+>>>>>>> b8a34173 (Mise à jour)
 
 5. Lancer le serveur
 bash
@@ -133,9 +149,13 @@ curl -k -c cookies.txt -b cookies.txt -X POST https://127.0.0.1:8001/login \
 
 /---------------------------------------/
 
+/---------------------------------------/
+
 Ajouter au panier
 bash
 curl -k -c cookies.txt -b cookies.txt https://127.0.0.1:8001/panier/ajouter/1
+
+/---------------------------------------/
 
 /---------------------------------------/
 
@@ -151,15 +171,21 @@ curl -k -c cookies.txt -b cookies.txt https://127.0.0.1:8001/panier/valider
 
 /---------------------------------------/
 
+/---------------------------------------/
+
 Historique commandes
 bash
 curl -k -c cookies.txt -b cookies.txt https://127.0.0.1:8001/mon-compte
 
 /---------------------------------------/
 
+/---------------------------------------/
+
 Toggle API
 bash
 curl -k -c cookies.txt -b cookies.txt -X POST https://127.0.0.1:8001/mon-compte/api/toggle
+
+/---------------------------------------/
 
 /---------------------------------------/
 
@@ -172,6 +198,8 @@ curl -k -X POST https://127.0.0.1:8001/api/login \
 
 /---------------------------------------/
 
+/---------------------------------------/
+
 Mauvais mot de passe
 bash
 curl -k -X POST https://127.0.0.1:8001/api/login \
@@ -180,11 +208,15 @@ curl -k -X POST https://127.0.0.1:8001/api/login \
 
 /---------------------------------------/
 
+/---------------------------------------/
+
 Accès API désactivé → 403 attendu
 bash
 curl -k -X POST https://127.0.0.1:8001/api/login \
  -H "Content-Type: application/json" \
  -d '{"username":"test1@gmail.com","password":"password"}'
+
+/---------------------------------------/
 
 /---------------------------------------/
 
@@ -201,6 +233,8 @@ curl -k https://127.0.0.1:8001/api/products \
 
 /---------------------------------------/
 
+/---------------------------------------/
+
 Token invalide
 bash
 curl -k https://127.0.0.1:8001/api/products \
@@ -208,8 +242,15 @@ curl -k https://127.0.0.1:8001/api/products \
 
 /---------------------------------------/
 
+
 🧪 Vérifications techniques
 
+<<<<<<< HEAD
+=======
+
+/---------------------------------------/
+
+>>>>>>> b8a34173 (Mise à jour)
 Valider le schéma Doctrine
 bash
 php bin/console doctrine:schema:validate
@@ -218,21 +259,41 @@ php bin/console doctrine:schema:validate
 /---------------------------------------/
 
 Recharger les fixtures
+<<<<<<< HEAD
+=======
+
+
+/---------------------------------------/
+
+>>>>>>> b8a34173 (Mise à jour)
 bash
 php bin/console doctrine:fixtures:load -n
 
 /---------------------------------------/
 
 Vérifier les assets
+<<<<<<< HEAD
+=======
+
+
+/---------------------------------------/
+
+>>>>>>> b8a34173 (Mise à jour)
 bash
 ls -lh public/assets
 
 /---------------------------------------/
 
 Vérifier les images optimisées
+<<<<<<< HEAD
+=======
+
+
+/---------------------------------------/
+
+>>>>>>> b8a34173 (Mise à jour)
 bash
 ls -lh public/uploads
-
 
 📄 Licence
 Projet réalisé dans le cadre du parcours OpenClassrooms – Développeur d’Applications PHP/Symfony.
