@@ -54,7 +54,7 @@ bash
 
 curl -k -X POST https://127.0.0.1:8001/register \
  -H "Content-Type: application/x-www-form-urlencoded" \
- -d "registration_form[lastname]=Test&registration_form[firstname]=User&registration_form[email]=test@gmail.com&registration_form[password]=password&registration_form[confirmPassword]=password&registration_form[acceptCgu]=1"
+ -d "registration_form[lastname]=Test&registration_form[firstname]=User&registration_form[email]=test1@gmail.com&registration_form[password]=password&registration_form[confirmPassword]=password&registration_form[acceptCgu]=1"
 
 
 Connexion (avec cookies)
@@ -84,30 +84,35 @@ Login API (identifiants corrects)
 bash
 curl -k -X POST https://127.0.0.1:8001/api/login \
  -H "Content-Type: application/json" \
- -d '{"username":"test@gmail.com","password":"password"}'
+ -d '{"username":"test1@gmail.com","password":"password"}'
+
+
+
 Login API (mauvais mot de passe)
 
 bash
 
 curl -k -X POST https://127.0.0.1:8001/api/login \
  -H "Content-Type: application/json" \
- -d '{"username":"test@gmail.com","password":"wrong"}'
+ -d '{"username":"test1@gmail.com","password":"wrong"}'
 
 Login API avec accès API désactivé
 bash
 curl -k -X POST https://127.0.0.1:8001/api/login \
  -H "Content-Type: application/json" \
- -d '{"username":"test@gmail.com","password":"password"}'
+ -d '{"username":"test1@gmail.com","password":"password"}'
  
 Résultat attendu : 403 Forbidden
 Récupérer les produits avec JWT
 bash
 TOKEN=$(curl -sk -X POST https://127.0.0.1:8001/api/login \
  -H "Content-Type: application/json" \
- -d '{"username":"test@gmail.com","password":"password"}' | jq -r .token)
+ -d '{"username":"test1@gmail.com","password":"password"}' | jq -r .token)
 
 curl -k https://127.0.0.1:8001/api/products \
- -H "Authorization: Bearer $TOKEN"
+ -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3Nzg2ODU1OTgsImV4cCI6MTc3ODY4OTE5OCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidGVzdDFAZ21haWwuY29tIn0.07nmpxF3UG9BITZYwYQlA9xhKNk8y83EmTKaYnwmyNDa63k0OJNrxgoPcQECfRvxgMhDCYVSGg0vbrxdYFeH65zIUuCOiWchRwUoxK4eBEGYH0IwPF1NEfqO53FfObzdAKravL9kuu_Rhrq83MKiGgK30ZZfW2pgmxhXOEytZei4ECPPxVzKreKbC4GQZI9ylm4DAHy8K3V00QamoW4N01OFLTEbgwrd2ckTzDaQSHghfOZ2vU7Y0PZsu6B_WOp1L0c2eQZdeBaDrrMD16Rrdu8w-naleT7jQJ03BUoP8b1QNDn6GkjVDfoL6BuZ15bFgi29GlktGgzeaKdSMnqi5Q"
+
+
 Token invalide
 bash
 curl -k https://127.0.0.1:8001/api/products \
